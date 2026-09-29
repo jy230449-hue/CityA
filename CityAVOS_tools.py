@@ -1,3 +1,12 @@
+# ============================================================
+# CityAVOS_tools.py
+# 修改记录：
+# 2026-09-28
+# - 保留原作者代码，不删除；被替换的原代码已在对应位置完整注释并标注“原作者代码”。
+# - 修正 get_action_from_llm() 中两张图片的输入顺序。
+# - 增强 LLM 动作返回值解析，兼容 "Turn Left." 等带标点/大小写差异的结果。
+# ============================================================
+
 import numpy as np
 import math
 import time
@@ -315,15 +324,70 @@ def get_action_from_llm(adviser_cognitive_map, adviser_uncertainty_map, target_t
 
             # 提取返回的动作
             print(prompt)
-            chosen_action = chat_with_llm_images(prompt, [("./" + target_image_path), rgb_path])
-            print(chosen_action)
+
+            # ============================================================
+            # 原作者代码（保留，不执行）
+            # 原作者这里的图片顺序为：
+            #   第1张：目标参考图
+            #   第2张：当前无人机 RGB 图
+            # 但上面的 Prompt 描述恰好相反：
+            #   第1张应为当前 RGB 图，第2张应为目标参考图
+            # 同时，原作者直接使用 `chosen_action in action_set` 做严格匹配，
+            # 当模型返回 "Turn Left."、"Turn Left\n" 等带标点/空白的结果时会判定失败。
+            #
+            # chosen_action = chat_with_llm_images(prompt, [("./" + target_image_path), rgb_path])
+            # print(chosen_action)
+            #
+            # # 验证动作是否在动作集中
+            # if chosen_action in action_set:
+            #     # 返回动作在列表中的索引
+            #     return action_set.index(chosen_action)
+            # else:
+            #     print(f"Attempt {attempt + 1}: Invalid action chosen. Retrying...")
+            #     time.sleep(1)  # 短暂延迟后重试
+            # ============================================================
+
+            # ============================================================
+            # 2026-09-28 修改
+            # 修改内容：
+            # 1. 修正多模态图片顺序，使其与 Prompt 保持一致：
+            #       第1张 = 当前无人机 RGB 图
+            #       第2张 = 目标参考图
+            # 2. 保留模型原始输出用于调试。
+            # 3. 对模型返回动作进行轻量标准化：
+            #       去除首尾空白、引号、反引号以及末尾常见标点，
+            #       并忽略大小写进行匹配。
+            #    这样 "Turn Left." / "turn left" / "`Turn Left`" 都可以正确识别。
+            # ============================================================
+
+            chosen_action = chat_with_llm_images(
+                prompt,
+                [rgb_path, target_image_path]
+            )
+
+            # 打印模型原始输出，便于排查模型是否返回了多余字符
+            print("LLM raw action:", repr(chosen_action))
+
+            # 对返回结果进行标准化
+            chosen_action_clean = chosen_action.strip()
+            chosen_action_clean = chosen_action_clean.strip("`'\"* ")
+            chosen_action_clean = chosen_action_clean.rstrip(".,;:!?")
+
+            # 忽略大小写匹配到标准动作名称
+            action_map = {action.lower(): action for action in action_set}
+            chosen_action_normalized = action_map.get(chosen_action_clean.lower())
+
+            print("LLM normalized action:", chosen_action_normalized)
 
             # 验证动作是否在动作集中
-            if chosen_action in action_set:
-                # 返回动作在列表中的索引
-                return action_set.index(chosen_action)
+            if chosen_action_normalized is not None:
+                # 返回标准动作在列表中的索引
+                return action_set.index(chosen_action_normalized)
             else:
-                print(f"Attempt {attempt + 1}: Invalid action chosen. Retrying...")
+                print(
+                    f"Attempt {attempt + 1}: Invalid action chosen: "
+                    f"{repr(chosen_action)}. Retrying..."
+                )
                 time.sleep(1)  # 短暂延迟后重试
 
         except Exception as e:

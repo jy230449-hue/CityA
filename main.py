@@ -37,10 +37,12 @@ def main():
 
     # initialization
     print("\r Initializing")
+
     drone = AirsimAgent(None, None, None)
-    config_file = r"D:\JYT\code\GroundSAM\GroundingDINO\groundingdino\config\GroundingDINO_SwinT_OGC.py"
+    config_file = r"C:\hjy\project\CityAVOS\GroundSAM\GroundingDINO\groundingdino\config\GroundingDINO_SwinT_OGC.py"
     grounded_checkpoint = "GroundSAM/groundingdino_swint_ogc.pth"
     sam_checkpoint = "GroundSAM/sam_vit_h_4b8939.pth"
+		
     sam_version = "vit_h"
     device = "cuda" if torch.cuda.is_available() else "cpu"
     dino_model = load_dino_model(config_file, grounded_checkpoint, device)
@@ -48,14 +50,15 @@ def main():
     sam.to(device=device)
     sam_predictor = SamPredictor(sam)
 
-    dataset_path = "./data/target_information2.json"
+    dataset_path = "./data/target_information_2420.json"
     with open(dataset_path, "r") as file:
         dataset = json.load(file)
     scenes_path = "./data/scenes.json"
     with open(scenes_path, "r") as file:
         scenes = json.load(file)
     task_start = 0
-    task_end = len(dataset)
+   # task_end = len(dataset)
+    task_end = 1
     if_figure_plot = 1
     if_draw = 1
     theta_T = 0.1

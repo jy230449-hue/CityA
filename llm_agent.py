@@ -5,7 +5,7 @@ import base64
 
 
 client = OpenAI(
-    api_key="input your own key",
+    api_key="sk-ws-H.PLRHLML.KI2a.MEYCIQCrvKvUsNLhgZ0fFnYbh__TL7fbxXEBWwrxeTMM5IxENgIhAMeODlFAtEWJ1-m03CK5higmNuHwMVvhyGx3iKlUcjI0",
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
 )
 # client = OpenAI(
@@ -33,7 +33,8 @@ def chat_with_llm(prompt, image_paths=None):
     # 根据是否有图片选择不同的模型和消息格式
     if image_paths:
         # Use multimodal model for image+text input
-        model_name = "qwen-vl-plus-latest"
+        # model_name = "qwen-vl-plus-latest"
+        model_name = "qwen3-vl-plus"
         # model_name = "gpt-4o"
 
         # Prepare message content with text and multiple images
@@ -89,7 +90,8 @@ def chat_with_llm_images(prompt, image_paths=None):
 
     response = client.chat.completions.create(
         # model="gpt-4o",
-        model="qwen-vl-plus-latest",
+        #   model="qwen-vl-plus-latest",
+        model= "qwen3-vl-plus",
         messages=messages
     )
 

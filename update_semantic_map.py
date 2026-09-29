@@ -69,7 +69,7 @@ def add_label_to_semantic_map(world_points, labels, semantic_map, cognitive_map,
 
 #
 def visualize_semantic_map(semantic_map, step, if_figure_plot,
-                           filename_prefix='D:/JYT/code/output/semantic_map/semantic_map'):
+                           filename_prefix='./output/semantic_map/semantic_map'):
     """
     可视化3D语义图 (优化版)
     特点：窗口常驻、非阻塞、只渲染有效点
@@ -153,7 +153,7 @@ def visualize_semantic_map(semantic_map, step, if_figure_plot,
 
 #
 def visualize_cognitive_map(pos, look, cognitive_map, scores_rel, step, max_cluster_center, if_figure_plot,
-                            filename_prefix='D:/JYT/code/output/cognitive_map/cognitive_map'):
+                            filename_prefix='./output/cognitive_map/cognitive_map'):
 
     grid_keys = cognitive_map[:, :3]  # 获取x, y, z坐标
 

@@ -80,7 +80,7 @@ def cognitive_map_denoising(points, observer_pos, look_direction, step_x, fov=12
 
 
 
-def visualize_uncertainty_map(points, observer_pos, look_direction, step, if_figure_plot, filename_prefix='D:/JYT/code/output/uncertainty_map/uncertainty_map'):
+def visualize_uncertainty_map(points, observer_pos, look_direction, step, if_figure_plot, filename_prefix='./output/uncertainty_map/uncertainty_map'):
     """可视化当前三维点的深度值，每个点表示为10x10x5的立方体"""
     look_direction = look_direction * [1, -1, 1]
     fig = plt.figure(figsize=(15, 12))
