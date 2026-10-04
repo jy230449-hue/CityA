@@ -12,57 +12,195 @@ merged_labels = None
 camera_params_list = []
 depth_image_paths = []
 
+
+# ============================================================
+# 2026-10-03 性能优化：规则网格元数据
+#
+# 目的：
+# add_label_to_semantic_map() 原版每更新一个世界坐标点都会：
+#     np.where(semantic_map[:, 0] == x ... )
+# 这会重复扫描整张地图。Scene3 约数百万网格点时会极慢。
+#
+# 这里在生成规则网格时保存其起点、步长和维度，后续可直接：
+#     (x, y, z) -> 一维数组索引
+# 不改变地图分辨率，也不改变地图点排列顺序。
+# ============================================================
+_SEMANTIC_GRID_META = {}
+
+
+def _register_grid_meta(array, xs, ys, zs):
+    """为规则网格数组保存 O(1) 坐标索引所需元数据。"""
+    _SEMANTIC_GRID_META[id(array)] = {
+        "x0": float(xs[0]),
+        "y0": float(ys[0]),
+        "z0": float(zs[0]),
+        "dx": float(xs[1] - xs[0]) if len(xs) > 1 else 1.0,
+        "dy": float(ys[1] - ys[0]) if len(ys) > 1 else 1.0,
+        "dz": float(zs[1] - zs[0]) if len(zs) > 1 else 1.0,
+        "nx": int(len(xs)),
+        "ny": int(len(ys)),
+        "nz": int(len(zs)),
+    }
+
+
+def _grid_index_from_key(key, meta):
+    """
+    将整数世界坐标 key=(x,y,z) 映射到 generate_semantic_map()
+    的 x->y->z 排列下标。若坐标不在网格上，返回 None。
+    """
+    kx, ky, kz = key
+
+    fx = (float(kx) - meta["x0"]) / meta["dx"]
+    fy = (float(ky) - meta["y0"]) / meta["dy"]
+    fz = (float(kz) - meta["z0"]) / meta["dz"]
+
+    ix = int(round(fx))
+    iy = int(round(fy))
+    iz = int(round(fz))
+
+    # 必须正好落在规则网格上；避免 interval>1 时错误吸附到邻近点。
+    if (
+        not np.isclose(fx, ix, atol=1e-9)
+        or not np.isclose(fy, iy, atol=1e-9)
+        or not np.isclose(fz, iz, atol=1e-9)
+    ):
+        return None
+
+    if not (
+        0 <= ix < meta["nx"]
+        and 0 <= iy < meta["ny"]
+        and 0 <= iz < meta["nz"]
+    ):
+        return None
+
+    return (ix * meta["ny"] + iy) * meta["nz"] + iz
+
 def generate_semantic_map(x_min, x_max, y_min, y_max, z_min, z_max, interval, interval_z):
-    """生成三维网格点，每个点包含xyz坐标和label值"""
-    points = []
+    """
+    生成三维网格点，每个点包含 xyz 坐标和 label 值。
+
+    2026-10-03 性能优化：
+    - 将三重 Python for + append 改为 NumPy 向量化生成。
+    - 保持原版 range() 的覆盖范围、x->y->z 排列顺序和 float64 dtype。
+    - 注册规则网格元数据，供 add_label_to_semantic_map() O(1) 定位。
+    """
     x_start, x_end = min(x_min, x_max), max(x_min, x_max)
     y_start, y_end = min(y_min, y_max), max(y_min, y_max)
     z_start, z_end = min(z_min, z_max), max(z_min, z_max)
 
-    for x in range(x_start, x_end + interval, interval):
-        for y in range(y_start, y_end + interval, interval):
-            for z in range(z_start, z_end + interval_z, interval_z):
-                point = np.array([float(x), float(y), float(z), 0])  # [x, y, z, label]
-                points.append(point)
+    xs = np.arange(x_start, x_end + interval, interval, dtype=np.float64)
+    ys = np.arange(y_start, y_end + interval, interval, dtype=np.float64)
+    zs = np.arange(z_start, z_end + interval_z, interval_z, dtype=np.float64)
 
-    return np.array(points, dtype=np.float64)
+    nx, ny, nz = len(xs), len(ys), len(zs)
+    n = nx * ny * nz
+
+    points = np.empty((n, 4), dtype=np.float64)
+    points[:, 0] = np.repeat(xs, ny * nz)
+    points[:, 1] = np.tile(np.repeat(ys, nz), nx)
+    points[:, 2] = np.tile(zs, nx * ny)
+    points[:, 3] = 0.0
+
+    _register_grid_meta(points, xs, ys, zs)
+    return points
 
 def generate_coginitive_map(x_min, x_max, y_min, y_max, z_min, z_max, interval, interval_z):
-    """生成三维网格点，每个点包含xyz坐标和label值"""
-    points = []
+    """
+    生成三维认知网格点 [x, y, z, score, weight]。
+
+    2026-10-03 性能优化：
+    - 向量化生成，保持原版点序、范围和 float64 dtype。
+    - 第4列初始为0，第5列初始为1，与原代码一致。
+    """
     x_start, x_end = min(x_min, x_max), max(x_min, x_max)
     y_start, y_end = min(y_min, y_max), max(y_min, y_max)
     z_start, z_end = min(z_min, z_max), max(z_min, z_max)
 
-    for x in range(x_start, x_end + interval, interval):
-        for y in range(y_start, y_end + interval, interval):
-            for z in range(z_start, z_end + interval_z, interval_z):
-                point = np.array([float(x), float(y), float(z), 0, 1])  # [x, y, z, label]
-                points.append(point)
+    xs = np.arange(x_start, x_end + interval, interval, dtype=np.float64)
+    ys = np.arange(y_start, y_end + interval, interval, dtype=np.float64)
+    zs = np.arange(z_start, z_end + interval_z, interval_z, dtype=np.float64)
 
-    return np.array(points, dtype=np.float64)
+    nx, ny, nz = len(xs), len(ys), len(zs)
+    n = nx * ny * nz
+
+    points = np.empty((n, 5), dtype=np.float64)
+    points[:, 0] = np.repeat(xs, ny * nz)
+    points[:, 1] = np.tile(np.repeat(ys, nz), nx)
+    points[:, 2] = np.tile(zs, nx * ny)
+    points[:, 3] = 0.0
+    points[:, 4] = 1.0
+
+    return points
 
 def add_label_to_semantic_map(world_points, labels, semantic_map, cognitive_map, scores_rel):
-    """对world_points四舍五入后进行归类，每一个相同值所对应的标签最多的为真实标签，将真实标签添加至semantic_map中对应的点上"""
-    # 创建一个字典来存储每个点的标签
+    """
+    将检测到的 world_points 归并到 semantic_map / cognitive_map。
+
+    保留原逻辑：
+    1. 世界坐标 np.round() 到整数网格点；
+    2. 同一网格点若有多个 label，使用出现次数最多的 dominant label；
+    3. semantic_map 写 dominant label；
+    4. cognitive_map 写 scores_rel[label-1] * 当前 weight。
+
+    2026-10-03 性能优化：
+    原版对每个 key 都用 np.where() 扫描完整 semantic_map。
+    Scene3 数百万网格点时复杂度接近 O(K*N)。
+
+    新版：
+    - 分组逻辑仍用字典 + Counter，保持 dominant-label 语义；
+    - 利用规则网格元数据直接计算数组下标，单个 key 为 O(1)；
+    - 若遇到非本函数生成、缺少元数据的 semantic_map，则自动回退原 np.where，
+      保证兼容性。
+    """
+    if world_points is None or labels is None:
+        return semantic_map, cognitive_map
+
+    world_points = np.asarray(world_points)
+    labels = np.asarray(labels)
+
+    if len(world_points) == 0 or len(labels) == 0:
+        return semantic_map, cognitive_map
+
+    # 创建字典，保持原代码“同一整数坐标按出现次数取主导标签”的行为。
     label_dict = {}
 
-    # 将世界坐标点四舍五入到最近的网格点
     for point, label in zip(world_points, labels):
-        rounded_point = tuple(np.round(point).astype(int))  # 四舍五入并转换为元组作为字典的键
+        # 原实现 np.round(point).astype(int)。
+        # 对非有限值跳过，相当于其无法命中规则地图坐标。
+        if not np.all(np.isfinite(point)):
+            continue
+
+        rounded_point = tuple(np.round(point).astype(int))
         if rounded_point in label_dict:
             label_dict[rounded_point].append(label)
         else:
             label_dict[rounded_point] = [label]
 
-    # 确定每个网格点的主导标签
+    meta = _SEMANTIC_GRID_META.get(id(semantic_map))
+
     for key, value in label_dict.items():
-        dominant_label = Counter(value).most_common(1)[0][0]  # 获取最常见的标签
-        # 更新语义图中对应点的标签
-        idx = np.where((semantic_map[:, 0] == key[0]) & (semantic_map[:, 1] == key[1]) & (semantic_map[:, 2] == key[2]))
-        if idx[0].size > 0:
-            semantic_map[idx[0][0], 3] = dominant_label  # 更新语义图中的标签
-            cognitive_map[idx[0][0], 3] = scores_rel[int(dominant_label)-1] * cognitive_map[idx[0][0], 4]  # 更新认知图中的标签
+        dominant_label = Counter(value).most_common(1)[0][0]
+
+        idx_value = None
+        if meta is not None:
+            idx_value = _grid_index_from_key(key, meta)
+
+        if idx_value is None and meta is None:
+            # 兼容旧数组/外部数组：只有缺少规则网格元数据时才使用原慢路径。
+            idx = np.where(
+                (semantic_map[:, 0] == key[0])
+                & (semantic_map[:, 1] == key[1])
+                & (semantic_map[:, 2] == key[2])
+            )
+            if idx[0].size > 0:
+                idx_value = int(idx[0][0])
+
+        if idx_value is not None:
+            semantic_map[idx_value, 3] = dominant_label
+            cognitive_map[idx_value, 3] = (
+                scores_rel[int(dominant_label) - 1]
+                * cognitive_map[idx_value, 4]
+            )
 
     return semantic_map, cognitive_map
 

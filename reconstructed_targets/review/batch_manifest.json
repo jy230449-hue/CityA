@@ -1,0 +1,182 @@
+[
+  {
+    "representative_task": 289,
+    "scene_id": 4,
+    "target_text": "green trash cans inside the white pavilion",
+    "target_pos": "[7802.35, -3598.31, -2.01467]",
+    "target_image_path": "data/target_image/Scene4/trash_bin.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\289_trash_bin",
+    "contact_sheet": ".\\reconstructed_targets\\review\\289_trash_bin_contact.jpg"
+  },
+  {
+    "representative_task": 290,
+    "scene_id": 4,
+    "target_text": "iron fence gate on the road",
+    "target_pos": "[7699.52, -3637.64, -2.7376]",
+    "target_image_path": "data/target_image/Scene4/iron_fence_gate.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\290_iron_fence_gate",
+    "contact_sheet": ".\\reconstructed_targets\\review\\290_iron_fence_gate_contact.jpg"
+  },
+  {
+    "representative_task": 291,
+    "scene_id": 4,
+    "target_text": "The red, cross-shaped fire hydrant next to the streetlight pole",
+    "target_pos": "[7716.22, -3668.41, -0.3838]",
+    "target_image_path": "data/target_image/Scene4/Fire_extinguisher.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\291_Fire_extinguisher",
+    "contact_sheet": ".\\reconstructed_targets\\review\\291_Fire_extinguisher_contact.jpg"
+  },
+  {
+    "representative_task": 292,
+    "scene_id": 4,
+    "target_text": "The white and green squares on the ground are the parking lot, and the white pavilion next to the parking lot is the garbage bin inside",
+    "target_pos": "[7757.58, -3628.82, -1.6751]",
+    "target_image_path": "data/target_image/Scene4/trash_bin_beside_the_parking_lot.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\292_trash_bin_beside_the_parking_lot",
+    "contact_sheet": ".\\reconstructed_targets\\review\\292_trash_bin_beside_the_parking_lot_contact.jpg"
+  },
+  {
+    "representative_task": 293,
+    "scene_id": 4,
+    "target_text": "white safeguard pavilion at the gate of the neighborhood",
+    "target_pos": "[7690.95, -3517.15, -2.117]",
+    "target_image_path": "data/target_image/Scene4/safeguard_pavillion.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\293_safeguard_pavillion",
+    "contact_sheet": ".\\reconstructed_targets\\review\\293_safeguard_pavillion_contact.jpg"
+  },
+  {
+    "representative_task": 294,
+    "scene_id": 4,
+    "target_text": "stone balls on the road",
+    "target_pos": "[7702.41, -3540.95, -0.7754]",
+    "target_image_path": "data/target_image/Scene4/stoneballs.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\294_stoneballs",
+    "contact_sheet": ".\\reconstructed_targets\\review\\294_stoneballs_contact.jpg"
+  },
+  {
+    "representative_task": 295,
+    "scene_id": 4,
+    "target_text": "green and white grids",
+    "target_pos": "[7692.01, -3563.11, -0.9503]",
+    "target_image_path": "data/target_image/Scene4/parking_lot.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\295_parking_lot",
+    "contact_sheet": ".\\reconstructed_targets\\review\\295_parking_lot_contact.jpg"
+  },
+  {
+    "representative_task": 296,
+    "scene_id": 5,
+    "target_text": "The white garbage station next to the residential building",
+    "target_pos": "[7562.19, -3538.68, -2.3804]",
+    "target_image_path": "data/target_image/Scene4/garbage station next to the building.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\296_garbage_station_next_to_the_building",
+    "contact_sheet": ".\\reconstructed_targets\\review\\296_garbage_station_next_to_the_building_contact.jpg"
+  },
+  {
+    "representative_task": 297,
+    "scene_id": 4,
+    "target_text": "The white box beside the lawn parking lot",
+    "target_pos": "[7692.88, -3574.72, -2.2455]",
+    "target_image_path": "data/target_image/Scene4/white box beside the lawn parking lot.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\297_white_box_beside_the_lawn_parking_lot",
+    "contact_sheet": ".\\reconstructed_targets\\review\\297_white_box_beside_the_lawn_parking_lot_contact.jpg"
+  },
+  {
+    "representative_task": 307,
+    "scene_id": 4,
+    "target_text": "The signboard next to the street lamp",
+    "target_pos": "[7773.48, -3708.4, -4.6611]",
+    "target_image_path": "data/target_image/Scene5/signboard.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\307_signboard",
+    "contact_sheet": ".\\reconstructed_targets\\review\\307_signboard_contact.jpg"
+  },
+  {
+    "representative_task": 308,
+    "scene_id": 4,
+    "target_text": "red square framework",
+    "target_pos": "[7711.21, -3552.8, -5.4625]",
+    "target_image_path": "data/target_image/Scene5/red_square_framework.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\308_red_square_framework",
+    "contact_sheet": ".\\reconstructed_targets\\review\\308_red_square_framework_contact.jpg"
+  },
+  {
+    "representative_task": 309,
+    "scene_id": 4,
+    "target_text": "stone wall with Chinese character 'Yisheng Garden'",
+    "target_pos": "[7826.65, -3610.77, -1.2696]",
+    "target_image_path": "data/target_image/Scene5/stonewall_with_sign.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\309_stonewall_with_sign",
+    "contact_sheet": ".\\reconstructed_targets\\review\\309_stonewall_with_sign_contact.jpg"
+  },
+  {
+    "representative_task": 310,
+    "scene_id": 4,
+    "target_text": "Circular greenbelt",
+    "target_pos": "[7694.04, -3605.72, -4.1656]",
+    "target_image_path": "data/target_image/Scene5/Circular_greenbelt.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\310_Circular_greenbelt",
+    "contact_sheet": ".\\reconstructed_targets\\review\\310_Circular_greenbelt_contact.jpg"
+  },
+  {
+    "representative_task": 311,
+    "scene_id": 4,
+    "target_text": "A conical roof supported by four pillars",
+    "target_pos": "[7718.85, -3656.02, -4.6041]",
+    "target_image_path": "data/target_image/Scene5/Pavilion.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\311_Pavilion",
+    "contact_sheet": ".\\reconstructed_targets\\review\\311_Pavilion_contact.jpg"
+  },
+  {
+    "representative_task": 312,
+    "scene_id": 4,
+    "target_text": "Blue transparent prism roof and white frame",
+    "target_pos": "[7789.5, -3652.15, -2.3279]",
+    "target_image_path": "data/target_image/Scene5/Glass_greenhouse.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\312_Glass_greenhouse",
+    "contact_sheet": ".\\reconstructed_targets\\review\\312_Glass_greenhouse_contact.jpg"
+  },
+  {
+    "representative_task": 313,
+    "scene_id": 4,
+    "target_text": "Tilted glass dome with white frame",
+    "target_pos": "[7725.39, -3543.6, -3.2063]",
+    "target_image_path": "data/target_image/Scene5/underground_parking_lot_entrance.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\313_underground_parking_lot_entrance",
+    "contact_sheet": ".\\reconstructed_targets\\review\\313_underground_parking_lot_entrance_contact.jpg"
+  },
+  {
+    "representative_task": 314,
+    "scene_id": 4,
+    "target_text": "Composed of a blue roof and white walls with windows",
+    "target_pos": "[7787.51, -3580.39, -6.4087]",
+    "target_image_path": "data/target_image/Scene5/House.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\314_House",
+    "contact_sheet": ".\\reconstructed_targets\\review\\314_House_contact.jpg"
+  },
+  {
+    "representative_task": 315,
+    "scene_id": 4,
+    "target_text": "The greenbelt surrounded by the road",
+    "target_pos": "[7694.04, -3605.72, -4.1656]",
+    "target_image_path": "data/target_image/Scene5/green belt surrounded by the road.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\315_green_belt_surrounded_by_the_road",
+    "contact_sheet": ".\\reconstructed_targets\\review\\315_green_belt_surrounded_by_the_road_contact.jpg"
+  },
+  {
+    "representative_task": 316,
+    "scene_id": 5,
+    "target_text": "the blue roofed white house next to The Entry of underground parking",
+    "target_pos": "[7676.11, -3547.65, -5.6376]",
+    "target_image_path": "data/target_image/Scene5/house next to The entrance.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\316_house_next_to_The_entrance",
+    "contact_sheet": ".\\reconstructed_targets\\review\\316_house_next_to_The_entrance_contact.jpg"
+  },
+  {
+    "representative_task": 317,
+    "scene_id": 4,
+    "target_text": "A blue roofed white house between two residential buildings",
+    "target_pos": "[7758.03, -3690.37, -4.6246]",
+    "target_image_path": "data/target_image/Scene5/house between two buildings.png",
+    "raw_folder": ".\\reconstructed_targets\\batch_raw\\317_house_between_two_buildings",
+    "contact_sheet": ".\\reconstructed_targets\\review\\317_house_between_two_buildings_contact.jpg"
+  }
+]

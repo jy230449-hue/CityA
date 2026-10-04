@@ -1,0 +1,31 @@
+{
+  "experiment_name": "cityavos_public_repro_v1",
+
+  "dataset_path": "./data/target_information_605.json",
+  "scenes_path": "./data/scenes_compat_6.json",
+
+  "task_start": 0,
+  "task_end": 5,
+
+  "difficulty_map": {
+    "1": "Easy",
+    "2": "Hard",
+    "3": "Hard"
+  },
+
+  "max_steps_mode": "scene",
+  "debug_max_steps": 100,
+
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+
+  "if_figure_plot": false,
+  "if_draw": false,
+
+  "model_provider": "dashscope",
+  "vision_model": "qwen3-vl-plus",
+
+  "random_seed": 42,
+
+  "output_dir": "./output/experiments/cityavos_public_repro_v1"
+}

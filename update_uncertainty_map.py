@@ -4,77 +4,163 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from matplotlib.colors import Normalize
 
 def generate_uncertainty_map(x_min, x_max, y_min, y_max, z_min, z_max, interval, interval_z):
-    """生成三维网格点，每个点有六个深度值"""
-    points = []
+    """
+    生成三维网格点，每个点保留原代码的 [x, y, z, 1.0] 结构。
+
+    2026-10-03 性能优化：
+    - 原版使用三重 Python for + append，场景变大后初始化很慢。
+    - 这里改为 NumPy 向量化生成，网格范围、排列顺序和 dtype 均保持一致。
+    """
     x_start, x_end = min(x_min, x_max), max(x_min, x_max)
     y_start, y_end = min(y_min, y_max), max(y_min, y_max)
     z_start, z_end = min(z_min, z_max), max(z_min, z_max)
 
-    for x in range(x_start, x_end + interval, interval):
-        for y in range(y_start, y_end + interval, interval):
-            for z in range(z_start, z_end + interval_z, interval_z):
-                point = np.array([float(x), float(y), float(z)] + [1.0])  # [x, y, z, depth1, depth2, depth3, depth4, depth5, depth6]
-                points.append(point)
+    xs = np.arange(x_start, x_end + interval, interval, dtype=np.float64)
+    ys = np.arange(y_start, y_end + interval, interval, dtype=np.float64)
+    zs = np.arange(z_start, z_end + interval_z, interval_z, dtype=np.float64)
 
-    return np.array(points, dtype=np.float64)
+    nx, ny, nz = len(xs), len(ys), len(zs)
+    n = nx * ny * nz
+
+    points = np.empty((n, 4), dtype=np.float64)
+    points[:, 0] = np.repeat(xs, ny * nz)
+    points[:, 1] = np.tile(np.repeat(ys, nz), nx)
+    points[:, 2] = np.tile(zs, nx * ny)
+    points[:, 3] = 1.0
+
+    return points
 
 def uncertainty_map_update(points, observer_pos, look_direction, step_x, fov=90, max_distance=100):
-    """获取当前视野内的可见面并更新深度值"""
-    look_direction = look_direction * [1, -1, 1]
+    """
+    获取当前视野内的可见面并更新深度值。
 
-    look_direction_normalized = look_direction / np.linalg.norm(look_direction)
-
+    2026-10-03 性能优化：
+    - 原版逐点 Python 循环。
+    - 改为分块 NumPy 向量化，降低 Python 循环开销并控制临时内存。
+    - 判断条件仍保持：
+        distance <= max_distance
+        distance > 0
+        cos_angle > cos(fov/2)
+    - 深度更新公式保持不变。
+    """
+    points = np.asarray(points)
     updated_points = points.copy()
-    cos_fov = np.cos(np.radians(fov / 2))
 
-    for i, point in enumerate(points):
-        point_pos = point[:3]  # 获取点的位置 [x, y, z]
-        to_point = point_pos - observer_pos  # 从观察者到目标的向量
-        distance = np.linalg.norm(to_point)  # 计算与观察者的距离
+    if len(points) == 0:
+        return updated_points
 
-        if distance > max_distance:
+    observer_pos = np.asarray(observer_pos, dtype=np.float64)
+    look_direction = (
+        np.asarray(look_direction, dtype=np.float64)
+        * np.array([1.0, -1.0, 1.0], dtype=np.float64)
+    )
+
+    look_norm = np.linalg.norm(look_direction)
+    if look_norm == 0:
+        return updated_points
+
+    look_direction_normalized = look_direction / look_norm
+    cos_fov = np.cos(np.radians(fov / 2.0))
+
+    # 控制峰值内存；对 Scene3/4 的大地图也能稳定运行。
+    chunk_size = 500_000
+
+    for start in range(0, len(points), chunk_size):
+        end = min(start + chunk_size, len(points))
+
+        xyz = points[start:end, :3]
+        to_point = xyz - observer_pos
+        distance_sq = np.einsum("ij,ij->i", to_point, to_point)
+
+        valid = (distance_sq > 0.0) & (distance_sq <= float(max_distance) ** 2)
+        if not np.any(valid):
             continue
 
-        if distance > 0:  # 计算可见性
-            to_point_normalized = to_point / distance
-            cos_angle = np.dot(to_point_normalized, look_direction_normalized)
+        local_idx = np.flatnonzero(valid)
+        vectors = to_point[local_idx]
+        distances = np.sqrt(distance_sq[local_idx])
 
-            if cos_angle > cos_fov:  # 如果点落在视场范围内
-                face_depths = updated_points[i][3:]  # 获取当前面的深度值
+        cos_angle = (vectors @ look_direction_normalized) / distances
+        visible_local = cos_angle > cos_fov
 
-                log_curr_dist = np.exp(-distance*0.15/step_x)
+        if not np.any(visible_local):
+            continue
 
-                # 更新深度值
-                face_depths = max(0, face_depths * (1 - log_curr_dist))
+        selected_local = local_idx[visible_local]
+        selected_global = start + selected_local
+        selected_dist = distances[visible_local]
 
-                updated_points[i][3:] = face_depths
+        log_curr_dist = np.exp(-selected_dist * 0.15 / step_x)
+        factor = 1.0 - log_curr_dist
+
+        # 原代码的 face_depths = max(0, face_depths * factor)
+        # 对当前 [x,y,z,depth] 数据结构与原实现等价；
+        # np.maximum 同时兼容未来存在多列 depth 的情况。
+        updated_points[selected_global, 3:] = np.maximum(
+            0.0,
+            updated_points[selected_global, 3:] * factor[:, None]
+        )
 
     return updated_points
 
 
 def cognitive_map_denoising(points, observer_pos, look_direction, step_x, fov=120, max_distance=2000):
-    """获取当前视野内的可见面并更新深度值"""
-    look_direction = look_direction * [1, -1, 1]
-    look_direction_normalized = look_direction / np.linalg.norm(look_direction)
+    """
+    获取当前视野内的认知地图点并清零。
 
+    2026-10-03 性能优化：
+    - 原版对整个 cognitive_map 逐点 Python 遍历。
+    - Scene3 的 1m 网格可达到数百万点，因此单步会耗时几十秒。
+    - 改为分块 NumPy 向量化，保持原版实际使用的 step_x * 1.9 距离条件。
+    - max_distance 参数原代码未参与判定，这里为保持复现行为也不改变该逻辑。
+    """
+    points = np.asarray(points)
     updated_points = points.copy()
-    cos_fov = np.cos(np.radians(fov / 2))
 
-    for i, point in enumerate(points):
-        point_pos = point[:3]  # 获取点的位置 [x, y, z]
-        to_point = point_pos - observer_pos  # 从观察者到目标的向量
-        distance = np.linalg.norm(to_point)  # 计算与观察者的距离
+    if len(points) == 0:
+        return updated_points
 
-        if distance > step_x * 1.9:
+    observer_pos = np.asarray(observer_pos, dtype=np.float64)
+    look_direction = (
+        np.asarray(look_direction, dtype=np.float64)
+        * np.array([1.0, -1.0, 1.0], dtype=np.float64)
+    )
+
+    look_norm = np.linalg.norm(look_direction)
+    if look_norm == 0:
+        return updated_points
+
+    look_direction_normalized = look_direction / look_norm
+    cos_fov = np.cos(np.radians(fov / 2.0))
+    max_distance_effective = float(step_x) * 1.9
+    max_distance_sq = max_distance_effective ** 2
+
+    chunk_size = 500_000
+
+    for start in range(0, len(points), chunk_size):
+        end = min(start + chunk_size, len(points))
+
+        xyz = points[start:end, :3]
+        to_point = xyz - observer_pos
+        distance_sq = np.einsum("ij,ij->i", to_point, to_point)
+
+        valid = (distance_sq > 0.0) & (distance_sq <= max_distance_sq)
+        if not np.any(valid):
             continue
 
-        if distance > 0:  # 计算可见性
-            to_point_normalized = to_point / distance
-            cos_angle = np.dot(to_point_normalized, look_direction_normalized)
+        local_idx = np.flatnonzero(valid)
+        vectors = to_point[local_idx]
+        distances = np.sqrt(distance_sq[local_idx])
 
-            if cos_angle > cos_fov:  # 如果点落在视场范围内
-                updated_points[i][3] = 0
-                updated_points[i][4] = 0  # 更新深度值
+        cos_angle = (vectors @ look_direction_normalized) / distances
+        visible_local = cos_angle > cos_fov
+
+        if not np.any(visible_local):
+            continue
+
+        selected_global = start + local_idx[visible_local]
+        updated_points[selected_global, 3] = 0.0
+        updated_points[selected_global, 4] = 0.0
 
     return updated_points
 

@@ -1,0 +1,216 @@
+{
+  "source": "reconstructed_from_cityavos_simulator",
+  "representative_task": 289,
+  "scene_id": 4,
+  "target_text": "green trash cans inside the white pavilion",
+  "target_pos": [
+    7802.35,
+    -3598.31,
+    -2.01467
+  ],
+  "target_image_path": "data/target_image/Scene4/trash_bin.png",
+  "capture_height_above_target": 5.0,
+  "radii": [
+    8.0,
+    12.0
+  ],
+  "camera_ids": [
+    1,
+    2,
+    3
+  ],
+  "records": [
+    {
+      "view_id": 0,
+      "radius": 8.0,
+      "angle_deg": 0,
+      "capture_pose": [
+        7810.35,
+        -3598.31,
+        -7.014670000000001,
+        0.0,
+        0.0,
+        180.0
+      ],
+      "target_pos": [
+        7802.35,
+        -3598.31,
+        -2.01467
+      ],
+      "yaw_to_target": 180.0,
+      "files": {
+        "1": "view_00_r8_a0_cam1.png",
+        "2": "view_00_r8_a0_cam2.png",
+        "3": "view_00_r8_a0_cam3.png"
+      }
+    },
+    {
+      "view_id": 1,
+      "radius": 8.0,
+      "angle_deg": 90,
+      "capture_pose": [
+        7802.35,
+        -3590.31,
+        -7.014670000000001,
+        0.0,
+        0.0,
+        -90.0
+      ],
+      "target_pos": [
+        7802.35,
+        -3598.31,
+        -2.01467
+      ],
+      "yaw_to_target": -90.0,
+      "files": {
+        "1": "view_01_r8_a90_cam1.png",
+        "2": "view_01_r8_a90_cam2.png",
+        "3": "view_01_r8_a90_cam3.png"
+      }
+    },
+    {
+      "view_id": 2,
+      "radius": 8.0,
+      "angle_deg": 180,
+      "capture_pose": [
+        7794.35,
+        -3598.31,
+        -7.014670000000001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_pos": [
+        7802.35,
+        -3598.31,
+        -2.01467
+      ],
+      "yaw_to_target": 0.0,
+      "files": {
+        "1": "view_02_r8_a180_cam1.png",
+        "2": "view_02_r8_a180_cam2.png",
+        "3": "view_02_r8_a180_cam3.png"
+      }
+    },
+    {
+      "view_id": 3,
+      "radius": 8.0,
+      "angle_deg": 270,
+      "capture_pose": [
+        7802.35,
+        -3606.31,
+        -7.014670000000001,
+        0.0,
+        0.0,
+        90.0
+      ],
+      "target_pos": [
+        7802.35,
+        -3598.31,
+        -2.01467
+      ],
+      "yaw_to_target": 90.0,
+      "files": {
+        "1": "view_03_r8_a270_cam1.png",
+        "2": "view_03_r8_a270_cam2.png",
+        "3": "view_03_r8_a270_cam3.png"
+      }
+    },
+    {
+      "view_id": 4,
+      "radius": 12.0,
+      "angle_deg": 0,
+      "capture_pose": [
+        7814.35,
+        -3598.31,
+        -7.014670000000001,
+        0.0,
+        0.0,
+        180.0
+      ],
+      "target_pos": [
+        7802.35,
+        -3598.31,
+        -2.01467
+      ],
+      "yaw_to_target": 180.0,
+      "files": {
+        "1": "view_04_r12_a0_cam1.png",
+        "2": "view_04_r12_a0_cam2.png",
+        "3": "view_04_r12_a0_cam3.png"
+      }
+    },
+    {
+      "view_id": 5,
+      "radius": 12.0,
+      "angle_deg": 90,
+      "capture_pose": [
+        7802.35,
+        -3586.31,
+        -7.014670000000001,
+        0.0,
+        0.0,
+        -90.0
+      ],
+      "target_pos": [
+        7802.35,
+        -3598.31,
+        -2.01467
+      ],
+      "yaw_to_target": -90.0,
+      "files": {
+        "1": "view_05_r12_a90_cam1.png",
+        "2": "view_05_r12_a90_cam2.png",
+        "3": "view_05_r12_a90_cam3.png"
+      }
+    },
+    {
+      "view_id": 6,
+      "radius": 12.0,
+      "angle_deg": 180,
+      "capture_pose": [
+        7790.35,
+        -3598.31,
+        -7.014670000000001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_pos": [
+        7802.35,
+        -3598.31,
+        -2.01467
+      ],
+      "yaw_to_target": 0.0,
+      "files": {
+        "1": "view_06_r12_a180_cam1.png",
+        "2": "view_06_r12_a180_cam2.png",
+        "3": "view_06_r12_a180_cam3.png"
+      }
+    },
+    {
+      "view_id": 7,
+      "radius": 12.0,
+      "angle_deg": 270,
+      "capture_pose": [
+        7802.35,
+        -3610.31,
+        -7.014670000000001,
+        0.0,
+        0.0,
+        90.0
+      ],
+      "target_pos": [
+        7802.35,
+        -3598.31,
+        -2.01467
+      ],
+      "yaw_to_target": 90.0,
+      "files": {
+        "1": "view_07_r12_a270_cam1.png",
+        "2": "view_07_r12_a270_cam2.png",
+        "3": "view_07_r12_a270_cam3.png"
+      }
+    }
+  ]
+}

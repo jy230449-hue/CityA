@@ -1,0 +1,148 @@
+{
+  "task_index": 301,
+  "mission_id": "302",
+  "scene_id": "5",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "The railing on the slope",
+  "target_image_path": "data\\target_image\\Scene4\\railing.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 1,
+  "if_success": 0,
+  "termination_reason": "profile_step_limit",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": true,
+  "profile_step_limit": 1,
+  "model_init_time_s": 29.384,
+  "map_init_time_s": 1.5726,
+  "target_prompt_time_s": 27.5967,
+  "relevance_scores_time_s": 7.0979,
+  "task_total_time_s": 108.9012,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 32.02909730000002,
+      "image_save_s": 0.2259918999999968,
+      "map_preprocess_s": 2.345534499999985,
+      "dino_sam_s": 14.271492099999989,
+      "semantic_cognitive_s": 11.26145249999999,
+      "uncertainty_adviser_s": 0.2442965999999842,
+      "boundary_filter_s": 0.00020660000001271328,
+      "qwen_vlm_s": 9.6478951,
+      "action_execution_s": 1.1016174000000092,
+      "success_check_s": 6.469999999580978e-05,
+      "total_step_s": 72.20071589999999
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 1.1016,
+      "avg_s": 1.1016,
+      "count": 1
+    },
+    "boundary_filter_s": {
+      "total_s": 0.0002,
+      "avg_s": 0.0002,
+      "count": 1
+    },
+    "dino_sam_s": {
+      "total_s": 14.2715,
+      "avg_s": 14.2715,
+      "count": 1
+    },
+    "image_save_s": {
+      "total_s": 0.226,
+      "avg_s": 0.226,
+      "count": 1
+    },
+    "map_preprocess_s": {
+      "total_s": 2.3455,
+      "avg_s": 2.3455,
+      "count": 1
+    },
+    "observation_s": {
+      "total_s": 32.0291,
+      "avg_s": 32.0291,
+      "count": 1
+    },
+    "qwen_vlm_s": {
+      "total_s": 9.6479,
+      "avg_s": 9.6479,
+      "count": 1
+    },
+    "semantic_cognitive_s": {
+      "total_s": 11.2615,
+      "avg_s": 11.2615,
+      "count": 1
+    },
+    "success_check_s": {
+      "total_s": 0.0001,
+      "avg_s": 0.0001,
+      "count": 1
+    },
+    "total_step_s": {
+      "total_s": 72.2007,
+      "avg_s": 72.2007,
+      "count": 1
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.2443,
+      "avg_s": 0.2443,
+      "count": 1
+    }
+  },
+  "initial_target_distance": 124.7046999916202,
+  "final_navigation_error": 134.30213028839117,
+  "trajectory_length": 10.0,
+  "action_history": [
+    "Go Forward"
+  ],
+  "adviser_uncertainty_history": [
+    "Go Down"
+  ],
+  "adviser_cognitive_history": [
+    null
+  ],
+  "attraction_value_history": [
+    0.0
+  ],
+  "position": [
+    [
+      7647.21,
+      3573.21,
+      2.0
+    ],
+    [
+      7657.21,
+      3573.21,
+      2.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ]
+}

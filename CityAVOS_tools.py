@@ -5,6 +5,24 @@
 # - 保留原作者代码，不删除；被替换的原代码已在对应位置完整注释并标注“原作者代码”。
 # - 修正 get_action_from_llm() 中两张图片的输入顺序。
 # - 增强 LLM 动作返回值解析，兼容 "Turn Left." 等带标点/大小写差异的结果。
+#
+# 2026-10-02 修改
+# - 新增 predict_next_position() / is_position_in_scene() / get_valid_action_names()。
+#   作用：限制最终动作不飞出当前 Scene。
+# - get_action_from_llm() 新增 valid_actions。
+#   作用：把当前合法动作传给 LLM。
+# - 新增 Qwen 单次请求测速。
+#   作用：区分“单次 API 很慢”和“多次重试累计很慢”，不改变决策逻辑。
+# 2026-10-03 修改
+# - get_action_from_llm() 新增 action_history / position_history。
+#   作用：给本地 VLM 提供最近动作/位置，避免无记忆导航。
+# - 新增 build_navigation_history_hint()。
+#   作用：检测 Go Left <-> Go Right / Turn Left <-> Turn Right 往返，
+#   以及“走两步回到原位”的位置循环。
+# - 出现明确循环时，会从 Prompt 合法动作集中临时移除“立即撤销上一步”的动作；
+#   main.py 的 Scene 硬边界保护仍然保留。
+# ============================================================
+
 # ============================================================
 
 import numpy as np
@@ -29,8 +47,103 @@ def rad_to_deg(rad):
     direction = np.array([x, y, 0])
     return direction
 
+# ============================================================
+# 2026-10-02 新增：最终动作边界保护辅助函数
+#
+# 作用：
+# 1. predict_next_position() 只预测位置，不实际移动无人机。
+# 2. is_position_in_scene() 统一检查 x/y/z 是否仍位于当前 Scene。
+# 3. get_valid_action_names() 给 LLM 提供“当前允许动作”列表。
+#
+# 注意：
+# - 坐标系统继续沿用当前项目的 map 坐标：drone.pos * [1, -1, -1]。
+# - Turn Left / Turn Right 不改变位置，因此始终不会因位置越界被拒绝。
+# - Stop 不参与默认可行动作列表；LLM 调用失败时仍可作为兜底动作。
+# ============================================================
+def predict_next_position(drone, action_label, scene):
+    curr_pos = np.asarray(
+        drone.pos * [1, -1, -1],
+        dtype=float
+    ).copy()
 
-def action_value_choose(drone, points, scene, total_uncertainty):
+    yaw = float(drone.ori[2])
+    step_x = float(scene["step_x"])
+    step_z = float(scene["step_z"])
+
+    next_pos = curr_pos.copy()
+
+    # 0: Go Up
+    if action_label == 0:
+        next_pos[2] += step_z
+
+    # 1: Go Down
+    elif action_label == 1:
+        next_pos[2] -= step_z
+
+    # 2 / 3: Turn Left / Turn Right，只改变朝向，不改变位置
+    elif action_label in (2, 3):
+        pass
+
+    # 4: Go Forward
+    elif action_label == 4:
+        next_pos[0] += step_x * np.cos(math.radians(yaw))
+        next_pos[1] -= step_x * np.sin(math.radians(yaw))
+
+    # 5: Go Left
+    elif action_label == 5:
+        next_pos[0] += step_x * np.cos(math.radians(yaw - 90))
+        next_pos[1] -= step_x * np.sin(math.radians(yaw - 90))
+
+    # 6: Go Right
+    elif action_label == 6:
+        next_pos[0] += step_x * np.cos(math.radians(yaw + 90))
+        next_pos[1] -= step_x * np.sin(math.radians(yaw + 90))
+
+    # 7: Stop，不改变位置
+    elif action_label == 7:
+        pass
+
+    else:
+        raise ValueError(f"Unknown action_label: {action_label}")
+
+    # 消除 cos(90°) 等带来的 1e-15 级浮点残差，方便边界比较和日志查看
+    return np.round(next_pos, 8)
+
+
+def is_position_in_scene(pos, scene, eps=1e-6):
+    pos = np.asarray(pos, dtype=float)
+
+    return (
+        scene["x_min"] - eps <= pos[0] <= scene["x_max"] + eps
+        and scene["y_min"] - eps <= pos[1] <= scene["y_max"] + eps
+        and scene["z_min"] - eps <= pos[2] <= scene["z_max"] + eps
+    )
+
+
+def get_valid_action_names(drone, scene, include_stop=False):
+    valid_actions = []
+
+    # 默认检查 0~6；Stop 由参数决定是否加入。
+    max_action_index = 8 if include_stop else 7
+
+    for action_label in range(max_action_index):
+        next_pos = predict_next_position(
+            drone,
+            action_label,
+            scene
+        )
+
+        if is_position_in_scene(next_pos, scene):
+            valid_actions.append(action_set[action_label])
+
+    return valid_actions
+
+
+# 作者原代码
+# def action_value_choose(drone, points, scene, total_uncertainty):
+
+# 修改后
+def action_value_choose(drone, points, scene, total_uncertainty,theta_T=0.1):
     points_now = points.copy()
     uncertainty_now = np.sum(points[:, 3:])
     total_depth = [0, 0, 0, 0, 0, 0, 0]
@@ -84,10 +197,24 @@ def action_value_choose(drone, points, scene, total_uncertainty):
     temp = (uncertainty_now - total_depth[index]) / total_uncertainty
     print(temp)
 
-    if temp > 0.1:
+# -------------------------------------修改线--------------
+
+#    if temp > 0.1:
+#        return action_set[np.argmin(total_depth)]
+#   else:
+#       return None
+
+# ============================================================
+# 2026-09-29 修改
+# 使用外部实验参数 theta_T
+# ============================================================
+
+    if temp > theta_T:
         return action_set[np.argmin(total_depth)]
     else:
         return None
+
+#---------------修改完毕--------------------------------
 
 def action_to_pos(drone, pos_target, scene):
     """
@@ -265,11 +392,180 @@ def get_action_label():
             print("无效输入，请输入一个数字。")  # Handle non-integer input
 
 
-def get_action_from_llm(adviser_cognitive_map, adviser_uncertainty_map, target_text, target_image_path, rgb_path,
-                        Attraction_Value):
+
+# ============================================================
+# 2026-10-03 新增：导航历史 / 循环检测
+#
+# 为什么需要：
+# Qwen 每个 Step 原本只看到“当前 RGB + 目标图”，不知道刚刚执行过什么。
+# Task21 中已经观察到大量：
+#   Go Left -> Go Right -> Go Left -> Go Right
+# 以及回到两步之前位置的往返现象。
+#
+# 返回：
+#   history_hint: 给 VLM 的短历史提示
+#   avoid_action: 若确认出现往返，建议本轮临时禁止的“撤销动作”
+#
+# 注意：
+# - 这里只处理明显的短周期振荡，不代替 Cognitive/Uncertainty Adviser。
+# - 真正边界合法性仍由 main.py 的硬检查负责。
+# ============================================================
+def build_navigation_history_hint(
+    action_history=None,
+    position_history=None,
+    max_actions=8,
+    position_eps=1e-3,
+):
+    action_history = list(action_history or [])
+    position_history = list(position_history or [])
+
+    recent_actions = action_history[-max_actions:]
+
+    opposite_action = {
+        "Go Left": "Go Right",
+        "Go Right": "Go Left",
+        "Turn Left": "Turn Right",
+        "Turn Right": "Turn Left",
+        "Go Up": "Go Down",
+        "Go Down": "Go Up",
+    }
+
+    loop_detected = False
+    loop_reasons = []
+    avoid_action = None
+
+    # 1) 四步交替振荡：A B A B，并且 A/B 互为反向
+    if len(action_history) >= 4:
+        a, b, c, d = action_history[-4:]
+
+        if (
+            a == c
+            and b == d
+            and a != b
+            and opposite_action.get(a) == b
+        ):
+            loop_detected = True
+            loop_reasons.append(
+                f"alternating actions detected: {action_history[-4:]}"
+            )
+            avoid_action = opposite_action.get(d)
+
+    # 2) 两步回到原位：当前位置 ~= 两个动作前的位置
+    if len(position_history) >= 3:
+        try:
+            current_pos = np.asarray(position_history[-1], dtype=float)
+            two_steps_ago = np.asarray(position_history[-3], dtype=float)
+
+            if np.linalg.norm(current_pos - two_steps_ago) <= position_eps:
+                loop_detected = True
+                loop_reasons.append(
+                    "current position is approximately the same as two steps ago"
+                )
+
+                if action_history:
+                    avoid_action = opposite_action.get(
+                        action_history[-1],
+                        avoid_action,
+                    )
+        except Exception:
+            pass
+
+    # 3) 最近 6 个位置中，同一位置多次出现
+    if len(position_history) >= 4:
+        try:
+            recent_positions = [
+                np.asarray(p, dtype=float)
+                for p in position_history[-6:]
+            ]
+            current_pos = recent_positions[-1]
+
+            repeat_count = sum(
+                np.linalg.norm(p - current_pos) <= position_eps
+                for p in recent_positions
+            )
+
+            if repeat_count >= 3:
+                loop_detected = True
+                loop_reasons.append(
+                    f"same area revisited {repeat_count} times recently"
+                )
+        except Exception:
+            pass
+
+    lines = []
+
+    if recent_actions:
+        lines.append(
+            f"Recent executed actions: {recent_actions}."
+        )
+
+    if len(position_history) >= 2:
+        try:
+            compact_positions = [
+                np.round(
+                    np.asarray(p, dtype=float),
+                    2
+                ).tolist()
+                for p in position_history[-5:]
+            ]
+            lines.append(
+                f"Recent map positions (oldest -> newest): "
+                f"{compact_positions}."
+            )
+        except Exception:
+            pass
+
+    if loop_detected:
+        lines.append(
+            "Navigation loop warning: "
+            + "; ".join(loop_reasons)
+            + "."
+        )
+        lines.append(
+            "Do NOT immediately undo the previous movement. "
+            "Break the oscillation by choosing a different legal direction "
+            "or changing viewpoint before translating again."
+        )
+    else:
+        lines.append(
+            "Use the recent history to avoid revisiting the same area "
+            "without gaining new visual information."
+        )
+
+    return "\n".join(lines), avoid_action
+
+
+# ============================================================
+# 2026-10-02 修改
+# 新增 valid_actions=None。
+# 如果 main.py 传入当前 Scene 下的合法动作集合，就把它作为硬约束提示给 LLM。
+# 真正执行前 main.py 还会再次检查，形成“双层保护”。
+# ============================================================
+def get_action_from_llm(
+    adviser_cognitive_map,
+    adviser_uncertainty_map,
+    target_text,
+    target_image_path,
+    rgb_path,
+    Attraction_Value,
+    valid_actions=None,
+    action_history=None,
+    position_history=None,
+):
     max_retries = 3
+
+    # ============================================================
+    # 2026-10-03 新增：在本轮决策前分析导航历史。
+    # ============================================================
+    history_hint, history_avoid_action = build_navigation_history_hint(
+        action_history=action_history,
+        position_history=position_history,
+    )
+
     for attempt in range(max_retries):
         try:
+            valid_actions_for_prompt = None
+
             # 构建 prompt
             if adviser_uncertainty_map:
 
@@ -322,6 +618,83 @@ def get_action_from_llm(adviser_cognitive_map, adviser_uncertainty_map, target_t
                                 """
 
 
+            # ============================================================
+            # 2026-10-03 新增：最近动作 / 位置历史。
+            # ============================================================
+            if history_hint:
+                prompt += (
+                    "\nNavigation history:\n"
+                    + history_hint
+                    + "\n"
+                )
+
+            # ============================================================
+            # 2026-10-02 新增
+            # 把当前 Scene 下不会越界的动作告诉 LLM。
+            # 这只是 Prompt 层约束；main.py 仍会在执行前做硬边界检查。
+            # ============================================================
+            if valid_actions:
+                valid_actions_for_prompt = list(valid_actions)
+
+                # 原始“无 Adviser”分支只允许以下 5 个平面动作，
+                # 因此这里不因为边界提示而额外扩大该分支的动作空间。
+                if (
+                    adviser_uncertainty_map is None
+                    and adviser_cognitive_map is None
+                ):
+                    original_no_adviser_actions = {
+                        "Turn Left",
+                        "Turn Right",
+                        "Go Forward",
+                        "Go Left",
+                        "Go Right",
+                    }
+                    planar_valid_actions = [
+                        action
+                        for action in valid_actions_for_prompt
+                        if action in original_no_adviser_actions
+                    ]
+
+                    # 若过滤后为空，退回 Scene 合法动作，避免无可选动作。
+                    if planar_valid_actions:
+                        valid_actions_for_prompt = planar_valid_actions
+
+                # ========================================================
+                # 2026-10-03 新增：短周期循环硬提示
+                #
+                # 如果已经明确检测到 A<->B 往返，并且还有其他合法动作，
+                # 本轮 Prompt 暂时不允许“立即撤销上一步”的动作。
+                # 这样可强制模型先转向/探索新视角，打破左右横移循环。
+                # ========================================================
+                if (
+                    history_avoid_action
+                    and history_avoid_action in valid_actions_for_prompt
+                    and len(valid_actions_for_prompt) > 1
+                ):
+                    filtered_actions = [
+                        action
+                        for action in valid_actions_for_prompt
+                        if action != history_avoid_action
+                    ]
+
+                    if filtered_actions:
+                        print(
+                            "[LOOP GUARD] detected oscillation | "
+                            f"temporarily avoid={history_avoid_action} | "
+                            f"legal={valid_actions_for_prompt} -> "
+                            f"{filtered_actions}"
+                        )
+                        valid_actions_for_prompt = filtered_actions
+
+                if valid_actions_for_prompt:
+                    prompt += (
+                        "\nBoundary constraint:\n"
+                        "- The drone must stay inside the current search scene.\n"
+                        "- You MUST choose one action only from this currently "
+                        f"legal set: {valid_actions_for_prompt}.\n"
+                        "- Do not choose an action outside this legal set.\n"
+                    )
+
             # 提取返回的动作
             print(prompt)
 
@@ -360,10 +733,24 @@ def get_action_from_llm(adviser_cognitive_map, adviser_uncertainty_map, target_t
             #    这样 "Turn Left." / "turn left" / "`Turn Left`" 都可以正确识别。
             # ============================================================
 
+            # ============================================================
+            # 2026-10-02 新增：Qwen 单次请求测速
+            # 作用：记录每次 API 尝试耗时和返回值，不改变原有重试逻辑。
+            # ============================================================
+            qwen_attempt_start = time.perf_counter()
+            print(f"[QWEN TEST] Attempt {attempt + 1}/{max_retries} start")
+
             chosen_action = chat_with_llm_images(
                 prompt,
                 [rgb_path, target_image_path]
             )
+
+            qwen_attempt_time = time.perf_counter() - qwen_attempt_start
+            print(
+                f"[QWEN TEST] Attempt {attempt + 1}/{max_retries} "
+                f"time = {qwen_attempt_time:.2f}s"
+            )
+            print("[QWEN TEST] Raw result:", repr(chosen_action))
 
             # 打印模型原始输出，便于排查模型是否返回了多余字符
             print("LLM raw action:", repr(chosen_action))
@@ -379,9 +766,20 @@ def get_action_from_llm(adviser_cognitive_map, adviser_uncertainty_map, target_t
 
             print("LLM normalized action:", chosen_action_normalized)
 
-            # 验证动作是否在动作集中
-            if chosen_action_normalized is not None:
-                # 返回标准动作在列表中的索引
+            # ============================================================
+            # 2026-10-03 修改：
+            # 除了必须属于 action_set，还必须属于本轮 Prompt 的合法动作集合。
+            # 这样循环保护临时移除的“反向撤销动作”不会被模型绕过。
+            # ============================================================
+            action_is_allowed = (
+                chosen_action_normalized is not None
+                and (
+                    not valid_actions_for_prompt
+                    or chosen_action_normalized in valid_actions_for_prompt
+                )
+            )
+
+            if action_is_allowed:
                 return action_set.index(chosen_action_normalized)
             else:
                 print(
@@ -391,7 +789,14 @@ def get_action_from_llm(adviser_cognitive_map, adviser_uncertainty_map, target_t
                 time.sleep(1)  # 短暂延迟后重试
 
         except Exception as e:
-            print(f"Attempt {attempt + 1} failed: {e}")
+            # ============================================================
+            # 2026-10-02 修改：输出失败尝试信息
+            # 作用：判断是否因超时/网络/API 异常触发重试。
+            # ============================================================
+            print(
+                f"[QWEN TEST] Attempt {attempt + 1}/{max_retries} failed:",
+                repr(e)
+            )
             time.sleep(2)  # 错误后延迟重试
 
         # 如果重试仍失败，返回默认动作的索引
@@ -421,6 +826,21 @@ def find_max_cluster_center(cognitive_map, eps=1.0, min_samples=3):
 
     # 2. 找出第四维的最大值
     max_value = np.max(cognitive_map[:, 3])
+
+    # ============================================================
+    # 2026-10-03 性能修复：全零 Cognitive Map 直接返回。
+    #
+    # 原逻辑在 max_value == 0 时，会把“整张地图的所有点”都当成
+    # 最大值点送进 DBSCAN。Scene4 当前约千万级网格点，会导致
+    # find_max_cluster_center() 单次耗时数百秒。
+    #
+    # main.py 只有在 max_value > cognitive_threshold(0.5) 时才会
+    # 使用 cluster_center 生成 adviser_cognitive_map；因此 max_value<=0
+    # 时 cluster_center 本来就不会影响导航。这里直接返回 None，
+    # 不改变有效导航结果，只跳过无意义的超大规模聚类。
+    # ============================================================
+    if max_value <= 0:
+        return max_value, None
 
     # 3. 找出具有最大值的点 (使用 np.isclose 解决浮点数精度问题)
     # atol 是绝对容差，根据数据量级调整，通常 1e-8 足够

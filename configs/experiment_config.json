@@ -1,0 +1,109 @@
+{
+    "experiment_name": "CityAVOS_AAAI26_reproduction",
+
+    "dataset": {
+        "name": "target_information_605.json",
+        "total_tasks": 605
+    },
+
+
+    "scene": {
+        "name": "scenes.json",
+        "total_scenes": 6,
+        "difficulty": [
+            "Easy",
+            "Hard"
+        ]
+    },
+
+
+    "model": {
+
+        "vlm": {
+            "name": "qwen3-vl-plus",
+            "provider": "aliyun"
+        },
+
+        "grounding_model": {
+            "name": "GroundingDINO",
+            "checkpoint":
+            "GroundSAM/groundingdino_swint_ogc.pth"
+        },
+
+
+        "segment_model": {
+            "name": "SAM",
+            "version": "vit_h",
+            "checkpoint":
+            "GroundSAM/sam_vit_h_4b8939.pth"
+        }
+
+    },
+
+
+    "environment": {
+
+        "simulator":
+        "AirSim + EmbodiedCity",
+
+        "coordinate_transform":
+        "pos*[1,-1,-1]"
+
+    },
+
+
+    "experiment_parameter": {
+
+
+        "task_start":0,
+
+        "task_end":605,
+
+
+        "max_step":40,
+
+
+        "cognitive_threshold":0.5,
+
+
+        "theta_T":0.1,
+
+
+        "FOV":90,
+
+
+        "max_distance":1000
+
+    },
+
+
+    "save": {
+
+
+        "save_single_task_log":true,
+
+
+        "single_task_path":
+        "output/experiemnt_data/ours",
+
+
+        "summary_path":
+        "output/experiemnt_data/ours/experiment_summary.json"
+
+    },
+
+
+    "metrics": {
+
+
+        "calculate":
+
+        [
+            "SR",
+            "SPL",
+            "MSS",
+            "NE"
+        ]
+
+    }
+}

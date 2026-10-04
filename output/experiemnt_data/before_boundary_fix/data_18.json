@@ -1,0 +1,56 @@
+{
+  "task_index": 17,
+  "mission_id": "18",
+  "scene_id": "1",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "A station on the side of the street",
+  "target_image_path": "data\\target_image\\Scene1\\BusStation.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 1,
+  "if_success": 1,
+  "termination_reason": "target_visible",
+  "initial_target_distance": 17.314112740766877,
+  "final_navigation_error": 19.35919678085808,
+  "trajectory_length": 5.0,
+  "action_history": [
+    "Go Up"
+  ],
+  "adviser_uncertainty_history": [
+    "Turn Left"
+  ],
+  "adviser_cognitive_history": [
+    "Go Up"
+  ],
+  "attraction_value_history": [
+    0.95
+  ],
+  "position": [
+    [
+      6360.0,
+      4190.0,
+      5.0
+    ],
+    [
+      6360.0,
+      4190.0,
+      10.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ]
+  ]
+}
