@@ -1,0 +1,15 @@
+{
+  "mission_id": "144",
+  "target_text": "A black car parked in a parking lot with a pink car and a yellow jeep in the parking spaces on either side",
+  "target_image_path": "data\\target_image\\Scene2\\BlackCar.png",
+  "prompt_sam_raw": "car. parking lines. asphalt surface",
+  "prompt_sam": "car. parking lines. asphalt surface. vehicle.",
+  "scores_rel": {
+    "car": 0.85,
+    "parking lines": 0.7,
+    "asphalt surface": 0.6,
+    "vehicle": 0.9
+  },
+  "target_prompt_time_s": 12.2587,
+  "relevance_scores_time_s": 3.4244
+}

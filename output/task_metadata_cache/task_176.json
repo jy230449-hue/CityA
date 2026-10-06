@@ -1,0 +1,20 @@
+{
+  "mission_id": "176",
+  "target_text": "A sign with Chinese and English words 'Industrial and Commercial Bank of China' and a purple sign next to it.",
+  "target_image_path": "data\\target_image\\Scene3\\TheBuildingofICBC.png",
+  "prompt_sam_raw": "industrial and commercial bank china. 中国工商银行. red circular logo with stylized characters. vertical metal bars. purple banner on left side",
+  "prompt_sam": "industrial and commercial bank china. 中国工商银行. red circular logo with stylized characters. vertical metal bars. purple banner on left side. sign. signboard. wall sign. billboard.",
+  "scores_rel": {
+    "industrial and commercial bank china": 0.95,
+    "中国工商银行": 0.98,
+    "red circular logo with stylized characters": 1.0,
+    "vertical metal bars": 0.1,
+    "purple banner on left side": 0.85,
+    "sign": 0.97,
+    "signboard": 0.96,
+    "wall sign": 0.94,
+    "billboard": 0.92
+  },
+  "target_prompt_time_s": 16.4225,
+  "relevance_scores_time_s": 21.4904
+}

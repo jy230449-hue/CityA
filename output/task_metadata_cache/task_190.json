@@ -1,0 +1,19 @@
+{
+  "mission_id": "190",
+  "target_text": "A sign with the Chinese words 'China Merchants Bank' and a red China Merchants Bank logo",
+  "target_image_path": "data\\target_image\\Scene3\\TheBuildingofZhaoShang.png",
+  "prompt_sam_raw": "red circular logo with white m symbol. large white chinese characters reading \"招商银行\". modern glass building facade with grid pattern. tall skyscrapers in background. horizontal metal railing or parapet along roof edge. blue-tinted reflective windows below signage. faint power lines or cables in upper left. light-colored flat roof surface. vertical structural columns on right side. distant city skyline silhouette.",
+  "prompt_sam": "large white chinese characters reading 招商银行. blue-tinted reflective windows below signage. vertical structural columns on right side. distant city skyline silhouette. sign. signboard. wall sign. billboard.",
+  "scores_rel": {
+    "large white chinese characters reading 招商银行": 0.95,
+    "blue-tinted reflective windows below signage": 0.1,
+    "vertical structural columns on right side": 0.05,
+    "distant city skyline silhouette": 0.02,
+    "sign": 0.98,
+    "signboard": 0.97,
+    "wall sign": 0.96,
+    "billboard": 0.94
+  },
+  "target_prompt_time_s": 18.0359,
+  "relevance_scores_time_s": 8.9055
+}

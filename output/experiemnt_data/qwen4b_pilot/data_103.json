@@ -1,0 +1,177 @@
+{
+  "task_index": 102,
+  "mission_id": "103",
+  "scene_id": "2",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "A pink car parked in a parking lot with a black car in the parking space next to it",
+  "target_image_path": "data\\target_image\\Scene2\\PinkCar2.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 1,
+  "if_success": 0,
+  "termination_reason": "llm_stop",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 109.8584,
+  "map_init_time_s": 0.0429,
+  "target_prompt_time_s": 14.6736,
+  "relevance_scores_time_s": 4.5402,
+  "task_total_time_s": 91.9312,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 16.31410180000057,
+      "image_save_s": 0.03732599999966624,
+      "map_preprocess_s": 0.040244300000267685,
+      "dino_sam_s": 6.617709399999512,
+      "semantic_cognitive_s": 0.18523669999922276,
+      "uncertainty_adviser_s": 0.028568200001245714,
+      "boundary_filter_s": 0.0002086000004055677,
+      "qwen_vlm_s": 5.962515100000019,
+      "action_execution_s": 0.02161079999859794,
+      "success_check_s": 4.740000076708384e-05,
+      "total_step_s": 29.400863400000162
+    },
+    {
+      "step": 1,
+      "observation_s": 12.950718699999925,
+      "image_save_s": 0.02757720000045083,
+      "map_preprocess_s": 0.029005700000197976,
+      "dino_sam_s": 1.5030626999996457,
+      "semantic_cognitive_s": 0.1664215000000695,
+      "uncertainty_adviser_s": 0.0016035999997257022,
+      "boundary_filter_s": 0.00012729999980365392,
+      "qwen_vlm_s": 28.27909820000059,
+      "total_step_s": 42.962776000000304
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.0216,
+      "avg_s": 0.0216,
+      "count": 1
+    },
+    "boundary_filter_s": {
+      "total_s": 0.0003,
+      "avg_s": 0.0002,
+      "count": 2
+    },
+    "dino_sam_s": {
+      "total_s": 8.1208,
+      "avg_s": 4.0604,
+      "count": 2
+    },
+    "image_save_s": {
+      "total_s": 0.0649,
+      "avg_s": 0.0325,
+      "count": 2
+    },
+    "map_preprocess_s": {
+      "total_s": 0.0693,
+      "avg_s": 0.0346,
+      "count": 2
+    },
+    "observation_s": {
+      "total_s": 29.2648,
+      "avg_s": 14.6324,
+      "count": 2
+    },
+    "qwen_vlm_s": {
+      "total_s": 34.2416,
+      "avg_s": 17.1208,
+      "count": 2
+    },
+    "semantic_cognitive_s": {
+      "total_s": 0.3517,
+      "avg_s": 0.1758,
+      "count": 2
+    },
+    "success_check_s": {
+      "total_s": 0.0,
+      "avg_s": 0.0,
+      "count": 1
+    },
+    "total_step_s": {
+      "total_s": 72.3636,
+      "avg_s": 36.1818,
+      "count": 2
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.0302,
+      "avg_s": 0.0151,
+      "count": 2
+    }
+  },
+  "metric_initial_position": [
+    6870.0,
+    5250.0,
+    10.0
+  ],
+  "metric_target_position": [
+    6751.85,
+    5349.6,
+    -0.0
+  ],
+  "metric_final_position": [
+    6870.0,
+    5240.0,
+    10.0
+  ],
+  "initial_target_distance": 154.8534226292722,
+  "final_navigation_error": 161.46697030662338,
+  "trajectory_length": 10.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Go Forward"
+  ],
+  "adviser_uncertainty_history": [
+    null
+  ],
+  "adviser_cognitive_history": [
+    null
+  ],
+  "attraction_value_history": [
+    0.0
+  ],
+  "position": [
+    [
+      6870.0,
+      5250.0,
+      10.0
+    ],
+    [
+      6870.0,
+      5240.0,
+      10.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      90.0
+    ],
+    [
+      0.0,
+      0.0,
+      90.0
+    ]
+  ]
+}

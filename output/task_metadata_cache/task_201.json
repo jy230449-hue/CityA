@@ -1,0 +1,21 @@
+{
+  "mission_id": "201",
+  "target_text": "A green signboard perpendicular to the building, next to the signboard that reads Hua Xia Bank",
+  "target_image_path": "data\\target_image\\Scene3\\GreenBoard.png",
+  "prompt_sam_raw": "swimming pool. lane markings. swimmers. track. building. banner. water surface. starting blocks. diving board. spectator stands",
+  "prompt_sam": "swimming pool. lane markings. swimmers. track. building. banner. water surface. starting blocks. diving board. spectator stands.",
+  "scores_rel": {
+    "swimming pool": 0.0,
+    "lane markings": 0.0,
+    "swimmers": 0.0,
+    "track": 0.0,
+    "building": 0.1,
+    "banner": 0.85,
+    "water surface": 0.0,
+    "starting blocks": 0.0,
+    "diving board": 0.0,
+    "spectator stands": 0.0
+  },
+  "target_prompt_time_s": 8.8509,
+  "relevance_scores_time_s": 4.7996
+}

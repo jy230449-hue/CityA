@@ -1,0 +1,1588 @@
+{
+  "task_index": 216,
+  "mission_id": "217",
+  "scene_id": "3",
+  "mission_grade": "2",
+  "paper_difficulty": "Hard",
+  "target_text": "A white sign has the Chinese characters 'Industrial and Commercial Bank of China' and a hand image on it, and next to it is a sign with oranges and perfume.",
+  "target_image_path": "data\\target_image\\Scene3\\ICBC.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 20,
+  "step_z": 10,
+  "step_all": 40,
+  "steps": 40,
+  "if_success": 0,
+  "termination_reason": "max_steps",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Left"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "action_recovery_count": 1,
+  "action_recovery_history": [
+    {
+      "step": 35,
+      "action": "Turn Left",
+      "reason": "llm_no_valid_action",
+      "valid_actions": [
+        "Go Up",
+        "Turn Left",
+        "Turn Right",
+        "Go Forward",
+        "Go Left",
+        "Go Right"
+      ]
+    }
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 55.5511,
+  "map_init_time_s": 0.4183,
+  "target_prompt_time_s": 23.4446,
+  "relevance_scores_time_s": 16.0522,
+  "task_total_time_s": 1246.6965,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 19.987579200000013,
+      "image_save_s": 0.029510600000008935,
+      "map_preprocess_s": 0.41799939999998514,
+      "dino_sam_s": 4.0500299999999925,
+      "semantic_cognitive_s": 7.424691800000005,
+      "uncertainty_adviser_s": 0.004574800000000323,
+      "boundary_filter_s": 0.00019910000000322725,
+      "qwen_vlm_s": 3.5908311000000026,
+      "action_execution_s": 0.0395315000000096,
+      "success_check_s": 5.989999999655993e-05,
+      "total_step_s": 35.88647090000002
+    },
+    {
+      "step": 1,
+      "observation_s": 19.794646999999998,
+      "image_save_s": 0.04520080000000348,
+      "map_preprocess_s": 0.29687509999999406,
+      "dino_sam_s": 2.2273194000000274,
+      "semantic_cognitive_s": 0.35178849999999784,
+      "uncertainty_adviser_s": 0.09891869999998448,
+      "boundary_filter_s": 0.0009603000000026896,
+      "qwen_vlm_s": 5.056404100000009,
+      "action_execution_s": 0.07556429999999636,
+      "success_check_s": 5.780000000754626e-05,
+      "total_step_s": 28.170762300000007
+    },
+    {
+      "step": 2,
+      "observation_s": 16.009201699999977,
+      "image_save_s": 0.032019700000006424,
+      "map_preprocess_s": 0.43785460000000853,
+      "dino_sam_s": 2.523785199999992,
+      "semantic_cognitive_s": 0.23897180000000162,
+      "uncertainty_adviser_s": 0.004786499999994476,
+      "boundary_filter_s": 0.0003992999999979929,
+      "qwen_vlm_s": 4.604566799999986,
+      "action_execution_s": 0.00260520000000497,
+      "success_check_s": 5.120000000147229e-05,
+      "total_step_s": 23.882374800000008
+    },
+    {
+      "step": 3,
+      "observation_s": 28.80110239999999,
+      "image_save_s": 0.05986989999999537,
+      "map_preprocess_s": 0.8328155000000095,
+      "dino_sam_s": 8.508706799999999,
+      "semantic_cognitive_s": 1.4044779000000176,
+      "uncertainty_adviser_s": 0.035894899999988183,
+      "boundary_filter_s": 0.00021110000000135187,
+      "qwen_vlm_s": 17.189517800000033,
+      "action_execution_s": 0.09100250000000187,
+      "success_check_s": 6.220000000212167e-05,
+      "total_step_s": 57.196363700000006
+    },
+    {
+      "step": 4,
+      "observation_s": 18.48336869999997,
+      "image_save_s": 0.06036180000000968,
+      "map_preprocess_s": 0.5323427999999808,
+      "dino_sam_s": 1.8961331000000428,
+      "semantic_cognitive_s": 0.19051189999998996,
+      "uncertainty_adviser_s": 0.003079200000001947,
+      "boundary_filter_s": 0.00013530000001082954,
+      "qwen_vlm_s": 4.146746899999982,
+      "action_execution_s": 0.0016555999999923188,
+      "success_check_s": 0.00023360000000138825,
+      "total_step_s": 25.477233300000023
+    },
+    {
+      "step": 5,
+      "observation_s": 15.976952900000015,
+      "image_save_s": 0.07612940000001345,
+      "map_preprocess_s": 0.6523990000000026,
+      "dino_sam_s": 2.280532800000003,
+      "semantic_cognitive_s": 0.20309689999999136,
+      "uncertainty_adviser_s": 0.0034631999999987784,
+      "boundary_filter_s": 0.00014029999999820575,
+      "qwen_vlm_s": 4.297750000000008,
+      "action_execution_s": 0.001573800000016945,
+      "success_check_s": 5.770000001348308e-05,
+      "total_step_s": 23.52770940000005
+    },
+    {
+      "step": 6,
+      "observation_s": 17.955722100000003,
+      "image_save_s": 0.03442179999996142,
+      "map_preprocess_s": 0.7073014999999714,
+      "dino_sam_s": 2.1236178999999993,
+      "semantic_cognitive_s": 0.16470689999999877,
+      "uncertainty_adviser_s": 0.004226800000026287,
+      "boundary_filter_s": 0.00013660000001891603,
+      "qwen_vlm_s": 4.315222899999981,
+      "action_execution_s": 0.0009334999999737192,
+      "success_check_s": 8.080000003474197e-05,
+      "total_step_s": 25.378636200000017
+    },
+    {
+      "step": 7,
+      "observation_s": 15.571977500000003,
+      "image_save_s": 0.0715136999999686,
+      "map_preprocess_s": 0.4642195999999785,
+      "dino_sam_s": 2.668000300000017,
+      "semantic_cognitive_s": 0.2683922999999595,
+      "uncertainty_adviser_s": 0.002941899999996167,
+      "boundary_filter_s": 0.0002269000000296728,
+      "qwen_vlm_s": 3.4813747000000035,
+      "action_execution_s": 0.0013015999999765882,
+      "success_check_s": 5.7999999967250915e-05,
+      "total_step_s": 22.64901249999997
+    },
+    {
+      "step": 8,
+      "observation_s": 16.0889368,
+      "image_save_s": 0.042649600000004284,
+      "map_preprocess_s": 0.6582940000000121,
+      "dino_sam_s": 2.4912247999999977,
+      "semantic_cognitive_s": 0.5992952000000287,
+      "uncertainty_adviser_s": 0.0026684999999702086,
+      "boundary_filter_s": 0.00020749999998770363,
+      "qwen_vlm_s": 3.518865900000037,
+      "action_execution_s": 0.002520300000014686,
+      "success_check_s": 5.859999998847343e-05,
+      "total_step_s": 23.5673673
+    },
+    {
+      "step": 9,
+      "observation_s": 19.675583399999994,
+      "image_save_s": 0.0702141000000438,
+      "map_preprocess_s": 0.4924425000000383,
+      "dino_sam_s": 1.5882927000000109,
+      "semantic_cognitive_s": 0.21436890000001085,
+      "uncertainty_adviser_s": 0.002930499999990843,
+      "boundary_filter_s": 0.0002289000000246233,
+      "qwen_vlm_s": 3.8784648000000175,
+      "action_execution_s": 0.044886600000040744,
+      "success_check_s": 5.4099999999834836e-05,
+      "total_step_s": 26.06155940000002
+    },
+    {
+      "step": 10,
+      "observation_s": 18.675254499999994,
+      "image_save_s": 0.035968400000001566,
+      "map_preprocess_s": 0.5249699000000305,
+      "dino_sam_s": 2.8094639999999913,
+      "semantic_cognitive_s": 0.8083328000000165,
+      "uncertainty_adviser_s": 0.02194040000000541,
+      "boundary_filter_s": 0.00020929999999452775,
+      "qwen_vlm_s": 4.1997678999999835,
+      "action_execution_s": 0.0025009999999952015,
+      "success_check_s": 4.9600000011196244e-05,
+      "total_step_s": 27.356965700000046
+    },
+    {
+      "step": 11,
+      "observation_s": 19.256560400000012,
+      "image_save_s": 0.10129009999997152,
+      "map_preprocess_s": 0.38221980000002986,
+      "dino_sam_s": 2.8303872000000183,
+      "semantic_cognitive_s": 0.588297300000022,
+      "uncertainty_adviser_s": 0.0037360000000035143,
+      "boundary_filter_s": 0.00020849999998517887,
+      "qwen_vlm_s": 10.310726500000044,
+      "action_execution_s": 0.0029882000000043263,
+      "success_check_s": 4.999999998744897e-05,
+      "total_step_s": 33.65262080000002
+    },
+    {
+      "step": 12,
+      "observation_s": 19.190545799999995,
+      "image_save_s": 0.03598650000003545,
+      "map_preprocess_s": 0.3350068000000306,
+      "dino_sam_s": 2.2026596999999697,
+      "semantic_cognitive_s": 0.8032751000000076,
+      "uncertainty_adviser_s": 0.0028804000000377528,
+      "boundary_filter_s": 0.0015491999999994732,
+      "qwen_vlm_s": 10.509760899999947,
+      "action_execution_s": 0.04211689999999635,
+      "success_check_s": 5.7599999990998185e-05,
+      "total_step_s": 33.37809090000002
+    },
+    {
+      "step": 13,
+      "observation_s": 20.781273600000077,
+      "image_save_s": 0.09386949999998251,
+      "map_preprocess_s": 0.40547379999998157,
+      "dino_sam_s": 2.5358350999999857,
+      "semantic_cognitive_s": 1.1749111999999968,
+      "uncertainty_adviser_s": 0.03686359999994693,
+      "boundary_filter_s": 0.000225499999942258,
+      "qwen_vlm_s": 8.429445600000008,
+      "action_execution_s": 0.002384000000006381,
+      "success_check_s": 5.920000000969594e-05,
+      "total_step_s": 33.58837110000002
+    },
+    {
+      "step": 14,
+      "observation_s": 19.54953999999998,
+      "image_save_s": 0.0498546000000033,
+      "map_preprocess_s": 0.7247050999999374,
+      "dino_sam_s": 3.0996721999999863,
+      "semantic_cognitive_s": 0.7102648999999701,
+      "uncertainty_adviser_s": 0.003048499999977139,
+      "boundary_filter_s": 0.00016210000001137814,
+      "qwen_vlm_s": 3.077884700000027,
+      "action_execution_s": 0.0013452000000597764,
+      "success_check_s": 5.6800000038492726e-05,
+      "total_step_s": 27.224178800000004
+    },
+    {
+      "step": 15,
+      "observation_s": 15.949834200000055,
+      "image_save_s": 0.03467230000001109,
+      "map_preprocess_s": 0.2857817999999952,
+      "dino_sam_s": 2.1057435999999825,
+      "semantic_cognitive_s": 0.15246330000002217,
+      "uncertainty_adviser_s": 0.0031086000000186687,
+      "boundary_filter_s": 0.0001480999999330379,
+      "qwen_vlm_s": 4.493521600000008,
+      "action_execution_s": 0.0016571999999541731,
+      "success_check_s": 0.00010480000003099121,
+      "total_step_s": 23.04030709999995
+    },
+    {
+      "step": 16,
+      "observation_s": 19.209673599999974,
+      "image_save_s": 0.04251149999993231,
+      "map_preprocess_s": 0.5036943000000065,
+      "dino_sam_s": 2.284025799999995,
+      "semantic_cognitive_s": 0.24734059999991587,
+      "uncertainty_adviser_s": 0.007347299999992174,
+      "boundary_filter_s": 0.00014870000006794726,
+      "qwen_vlm_s": 4.698363800000038,
+      "action_execution_s": 0.0013939000000391388,
+      "success_check_s": 5.090000001928274e-05,
+      "total_step_s": 27.037167299999965
+    },
+    {
+      "step": 17,
+      "observation_s": 20.70784630000003,
+      "image_save_s": 0.10967900000002828,
+      "map_preprocess_s": 0.3284363000000212,
+      "dino_sam_s": 2.934903600000098,
+      "semantic_cognitive_s": 1.7734934000000067,
+      "uncertainty_adviser_s": 0.04627210000001014,
+      "boundary_filter_s": 0.00021390000006249466,
+      "qwen_vlm_s": 4.188057999999955,
+      "action_execution_s": 0.001150500000107968,
+      "success_check_s": 8.350000007339986e-05,
+      "total_step_s": 30.34435809999991
+    },
+    {
+      "step": 18,
+      "observation_s": 17.985775699999976,
+      "image_save_s": 0.03653499999995802,
+      "map_preprocess_s": 0.5924393000000236,
+      "dino_sam_s": 1.8194492999999738,
+      "semantic_cognitive_s": 0.3360748999999714,
+      "uncertainty_adviser_s": 0.0036093999999593507,
+      "boundary_filter_s": 0.00014659999999366846,
+      "qwen_vlm_s": 4.714932799999929,
+      "action_execution_s": 0.0034655000000611835,
+      "success_check_s": 8.009999999103457e-05,
+      "total_step_s": 25.569600899999955
+    },
+    {
+      "step": 19,
+      "observation_s": 19.850164699999937,
+      "image_save_s": 0.03186809999999696,
+      "map_preprocess_s": 0.5176978999999164,
+      "dino_sam_s": 2.4396361999999954,
+      "semantic_cognitive_s": 1.4517609999999195,
+      "uncertainty_adviser_s": 0.006831799999986288,
+      "boundary_filter_s": 0.00023669999995945545,
+      "qwen_vlm_s": 4.654721900000027,
+      "action_execution_s": 0.0025464000000283704,
+      "success_check_s": 5.930000008902425e-05,
+      "total_step_s": 29.114780100000075
+    },
+    {
+      "step": 20,
+      "observation_s": 23.065650299999902,
+      "image_save_s": 0.12679849999994985,
+      "map_preprocess_s": 0.36447789999999713,
+      "dino_sam_s": 4.409821399999942,
+      "semantic_cognitive_s": 2.492863899999975,
+      "uncertainty_adviser_s": 0.1161190999999917,
+      "boundary_filter_s": 0.00024710000002414745,
+      "qwen_vlm_s": 15.682176400000003,
+      "action_execution_s": 0.02905590000000302,
+      "success_check_s": 7.500000003801688e-05,
+      "total_step_s": 46.53554680000002
+    },
+    {
+      "step": 21,
+      "observation_s": 18.020377999999937,
+      "image_save_s": 0.14569829999993544,
+      "map_preprocess_s": 0.548635900000022,
+      "dino_sam_s": 2.839068999999995,
+      "semantic_cognitive_s": 0.31687220000003435,
+      "uncertainty_adviser_s": 0.07391009999992093,
+      "boundary_filter_s": 0.0003522000000657499,
+      "qwen_vlm_s": 5.138873800000056,
+      "action_execution_s": 0.006009500000004664,
+      "success_check_s": 5.03999999637017e-05,
+      "total_step_s": 27.317445799999973
+    },
+    {
+      "step": 22,
+      "observation_s": 28.259163400000034,
+      "image_save_s": 0.08319160000007741,
+      "map_preprocess_s": 0.7936730999999781,
+      "dino_sam_s": 7.462424599999963,
+      "semantic_cognitive_s": 0.5157884000000195,
+      "uncertainty_adviser_s": 0.12478099999998449,
+      "boundary_filter_s": 0.00021130000004632166,
+      "qwen_vlm_s": 13.702197399999932,
+      "action_execution_s": 0.001132100000063474,
+      "success_check_s": 5.69000000041342e-05,
+      "total_step_s": 51.187434499999995
+    },
+    {
+      "step": 23,
+      "observation_s": 25.554018000000042,
+      "image_save_s": 0.031974300000001676,
+      "map_preprocess_s": 0.5998491999999942,
+      "dino_sam_s": 3.8757424000000356,
+      "semantic_cognitive_s": 0.21591430000000855,
+      "uncertainty_adviser_s": 0.004219799999987117,
+      "boundary_filter_s": 0.00013830000000325526,
+      "qwen_vlm_s": 3.9060524000000214,
+      "action_execution_s": 0.0011293999999679727,
+      "success_check_s": 5.6800000038492726e-05,
+      "total_step_s": 34.202873400000044
+    },
+    {
+      "step": 24,
+      "observation_s": 26.258880500000032,
+      "image_save_s": 0.12044380000008914,
+      "map_preprocess_s": 0.8025053000000071,
+      "dino_sam_s": 10.397265599999969,
+      "semantic_cognitive_s": 0.5213997999999265,
+      "uncertainty_adviser_s": 0.034955200000013065,
+      "boundary_filter_s": 0.00020630000005894544,
+      "qwen_vlm_s": 8.655131900000015,
+      "action_execution_s": 0.0036321999999699983,
+      "success_check_s": 5.329999999048596e-05,
+      "total_step_s": 47.06282710000005
+    },
+    {
+      "step": 25,
+      "observation_s": 25.00488669999993,
+      "image_save_s": 0.058483700000010685,
+      "map_preprocess_s": 0.8382497000000058,
+      "dino_sam_s": 7.4380392999999,
+      "semantic_cognitive_s": 0.21464860000003227,
+      "uncertainty_adviser_s": 0.004225799999971969,
+      "boundary_filter_s": 0.0005310999999892374,
+      "qwen_vlm_s": 10.129099500000052,
+      "action_execution_s": 0.0011842999999771564,
+      "success_check_s": 5.910000004405447e-05,
+      "total_step_s": 43.78879559999996
+    },
+    {
+      "step": 26,
+      "observation_s": 27.293938899999944,
+      "image_save_s": 0.10953540000002704,
+      "map_preprocess_s": 0.952395200000069,
+      "dino_sam_s": 5.8208700000000135,
+      "semantic_cognitive_s": 0.3342724999999973,
+      "uncertainty_adviser_s": 0.004240600000002814,
+      "boundary_filter_s": 0.0001427000000830958,
+      "qwen_vlm_s": 8.533904399999983,
+      "action_execution_s": 0.0014691000000084387,
+      "success_check_s": 5.239999995865219e-05,
+      "total_step_s": 43.148608800000034
+    },
+    {
+      "step": 27,
+      "observation_s": 17.725532399999906,
+      "image_save_s": 0.04505819999997129,
+      "map_preprocess_s": 0.4796102999999903,
+      "dino_sam_s": 2.1741073000000597,
+      "semantic_cognitive_s": 0.3685314000000517,
+      "uncertainty_adviser_s": 0.05863569999996798,
+      "boundary_filter_s": 0.00039259999994101236,
+      "qwen_vlm_s": 4.346789700000045,
+      "action_execution_s": 0.0026477000001250417,
+      "success_check_s": 5.51000000541535e-05,
+      "total_step_s": 25.4339109
+    },
+    {
+      "step": 28,
+      "observation_s": 16.49593279999999,
+      "image_save_s": 0.03720409999982621,
+      "map_preprocess_s": 0.5631743999999799,
+      "dino_sam_s": 1.4827655000001414,
+      "semantic_cognitive_s": 0.3270121000000472,
+      "uncertainty_adviser_s": 0.0043266999998650135,
+      "boundary_filter_s": 0.00020760000006703194,
+      "qwen_vlm_s": 4.581380999999965,
+      "action_execution_s": 0.0078523000001951,
+      "success_check_s": 5.719999990105862e-05,
+      "total_step_s": 23.611604899999975
+    },
+    {
+      "step": 29,
+      "observation_s": 14.757175599999982,
+      "image_save_s": 0.09393660000000637,
+      "map_preprocess_s": 0.3886064000000715,
+      "dino_sam_s": 2.337285900000097,
+      "semantic_cognitive_s": 0.30828230000020085,
+      "uncertainty_adviser_s": 0.07735780000007253,
+      "boundary_filter_s": 0.00021059999994577083,
+      "qwen_vlm_s": 4.709453200000098,
+      "action_execution_s": 0.0013077000000976113,
+      "success_check_s": 5.3999999863663106e-05,
+      "total_step_s": 22.757637700000032
+    },
+    {
+      "step": 30,
+      "observation_s": 18.36551519999989,
+      "image_save_s": 0.03476639999985309,
+      "map_preprocess_s": 0.5675174999998944,
+      "dino_sam_s": 2.1708507000000736,
+      "semantic_cognitive_s": 0.4746988000001693,
+      "uncertainty_adviser_s": 0.04886269999997239,
+      "boundary_filter_s": 0.00020769999991898658,
+      "qwen_vlm_s": 3.9096750000001066,
+      "action_execution_s": 0.0014791999999488326,
+      "success_check_s": 5.340000006981427e-05,
+      "total_step_s": 25.7289174
+    },
+    {
+      "step": 31,
+      "observation_s": 16.15436999999997,
+      "image_save_s": 0.06810280000013336,
+      "map_preprocess_s": 0.2852288999999928,
+      "dino_sam_s": 1.46886470000004,
+      "semantic_cognitive_s": 0.7348533999997926,
+      "uncertainty_adviser_s": 0.06718630000000303,
+      "boundary_filter_s": 0.000207299999829047,
+      "qwen_vlm_s": 3.0035139999999956,
+      "action_execution_s": 0.0014279000001806708,
+      "success_check_s": 5.260000011730881e-05,
+      "total_step_s": 21.946642800000063
+    },
+    {
+      "step": 32,
+      "observation_s": 17.420512299999928,
+      "image_save_s": 0.04056770000011056,
+      "map_preprocess_s": 0.5121123000001262,
+      "dino_sam_s": 2.445225100000016,
+      "semantic_cognitive_s": 0.6881812999999966,
+      "uncertainty_adviser_s": 0.013108900000133872,
+      "boundary_filter_s": 0.00020289999997658015,
+      "qwen_vlm_s": 3.6708117999999104,
+      "action_execution_s": 0.002574399999957677,
+      "success_check_s": 5.239999995865219e-05,
+      "total_step_s": 24.992423000000144
+    },
+    {
+      "step": 33,
+      "observation_s": 19.2805022,
+      "image_save_s": 0.03185609999991357,
+      "map_preprocess_s": 0.33929729999999836,
+      "dino_sam_s": 1.9402829000000565,
+      "semantic_cognitive_s": 0.49235569999996187,
+      "uncertainty_adviser_s": 0.05606660000012198,
+      "boundary_filter_s": 0.00020330000006651971,
+      "qwen_vlm_s": 4.730624499999976,
+      "action_execution_s": 0.04999780000002829,
+      "success_check_s": 5.3700000080425525e-05,
+      "total_step_s": 27.071859800000084
+    },
+    {
+      "step": 34,
+      "observation_s": 16.30960469999991,
+      "image_save_s": 0.022032399999943664,
+      "map_preprocess_s": 0.301198500000055,
+      "dino_sam_s": 1.9765972999998667,
+      "semantic_cognitive_s": 0.2448124000000007,
+      "uncertainty_adviser_s": 0.007272600000078455,
+      "boundary_filter_s": 0.00018880000015997211,
+      "qwen_vlm_s": 3.736290699999927,
+      "action_execution_s": 0.008391600000095423,
+      "success_check_s": 5.440000018097635e-05,
+      "total_step_s": 22.613325300000042
+    },
+    {
+      "step": 35,
+      "observation_s": 13.44774540000003,
+      "image_save_s": 0.09579099999996288,
+      "map_preprocess_s": 0.25671109999984765,
+      "dino_sam_s": 1.499479699999938,
+      "semantic_cognitive_s": 1.1877008000001297,
+      "uncertainty_adviser_s": 0.003660399999944275,
+      "boundary_filter_s": 0.00015210000015031255,
+      "qwen_vlm_s": 16.053502799999933,
+      "action_execution_s": 0.029068400000141992,
+      "success_check_s": 6.149999990157085e-05,
+      "total_step_s": 32.66727710000009
+    },
+    {
+      "step": 36,
+      "observation_s": 19.28040349999992,
+      "image_save_s": 0.06750820000002022,
+      "map_preprocess_s": 0.45891119999987495,
+      "dino_sam_s": 2.2543289999998706,
+      "semantic_cognitive_s": 0.7572419000000536,
+      "uncertainty_adviser_s": 0.0040893999998843356,
+      "boundary_filter_s": 0.00020760000006703194,
+      "qwen_vlm_s": 5.002079999999978,
+      "action_execution_s": 0.002946399999927962,
+      "success_check_s": 5.369999985305185e-05,
+      "total_step_s": 28.245080599999937
+    },
+    {
+      "step": 37,
+      "observation_s": 14.544410399999833,
+      "image_save_s": 0.1569836999999552,
+      "map_preprocess_s": 0.3249525999999605,
+      "dino_sam_s": 1.1743679000001066,
+      "semantic_cognitive_s": 0.41903339999998934,
+      "uncertainty_adviser_s": 0.004970000000184882,
+      "boundary_filter_s": 0.00014830000009169453,
+      "qwen_vlm_s": 4.432756200000085,
+      "action_execution_s": 0.0012248999998973886,
+      "success_check_s": 5.60999999379419e-05,
+      "total_step_s": 21.151108900000054
+    },
+    {
+      "step": 38,
+      "observation_s": 18.271820800000114,
+      "image_save_s": 0.07636029999980565,
+      "map_preprocess_s": 0.5127022000001489,
+      "dino_sam_s": 2.2416011000000253,
+      "semantic_cognitive_s": 0.4665397999999641,
+      "uncertainty_adviser_s": 0.011763900000005378,
+      "boundary_filter_s": 0.00020680000011452648,
+      "qwen_vlm_s": 4.751924800000097,
+      "action_execution_s": 0.05009710000013001,
+      "success_check_s": 0.00011990000007244817,
+      "total_step_s": 26.565419699999893
+    },
+    {
+      "step": 39,
+      "observation_s": 19.521853299999975,
+      "image_save_s": 0.02571499999999105,
+      "map_preprocess_s": 0.3199587999999949,
+      "dino_sam_s": 3.5587492999998176,
+      "semantic_cognitive_s": 0.511299999999892,
+      "uncertainty_adviser_s": 0.005103700000063327,
+      "boundary_filter_s": 0.0001331000000845961,
+      "qwen_vlm_s": 4.416085099999918,
+      "action_execution_s": 0.004379299999982322,
+      "success_check_s": 5.409999994299142e-05,
+      "total_step_s": 28.435614199999918
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.5301,
+      "avg_s": 0.0133,
+      "count": 40
+    },
+    "boundary_filter_s": {
+      "total_s": 0.0106,
+      "avg_s": 0.0003,
+      "count": 40
+    },
+    "dino_sam_s": {
+      "total_s": 124.3872,
+      "avg_s": 3.1097,
+      "count": 40
+    },
+    "image_save_s": {
+      "total_s": 2.5661,
+      "avg_s": 0.0642,
+      "count": 40
+    },
+    "map_preprocess_s": {
+      "total_s": 20.3027,
+      "avg_s": 0.5076,
+      "count": 40
+    },
+    "observation_s": {
+      "total_s": 774.5338,
+      "avg_s": 19.3633,
+      "count": 40
+    },
+    "qwen_vlm_s": {
+      "total_s": 246.4493,
+      "avg_s": 6.1612,
+      "count": 40
+    },
+    "semantic_cognitive_s": {
+      "total_s": 30.6988,
+      "avg_s": 0.7675,
+      "count": 40
+    },
+    "success_check_s": {
+      "total_s": 0.0026,
+      "avg_s": 0.0001,
+      "count": 40
+    },
+    "total_step_s": {
+      "total_s": 1206.5683,
+      "avg_s": 30.1642,
+      "count": 40
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 1.024,
+      "avg_s": 0.0256,
+      "count": 40
+    }
+  },
+  "metric_initial_position": [
+    6180.0,
+    3560.0,
+    20.0
+  ],
+  "metric_target_position": [
+    6231.54,
+    3693.84,
+    16.76
+  ],
+  "metric_final_position": [
+    6140.0,
+    3620.0,
+    10.0
+  ],
+  "initial_target_distance": 143.4573623067148,
+  "final_navigation_error": 117.80328857888482,
+  "trajectory_length": 570.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Go Forward",
+    "Go Left",
+    "Go Forward",
+    "Go Down",
+    "Turn Left",
+    "Go Up",
+    "Go Forward",
+    "Go Down",
+    "Go Left",
+    "Go Up",
+    "Go Down",
+    "Go Left",
+    "Go Left",
+    "Go Left",
+    "Turn Left",
+    "Go Up",
+    "Go Down",
+    "Turn Left",
+    "Go Forward",
+    "Go Right",
+    "Go Up",
+    "Go Forward",
+    "Go Forward",
+    "Go Forward",
+    "Go Left",
+    "Go Forward",
+    "Go Down",
+    "Go Left",
+    "Go Up",
+    "Go Up",
+    "Go Forward",
+    "Go Down",
+    "Go Right",
+    "Go Right",
+    "Go Down",
+    "Turn Left",
+    "Go Left",
+    "Go Up",
+    "Go Down",
+    "Go Left"
+  ],
+  "adviser_uncertainty_history": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    "Turn Left",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "adviser_cognitive_history": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "attraction_value_history": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "position": [
+    [
+      6180.0,
+      3560.0,
+      20.0
+    ],
+    [
+      6180.0,
+      3540.0,
+      20.0
+    ],
+    [
+      6200.0,
+      3540.0,
+      20.0
+    ],
+    [
+      6200.0,
+      3520.0,
+      20.0
+    ],
+    [
+      6200.0,
+      3520.0,
+      10.0
+    ],
+    [
+      6200.0,
+      3520.0,
+      10.0
+    ],
+    [
+      6200.0,
+      3520.0,
+      20.0
+    ],
+    [
+      6220.0,
+      3520.0,
+      20.0
+    ],
+    [
+      6220.0,
+      3520.0,
+      10.0
+    ],
+    [
+      6220.0,
+      3540.0,
+      10.0
+    ],
+    [
+      6220.0,
+      3540.0,
+      20.0
+    ],
+    [
+      6220.0,
+      3540.0,
+      10.0
+    ],
+    [
+      6220.0,
+      3560.0,
+      10.0
+    ],
+    [
+      6220.0,
+      3580.0,
+      10.0
+    ],
+    [
+      6220.0,
+      3600.0,
+      10.0
+    ],
+    [
+      6220.0,
+      3600.0,
+      10.0
+    ],
+    [
+      6220.0,
+      3600.0,
+      20.0
+    ],
+    [
+      6220.0,
+      3600.0,
+      10.0
+    ],
+    [
+      6220.0,
+      3600.0,
+      10.0
+    ],
+    [
+      6200.0,
+      3600.0,
+      10.0
+    ],
+    [
+      6200.0,
+      3620.0,
+      10.0
+    ],
+    [
+      6200.0,
+      3620.0,
+      20.0
+    ],
+    [
+      6180.0,
+      3620.0,
+      20.0
+    ],
+    [
+      6160.0,
+      3620.0,
+      20.0
+    ],
+    [
+      6140.0,
+      3620.0,
+      20.0
+    ],
+    [
+      6140.0,
+      3600.0,
+      20.0
+    ],
+    [
+      6120.0,
+      3600.0,
+      20.0
+    ],
+    [
+      6120.0,
+      3600.0,
+      10.0
+    ],
+    [
+      6120.0,
+      3580.0,
+      10.0
+    ],
+    [
+      6120.0,
+      3580.0,
+      20.0
+    ],
+    [
+      6120.0,
+      3580.0,
+      30.0
+    ],
+    [
+      6100.0,
+      3580.0,
+      30.0
+    ],
+    [
+      6100.0,
+      3580.0,
+      20.0
+    ],
+    [
+      6100.0,
+      3600.0,
+      20.0
+    ],
+    [
+      6100.0,
+      3620.0,
+      20.0
+    ],
+    [
+      6100.0,
+      3620.0,
+      10.0
+    ],
+    [
+      6100.0,
+      3620.0,
+      10.0
+    ],
+    [
+      6120.0,
+      3620.0,
+      10.0
+    ],
+    [
+      6120.0,
+      3620.0,
+      20.0
+    ],
+    [
+      6120.0,
+      3620.0,
+      10.0
+    ],
+    [
+      6140.0,
+      3620.0,
+      10.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      90.0
+    ],
+    [
+      0.0,
+      0.0,
+      90.0
+    ],
+    [
+      0.0,
+      0.0,
+      90.0
+    ],
+    [
+      0.0,
+      0.0,
+      90.0
+    ],
+    [
+      0.0,
+      0.0,
+      90.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -270.0
+    ],
+    [
+      0.0,
+      0.0,
+      -270.0
+    ],
+    [
+      0.0,
+      0.0,
+      -270.0
+    ],
+    [
+      0.0,
+      0.0,
+      -270.0
+    ],
+    [
+      0.0,
+      0.0,
+      -270.0
+    ]
+  ]
+}

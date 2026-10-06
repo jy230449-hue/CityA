@@ -1,0 +1,19 @@
+{
+  "mission_id": "133",
+  "target_text": "A green sign with the word Books in blue on it",
+  "target_image_path": "data\\target_image\\Scene2\\Books.png",
+  "prompt_sam_raw": "books. green sign. white arches. gray background. black border",
+  "prompt_sam": "books. green sign. white arches. black border. sign. signboard. wall sign. billboard.",
+  "scores_rel": {
+    "books": 0.1,
+    "green sign": 0.95,
+    "white arches": 0.05,
+    "black border": 0.2,
+    "sign": 0.85,
+    "signboard": 0.8,
+    "wall sign": 0.9,
+    "billboard": 0.7
+  },
+  "target_prompt_time_s": 10.0569,
+  "relevance_scores_time_s": 8.178
+}

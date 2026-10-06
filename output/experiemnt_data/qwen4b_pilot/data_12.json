@@ -1,0 +1,560 @@
+{
+  "task_index": 11,
+  "mission_id": "12",
+  "scene_id": "1",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "A red car parked in front of FamilyMart",
+  "target_image_path": "data\\target_image\\Scene1\\RedCar.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 12,
+  "if_success": 1,
+  "termination_reason": "target_visible",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 30.885,
+  "map_init_time_s": 0.0037,
+  "target_prompt_time_s": 31.4282,
+  "relevance_scores_time_s": 27.4876,
+  "task_total_time_s": 348.2423,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 19.146948400000838,
+      "image_save_s": 0.03761729999951058,
+      "map_preprocess_s": 0.019088000000010652,
+      "dino_sam_s": 2.3351633999991463,
+      "semantic_cognitive_s": 0.48123780000059924,
+      "uncertainty_adviser_s": 0.011023900000509457,
+      "boundary_filter_s": 0.0002086000004055677,
+      "qwen_vlm_s": 5.20777309999994,
+      "action_execution_s": 0.00148559999979625,
+      "success_check_s": 5.149999924469739e-05,
+      "total_step_s": 27.597953499999676
+    },
+    {
+      "step": 1,
+      "observation_s": 13.151306799999475,
+      "image_save_s": 0.031553700000586105,
+      "map_preprocess_s": 0.005583999999544176,
+      "dino_sam_s": 1.5323235000005297,
+      "semantic_cognitive_s": 0.5492285999998785,
+      "uncertainty_adviser_s": 0.0020738000002893386,
+      "boundary_filter_s": 0.0033663000003798516,
+      "qwen_vlm_s": 2.3806428000007145,
+      "action_execution_s": 0.0013575000002674642,
+      "success_check_s": 5.409999994299142e-05,
+      "total_step_s": 17.681210400000055
+    },
+    {
+      "step": 2,
+      "observation_s": 13.45086319999973,
+      "image_save_s": 0.03209239999978308,
+      "map_preprocess_s": 0.005017000000407279,
+      "dino_sam_s": 1.1368460999992749,
+      "semantic_cognitive_s": 0.44865739999931975,
+      "uncertainty_adviser_s": 0.001789699999790173,
+      "boundary_filter_s": 0.00012930000048072543,
+      "qwen_vlm_s": 2.199928799999725,
+      "action_execution_s": 0.0014212999994924758,
+      "success_check_s": 5.129999954078812e-05,
+      "total_step_s": 17.28344549999929
+    },
+    {
+      "step": 3,
+      "observation_s": 15.53591299999971,
+      "image_save_s": 0.04448049999973591,
+      "map_preprocess_s": 0.006493099999715923,
+      "dino_sam_s": 2.2476050999994186,
+      "semantic_cognitive_s": 0.029223499999716296,
+      "uncertainty_adviser_s": 0.0017410000000381842,
+      "boundary_filter_s": 0.00017690000004222384,
+      "qwen_vlm_s": 4.589897500000006,
+      "action_execution_s": 0.03349620000062714,
+      "success_check_s": 5.109999983687885e-05,
+      "total_step_s": 22.574716299999636
+    },
+    {
+      "step": 4,
+      "observation_s": 15.392891000000418,
+      "image_save_s": 0.0529724999996688,
+      "map_preprocess_s": 0.012765599999511323,
+      "dino_sam_s": 3.1889054000002943,
+      "semantic_cognitive_s": 0.3155286999999589,
+      "uncertainty_adviser_s": 0.0015998000008039526,
+      "boundary_filter_s": 0.0001329000006080605,
+      "qwen_vlm_s": 4.445094699999572,
+      "action_execution_s": 0.07875349999994796,
+      "success_check_s": 5.63000003239722e-05,
+      "total_step_s": 23.622802500000034
+    },
+    {
+      "step": 5,
+      "observation_s": 15.153635499999837,
+      "image_save_s": 0.03472650000003341,
+      "map_preprocess_s": 0.030724500000360422,
+      "dino_sam_s": 6.5987914999996065,
+      "semantic_cognitive_s": 0.5210465999998632,
+      "uncertainty_adviser_s": 0.042382200000247394,
+      "boundary_filter_s": 0.00021860000015294645,
+      "qwen_vlm_s": 5.250994100000753,
+      "action_execution_s": 0.05306819999987056,
+      "success_check_s": 6.410000059986487e-05,
+      "total_step_s": 27.981318299999657
+    },
+    {
+      "step": 6,
+      "observation_s": 13.365758199999618,
+      "image_save_s": 0.04867920000015147,
+      "map_preprocess_s": 0.005759599999692,
+      "dino_sam_s": 1.4549179000005097,
+      "semantic_cognitive_s": 0.09689200000048004,
+      "uncertainty_adviser_s": 0.0019625999993877485,
+      "boundary_filter_s": 0.0001339999998890562,
+      "qwen_vlm_s": 2.1515574000004563,
+      "action_execution_s": 0.001532299999780662,
+      "success_check_s": 4.6800000745861325e-05,
+      "total_step_s": 17.244930099999692
+    },
+    {
+      "step": 7,
+      "observation_s": 16.380167000000256,
+      "image_save_s": 0.052641700000094716,
+      "map_preprocess_s": 0.006774299999960931,
+      "dino_sam_s": 2.8658631000007517,
+      "semantic_cognitive_s": 0.2847866000001886,
+      "uncertainty_adviser_s": 0.0022967000004427973,
+      "boundary_filter_s": 0.0001692000005277805,
+      "qwen_vlm_s": 7.135637899999892,
+      "action_execution_s": 0.0011143000001538894,
+      "success_check_s": 4.839999928663019e-05,
+      "total_step_s": 26.773542300000372
+    },
+    {
+      "step": 8,
+      "observation_s": 16.13459480000074,
+      "image_save_s": 0.05968930000017281,
+      "map_preprocess_s": 0.006000899999889953,
+      "dino_sam_s": 3.3295422999999573,
+      "semantic_cognitive_s": 0.0416666000000987,
+      "uncertainty_adviser_s": 0.0017385000001013395,
+      "boundary_filter_s": 0.0001305999994656304,
+      "qwen_vlm_s": 4.647689399999763,
+      "action_execution_s": 0.021892099999604397,
+      "success_check_s": 5.94000002820394e-05,
+      "total_step_s": 24.293315800000528
+    },
+    {
+      "step": 9,
+      "observation_s": 17.715604600000006,
+      "image_save_s": 0.08677910000005795,
+      "map_preprocess_s": 0.005526799999643117,
+      "dino_sam_s": 2.4967475000003105,
+      "semantic_cognitive_s": 0.03397020000011253,
+      "uncertainty_adviser_s": 0.001922999999806052,
+      "boundary_filter_s": 0.0001343000003544148,
+      "qwen_vlm_s": 6.28956350000044,
+      "action_execution_s": 0.031416599999829486,
+      "success_check_s": 5.680000049324008e-05,
+      "total_step_s": 26.781850200000008
+    },
+    {
+      "step": 10,
+      "observation_s": 21.431225899999845,
+      "image_save_s": 0.10321060000023863,
+      "map_preprocess_s": 0.0057884999996531405,
+      "dino_sam_s": 3.0683531999993647,
+      "semantic_cognitive_s": 0.11471009999968373,
+      "uncertainty_adviser_s": 0.0015273999997589272,
+      "boundary_filter_s": 0.0002899999999499414,
+      "qwen_vlm_s": 5.154178100000536,
+      "action_execution_s": 0.0013005000000703149,
+      "success_check_s": 5.520000013348181e-05,
+      "total_step_s": 29.94887170000038
+    },
+    {
+      "step": 11,
+      "observation_s": 19.860085100000106,
+      "image_save_s": 0.028161300000647316,
+      "map_preprocess_s": 0.007686499999181251,
+      "dino_sam_s": 2.7437927000000855,
+      "semantic_cognitive_s": 0.3117333999998664,
+      "uncertainty_adviser_s": 0.0018350999998801854,
+      "boundary_filter_s": 0.0005379000003813417,
+      "qwen_vlm_s": 4.416303599999992,
+      "action_execution_s": 0.0013061999998171814,
+      "success_check_s": 5.929999952059006e-05,
+      "total_step_s": 27.389022000000296
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.2281,
+      "avg_s": 0.019,
+      "count": 12
+    },
+    "boundary_filter_s": {
+      "total_s": 0.0056,
+      "avg_s": 0.0005,
+      "count": 12
+    },
+    "dino_sam_s": {
+      "total_s": 32.9989,
+      "avg_s": 2.7499,
+      "count": 12
+    },
+    "image_save_s": {
+      "total_s": 0.6126,
+      "avg_s": 0.0511,
+      "count": 12
+    },
+    "map_preprocess_s": {
+      "total_s": 0.1172,
+      "avg_s": 0.0098,
+      "count": 12
+    },
+    "observation_s": {
+      "total_s": 196.719,
+      "avg_s": 16.3932,
+      "count": 12
+    },
+    "qwen_vlm_s": {
+      "total_s": 53.8693,
+      "avg_s": 4.4891,
+      "count": 12
+    },
+    "semantic_cognitive_s": {
+      "total_s": 3.2287,
+      "avg_s": 0.2691,
+      "count": 12
+    },
+    "success_check_s": {
+      "total_s": 0.0007,
+      "avg_s": 0.0001,
+      "count": 12
+    },
+    "total_step_s": {
+      "total_s": 289.173,
+      "avg_s": 24.0977,
+      "count": 12
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.0719,
+      "avg_s": 0.006,
+      "count": 12
+    }
+  },
+  "metric_initial_position": [
+    6360.0,
+    4160.0,
+    5.0
+  ],
+  "metric_target_position": [
+    6398.75,
+    4200.5,
+    0.26
+  ],
+  "metric_final_position": [
+    6400.0,
+    4190.0,
+    5.0
+  ],
+  "initial_target_distance": 56.251934188968114,
+  "final_navigation_error": 11.58792906433242,
+  "trajectory_length": 90.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Go Forward",
+    "Go Forward",
+    "Turn Left",
+    "Turn Right",
+    "Go Right",
+    "Go Forward",
+    "Go Forward",
+    "Turn Left",
+    "Go Forward",
+    "Go Forward",
+    "Go Forward",
+    "Go Forward"
+  ],
+  "adviser_uncertainty_history": [
+    "Turn Left",
+    "Turn Left",
+    "Turn Left",
+    "Turn Left",
+    null,
+    null,
+    null,
+    null,
+    "Turn Left",
+    "Turn Left",
+    "Turn Left",
+    "Turn Left"
+  ],
+  "adviser_cognitive_history": [
+    "Go Forward",
+    "Go Forward",
+    "Go Forward",
+    "Turn Right",
+    "Go Forward",
+    "Go Forward",
+    "Turn Left",
+    "Turn Left",
+    "Go Forward",
+    "Go Forward",
+    "Go Forward",
+    "Go Forward"
+  ],
+  "attraction_value_history": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "position": [
+    [
+      6360.0,
+      4160.0,
+      5.0
+    ],
+    [
+      6370.0,
+      4160.0,
+      5.0
+    ],
+    [
+      6380.0,
+      4160.0,
+      5.0
+    ],
+    [
+      6380.0,
+      4160.0,
+      5.0
+    ],
+    [
+      6380.0,
+      4160.0,
+      5.0
+    ],
+    [
+      6380.0,
+      4150.0,
+      5.0
+    ],
+    [
+      6390.0,
+      4150.0,
+      5.0
+    ],
+    [
+      6400.0,
+      4150.0,
+      5.0
+    ],
+    [
+      6400.0,
+      4150.0,
+      5.0
+    ],
+    [
+      6400.0,
+      4160.0,
+      5.0
+    ],
+    [
+      6400.0,
+      4170.0,
+      5.0
+    ],
+    [
+      6400.0,
+      4180.0,
+      5.0
+    ],
+    [
+      6400.0,
+      4190.0,
+      5.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ]
+  ]
+}

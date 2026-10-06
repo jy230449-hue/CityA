@@ -1,0 +1,250 @@
+{
+  "task_index": 212,
+  "mission_id": "213",
+  "scene_id": "3",
+  "mission_grade": "2",
+  "paper_difficulty": "Hard",
+  "target_text": "A sign with the Chinese words 'China Merchants Bank' and a red China Merchants Bank logo",
+  "target_image_path": "data\\target_image\\Scene3\\TheBuildingofZhaoShang.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 20,
+  "step_z": 10,
+  "step_all": 40,
+  "steps": 3,
+  "if_success": 0,
+  "termination_reason": "llm_stop",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 58.9735,
+  "map_init_time_s": 0.5777,
+  "target_prompt_time_s": 15.9691,
+  "relevance_scores_time_s": 6.3011,
+  "task_total_time_s": 149.3474,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 19.936499100003857,
+      "image_save_s": 0.02768649999052286,
+      "map_preprocess_s": 0.2568740999995498,
+      "dino_sam_s": 1.9648211000021547,
+      "semantic_cognitive_s": 0.4698333999986062,
+      "uncertainty_adviser_s": 0.036101700010476634,
+      "boundary_filter_s": 0.002757700000074692,
+      "qwen_vlm_s": 3.1007701000053203,
+      "action_execution_s": 0.0014869000006001443,
+      "success_check_s": 5.3099996875971556e-05,
+      "total_step_s": 26.016221199999563
+    },
+    {
+      "step": 1,
+      "observation_s": 15.384875600007945,
+      "image_save_s": 0.04124920000322163,
+      "map_preprocess_s": 0.2609331999992719,
+      "dino_sam_s": 1.3709127999900375,
+      "semantic_cognitive_s": 0.136426000011852,
+      "uncertainty_adviser_s": 0.004314200006774627,
+      "boundary_filter_s": 0.00024380000832024962,
+      "qwen_vlm_s": 3.7003415999934077,
+      "action_execution_s": 0.0014755000011064112,
+      "success_check_s": 4.850000550504774e-05,
+      "total_step_s": 20.909745400000247
+    },
+    {
+      "step": 2,
+      "observation_s": 23.454235600001994,
+      "image_save_s": 0.03335500000684988,
+      "map_preprocess_s": 0.6834549000050174,
+      "dino_sam_s": 7.636661800002912,
+      "semantic_cognitive_s": 0.5572750999999698,
+      "uncertainty_adviser_s": 0.0040690000023460016,
+      "boundary_filter_s": 0.00025120000645983964,
+      "qwen_vlm_s": 9.293264899999485,
+      "action_execution_s": 0.04767689999425784,
+      "success_check_s": 5.640000745188445e-05,
+      "total_step_s": 41.817541500000516
+    },
+    {
+      "step": 3,
+      "observation_s": 13.687753899997915,
+      "image_save_s": 0.02948179999657441,
+      "map_preprocess_s": 0.37562160000379663,
+      "dino_sam_s": 1.7543476999999257,
+      "semantic_cognitive_s": 0.13974420000158716,
+      "uncertainty_adviser_s": 0.005311800006893463,
+      "boundary_filter_s": 0.0001357000001007691,
+      "qwen_vlm_s": 21.573148199997377,
+      "total_step_s": 37.609452499993495
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.0506,
+      "avg_s": 0.0169,
+      "count": 3
+    },
+    "boundary_filter_s": {
+      "total_s": 0.0034,
+      "avg_s": 0.0008,
+      "count": 4
+    },
+    "dino_sam_s": {
+      "total_s": 12.7267,
+      "avg_s": 3.1817,
+      "count": 4
+    },
+    "image_save_s": {
+      "total_s": 0.1318,
+      "avg_s": 0.0329,
+      "count": 4
+    },
+    "map_preprocess_s": {
+      "total_s": 1.5769,
+      "avg_s": 0.3942,
+      "count": 4
+    },
+    "observation_s": {
+      "total_s": 72.4634,
+      "avg_s": 18.1158,
+      "count": 4
+    },
+    "qwen_vlm_s": {
+      "total_s": 37.6675,
+      "avg_s": 9.4169,
+      "count": 4
+    },
+    "semantic_cognitive_s": {
+      "total_s": 1.3033,
+      "avg_s": 0.3258,
+      "count": 4
+    },
+    "success_check_s": {
+      "total_s": 0.0002,
+      "avg_s": 0.0001,
+      "count": 3
+    },
+    "total_step_s": {
+      "total_s": 126.353,
+      "avg_s": 31.5882,
+      "count": 4
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.0498,
+      "avg_s": 0.0124,
+      "count": 4
+    }
+  },
+  "metric_initial_position": [
+    6030.0,
+    3560.0,
+    20.0
+  ],
+  "metric_target_position": [
+    5918.42,
+    3834.9,
+    134.58
+  ],
+  "metric_final_position": [
+    6030.0,
+    3580.0,
+    20.0
+  ],
+  "initial_target_distance": 318.03880706605605,
+  "final_navigation_error": 300.91972816683193,
+  "trajectory_length": 40.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Go Forward",
+    "Go Down",
+    "Go Up"
+  ],
+  "adviser_uncertainty_history": [
+    null,
+    null,
+    null
+  ],
+  "adviser_cognitive_history": [
+    null,
+    "Go Down",
+    "Go Up"
+  ],
+  "attraction_value_history": [
+    0.0,
+    0.94,
+    0.94
+  ],
+  "position": [
+    [
+      6030.0,
+      3560.0,
+      20.0
+    ],
+    [
+      6030.0,
+      3580.0,
+      20.0
+    ],
+    [
+      6030.0,
+      3580.0,
+      10.0
+    ],
+    [
+      6030.0,
+      3580.0,
+      20.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ]
+  ]
+}

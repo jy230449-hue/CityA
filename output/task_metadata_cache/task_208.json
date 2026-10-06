@@ -1,0 +1,20 @@
+{
+  "mission_id": "208",
+  "target_text": "A blue sign with Bank of Communications written in Chinese next to a yellow sign with CUTTYSARK printed in black",
+  "target_image_path": "data\\target_image\\Scene3\\SignBoardofBCommunication.png",
+  "prompt_sam_raw": "blue sign. white chinese characters. circular logo. glass windows. green bushes.",
+  "prompt_sam": "blue sign. white chinese characters. circular logo. glass windows. green bushes. sign. signboard. wall sign. billboard.",
+  "scores_rel": {
+    "blue sign": 0.95,
+    "white chinese characters": 0.95,
+    "circular logo": 0.1,
+    "glass windows": 0.05,
+    "green bushes": 0.02,
+    "sign": 0.85,
+    "signboard": 0.8,
+    "wall sign": 0.9,
+    "billboard": 0.3
+  },
+  "target_prompt_time_s": 5.304,
+  "relevance_scores_time_s": 11.3802
+}

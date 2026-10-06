@@ -1,0 +1,21 @@
+{
+  "mission_id": "196",
+  "target_text": "A sign perpendicular to the building with the word 'Shanghai Bank'in Chinese black characters next to the Agricultural Bank of China logo",
+  "target_image_path": "data\\target_image\\Scene3\\BankofShanghai.png",
+  "prompt_sam_raw": "shanghai bank sign. yellow triangle logo. blue arrow logo. tall building in background. glass facade building. vertical banner. chinese characters. english text \"bank of shanghai\". modern urban setting. shadow on building",
+  "prompt_sam": "shanghai bank sign. yellow triangle logo. blue arrow logo. tall building in background. glass facade building. vertical banner. chinese characters. modern urban setting. shadow on building. sign.",
+  "scores_rel": {
+    "shanghai bank sign": 0.95,
+    "yellow triangle logo": 0.85,
+    "blue arrow logo": 0.1,
+    "tall building in background": 0.6,
+    "glass facade building": 0.7,
+    "vertical banner": 0.9,
+    "chinese characters": 0.98,
+    "modern urban setting": 0.75,
+    "shadow on building": 0.3,
+    "sign": 0.97
+  },
+  "target_prompt_time_s": 16.7136,
+  "relevance_scores_time_s": 9.5541
+}

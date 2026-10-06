@@ -322,20 +322,82 @@ class AirsimAgent:
         # todo
         # "1"rgb “0” depth
 
-        # 获取rgb
-        responses = self.client.simGetImages(
-            [airsim.ImageRequest(1, airsim.ImageType.Scene, False, False)])  # if image_type == 0:
-        response = responses[0]
-        img1d = np.frombuffer(response.image_data_uint8, dtype=np.uint8)
-        img_out1 = img1d.reshape(response.height, response.width, 3)
+        # ==================== 原代码（保留，仅注释） ====================
+        # # 获取rgb
+        # responses = self.client.simGetImages(
+        #     [airsim.ImageRequest(1, airsim.ImageType.Scene, False, False)])  # if image_type == 0:
+        # response = responses[0]
+        # img1d = np.frombuffer(response.image_data_uint8, dtype=np.uint8)
+        # img_out1 = img1d.reshape(response.height, response.width, 3)
+        #
+        # # 获取depth
+        # responses2 = self.client.simGetImages(
+        #     [airsim.ImageRequest(0, airsim.ImageType.DepthPlanar, True, False)])
+        # img_out2 = np.array(responses2[0].image_data_float).reshape(
+        #     responses2[0].height,
+        #     responses2[0].width
+        # )
+        # img_depth_vis = img_out2 / 100
+        # img_depth_vis[img_depth_vis > 1] = 1.
+        # img_out2 = img_depth_vis * 100
+        #
+        # return img_out1, img_out2
+        # ===============================================================
 
-        # 获取depth
-        responses2 = self.client.simGetImages(
-            [airsim.ImageRequest(0, airsim.ImageType.DepthPlanar, True, False)])
-        img_out2 = np.array(responses2[0].image_data_float).reshape(responses2[0].height, responses2[0].width)
+        # 2026-10-04 修改：RGB + Depth 合并为一次 AirSim RPC 请求
+        obs_start = time.perf_counter()
+
+        rpc_start = time.perf_counter()
+        responses = self.client.simGetImages([
+            airsim.ImageRequest(
+                1,
+                airsim.ImageType.Scene,
+                False,
+                False
+            ),
+            airsim.ImageRequest(
+                0,
+                airsim.ImageType.DepthPlanar,
+                True,
+                False
+            ),
+        ])
+
+        print(
+            f"[AIRSIM] simGetImages RGB+Depth = "
+            f"{time.perf_counter() - rpc_start:.2f}s"
+        )
+
+        # RGB
+        rgb_response = responses[0]
+        img1d = np.frombuffer(
+            rgb_response.image_data_uint8,
+            dtype=np.uint8
+        )
+        img_out1 = img1d.reshape(
+            rgb_response.height,
+            rgb_response.width,
+            3
+        )
+
+        # Depth
+        depth_response = responses[1]
+        img_out2 = np.array(
+            depth_response.image_data_float,
+            dtype=np.float32
+        ).reshape(
+            depth_response.height,
+            depth_response.width
+        )
+
         img_depth_vis = img_out2 / 100
         img_depth_vis[img_depth_vis > 1] = 1.
         img_out2 = img_depth_vis * 100
+
+        print(
+            f"[AIRSIM] get_observation total = "
+            f"{time.perf_counter() - obs_start:.2f}s"
+        )
 
         return img_out1, img_out2
 

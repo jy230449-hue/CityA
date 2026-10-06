@@ -1,0 +1,53 @@
+==============================================================================
+CityAVOS FULL PROFILE SUMMARY
+==============================================================================
+
+High-level
+Observation              avg= 21.348s | max= 23.260s | min= 18.170s | n=5
+DINO+SAM total           avg=  5.644s | max= 11.790s | min=  3.080s | n=5
+Semantic total           avg=  0.710s | max=  3.180s | min=  0.040s | n=5
+Qwen                     avg=  6.944s | max=  8.070s | min=  6.250s | n=5
+Action                   avg=  1.024s | max=  1.070s | min=  1.000s | n=5
+Step total               avg= 10.687s | max= 43.040s | min=  0.025s | n=20
+
+DINO / SAM / CUDA
+DINO preprocess          avg=  0.372s | max=  0.457s | min=  0.257s | n=5
+DINO inference           avg=  1.797s | max=  4.351s | min=  0.711s | n=5
+DINO postprocess         avg=  0.083s | max=  0.115s | min=  0.005s | n=5
+SAM set_image            avg=  1.132s | max=  1.568s | min=  0.810s | n=5
+SAM predict              avg=  0.058s | max=  0.175s | min=  0.013s | n=5
+CUDA empty_cache         avg=  2.144s | max=  6.042s | min=  0.747s | n=5
+
+Semantic breakdown
+SEM score_match          avg=  0.001s | max=  0.003s | min=  0.000s | n=5
+SEM overlay              avg=  0.019s | max=  0.067s | min=  0.004s | n=5
+SEM update_map           avg=  0.671s | max=  3.174s | min=  0.025s | n=5
+SEM cluster              avg=  0.020s | max=  0.077s | min=  0.003s | n=5
+SEM camera               avg=  0.001s | max=  0.004s | min=  0.000s | n=5
+SEM read_depth           avg=  0.024s | max=  0.072s | min=  0.009s | n=5
+SEM depth_to_world       avg=  0.005s | max=  0.012s | min=  0.003s | n=5
+SEM add_label            avg=  0.640s | max=  3.144s | min=  0.006s | n=5
+
+GPU sampling
+min free VRAM          277 MiB
+max used VRAM          23876 MiB
+max GPU util           99%
+max power              174.5 W
+
+Bottleneck ranking by worst observed latency
+ 1. Observation              max= 23.260s | avg= 21.348s
+ 2. Qwen                     max=  8.070s | avg=  6.944s
+ 3. CUDA empty_cache         max=  6.042s | avg=  2.144s
+ 4. DINO inference           max=  4.351s | avg=  1.797s
+ 5. SEM update_map           max=  3.174s | avg=  0.671s
+ 6. SEM add_label            max=  3.144s | avg=  0.640s
+ 7. SAM set_image            max=  1.568s | avg=  1.132s
+ 8. Action                   max=  1.070s | avg=  1.024s
+ 9. SEM cluster              max=  0.077s | avg=  0.020s
+10. SEM depth_to_world       max=  0.012s | avg=  0.005s
+
+Automatic safety notes
+- GPU free VRAM dropped below 2 GiB: DO NOT raise Qwen above 8GiB yet.
+- CUDA empty_cache itself is expensive: final version should reduce/relocate cache clears.
+- update_semantic_map has a real spike: optimize the dominant SEM INNER substage.
+- Qwen is slowed by CPU offload; VRAM headroom decides whether it can receive more GPU memory.

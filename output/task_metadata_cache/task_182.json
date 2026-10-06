@@ -1,0 +1,21 @@
+{
+  "mission_id": "182",
+  "target_text": "A blue poster with the mirrored words MILD ESSENCE above a sign that reads Bank of Communications",
+  "target_image_path": "data\\target_image\\Scene3\\BlueSignBoard.png",
+  "prompt_sam_raw": "billboard. satellite. clouds. text \"mild essence\". text \"mild seven\". box-like object. blue background. white text. small japanese characters. horizontal lines (tiles)",
+  "prompt_sam": "billboard. satellite. clouds. box-like object. small japanese characters. horizontal lines tiles. poster. wall poster. sign. signboard.",
+  "scores_rel": {
+    "billboard": 0.95,
+    "satellite": 0.1,
+    "clouds": 0.3,
+    "box-like object": 0.05,
+    "small japanese characters": 0.6,
+    "horizontal lines tiles": 0.0,
+    "poster": 0.98,
+    "wall poster": 0.97,
+    "sign": 0.85,
+    "signboard": 0.8
+  },
+  "target_prompt_time_s": 12.2141,
+  "relevance_scores_time_s": 15.9639
+}

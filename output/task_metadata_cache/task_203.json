@@ -1,0 +1,21 @@
+{
+  "mission_id": "203",
+  "target_text": "A sign with the words Bank of China in Chinese and English and a Bank of China logo, and a car sign next to it.",
+  "target_image_path": "data\\target_image\\Scene3\\TheBuildingofBC.png",
+  "prompt_sam_raw": "orange circular logo with square inside. chinese characters \"中国银行\". english text \"bank of china\". vertical gray stone columns. reflective glass windows. yellow banner on left side.",
+  "prompt_sam": "orange circular logo with square inside. chinese characters 中国银行. vertical gray stone columns. reflective glass windows. yellow banner on left side. sign. signboard. wall sign. billboard. car.",
+  "scores_rel": {
+    "orange circular logo with square inside": 0.95,
+    "chinese characters 中国银行": 1.0,
+    "vertical gray stone columns": 0.3,
+    "reflective glass windows": 0.2,
+    "yellow banner on left side": 0.1,
+    "sign": 0.85,
+    "signboard": 0.9,
+    "wall sign": 0.8,
+    "billboard": 0.75,
+    "car": 0.4
+  },
+  "target_prompt_time_s": 46.9111,
+  "relevance_scores_time_s": 20.5401
+}

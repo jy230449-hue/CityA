@@ -1,0 +1,21 @@
+{
+  "mission_id": "97",
+  "target_text": "A yellow sign with the word Books on it",
+  "target_image_path": "data\\target_image\\Scene2\\Books2.png",
+  "prompt_sam_raw": "books. yellow sign. gray building facade. black cross-shaped frame. large windows. double doors. blue roof edge. horizontal black stripe. light green lettering. rectangular storefront",
+  "prompt_sam": "books. yellow sign. gray building facade. large windows. double doors. blue roof edge. horizontal black stripe. light green lettering. rectangular storefront. sign.",
+  "scores_rel": {
+    "books": 0.1,
+    "yellow sign": 0.95,
+    "gray building facade": 0.05,
+    "large windows": 0.05,
+    "double doors": 0.05,
+    "blue roof edge": 0.05,
+    "horizontal black stripe": 0.1,
+    "light green lettering": 0.85,
+    "rectangular storefront": 0.2,
+    "sign": 0.9
+  },
+  "target_prompt_time_s": 9.7649,
+  "relevance_scores_time_s": 9.9752
+}

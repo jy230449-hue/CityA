@@ -1,0 +1,177 @@
+{
+  "task_index": 89,
+  "mission_id": "90",
+  "scene_id": "2",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "A black sign with the word EXCHANGE in blue on it",
+  "target_image_path": "data\\target_image\\Scene2\\Exchange.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 1,
+  "if_success": 0,
+  "termination_reason": "llm_stop",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 109.8584,
+  "map_init_time_s": 0.1102,
+  "target_prompt_time_s": 15.4263,
+  "relevance_scores_time_s": 3.7413,
+  "task_total_time_s": 114.3206,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 25.547416899999916,
+      "image_save_s": 0.026746900000034657,
+      "map_preprocess_s": 0.13240589999986696,
+      "dino_sam_s": 8.235949299999447,
+      "semantic_cognitive_s": 0.1624138999995921,
+      "uncertainty_adviser_s": 0.001360799999019946,
+      "boundary_filter_s": 0.0003056999994441867,
+      "qwen_vlm_s": 12.979425800000172,
+      "action_execution_s": 0.07807320000028994,
+      "success_check_s": 0.00011670000094454736,
+      "total_step_s": 47.25226350000048
+    },
+    {
+      "step": 1,
+      "observation_s": 13.390107200000784,
+      "image_save_s": 0.025108600000748993,
+      "map_preprocess_s": 0.08671200000026147,
+      "dino_sam_s": 2.1957364000008965,
+      "semantic_cognitive_s": 1.2128719999982422,
+      "uncertainty_adviser_s": 0.048255499999868334,
+      "boundary_filter_s": 0.0003586000002542278,
+      "qwen_vlm_s": 29.99017019999883,
+      "total_step_s": 47.149998799999594
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.0781,
+      "avg_s": 0.0781,
+      "count": 1
+    },
+    "boundary_filter_s": {
+      "total_s": 0.0007,
+      "avg_s": 0.0003,
+      "count": 2
+    },
+    "dino_sam_s": {
+      "total_s": 10.4317,
+      "avg_s": 5.2158,
+      "count": 2
+    },
+    "image_save_s": {
+      "total_s": 0.0519,
+      "avg_s": 0.0259,
+      "count": 2
+    },
+    "map_preprocess_s": {
+      "total_s": 0.2191,
+      "avg_s": 0.1096,
+      "count": 2
+    },
+    "observation_s": {
+      "total_s": 38.9375,
+      "avg_s": 19.4688,
+      "count": 2
+    },
+    "qwen_vlm_s": {
+      "total_s": 42.9696,
+      "avg_s": 21.4848,
+      "count": 2
+    },
+    "semantic_cognitive_s": {
+      "total_s": 1.3753,
+      "avg_s": 0.6876,
+      "count": 2
+    },
+    "success_check_s": {
+      "total_s": 0.0001,
+      "avg_s": 0.0001,
+      "count": 1
+    },
+    "total_step_s": {
+      "total_s": 94.4023,
+      "avg_s": 47.2011,
+      "count": 2
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.0496,
+      "avg_s": 0.0248,
+      "count": 2
+    }
+  },
+  "metric_initial_position": [
+    6870.0,
+    5250.0,
+    10.0
+  ],
+  "metric_target_position": [
+    6824.95,
+    5377.2,
+    7.3
+  ],
+  "metric_final_position": [
+    6870.0,
+    5240.0,
+    10.0
+  ],
+  "initial_target_distance": 134.96900570130896,
+  "final_navigation_error": 144.43210342579647,
+  "trajectory_length": 10.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Go Forward"
+  ],
+  "adviser_uncertainty_history": [
+    null
+  ],
+  "adviser_cognitive_history": [
+    null
+  ],
+  "attraction_value_history": [
+    0.0
+  ],
+  "position": [
+    [
+      6870.0,
+      5250.0,
+      10.0
+    ],
+    [
+      6870.0,
+      5240.0,
+      10.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      90.0
+    ],
+    [
+      0.0,
+      0.0,
+      90.0
+    ]
+  ]
+}

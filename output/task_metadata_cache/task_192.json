@@ -1,0 +1,21 @@
+{
+  "mission_id": "192",
+  "target_text": "A purple sign that is perpendicular to the building and is located below a red poster with a picture of tea leaves and the words 'Tea Ceremony' in Chinese and 'When I do well in the exam' in English.",
+  "target_image_path": "data\\target_image\\Scene3\\SportsBoard3.png",
+  "prompt_sam_raw": "tall glass building. vertical purple banner. silhouettes of three people on banner. white structural beams. reflective windows. metal railing at bottom right. light source behind figures on banner. dark tree branches at top of banner. horizontal window lines. shadowed interior visible through glass",
+  "prompt_sam": "tall glass building. vertical purple banner. silhouettes of three people on banner. white structural beams. reflective windows. metal railing at bottom right. light source behind figures on banner. horizontal window lines. shadowed interior visible through glass. poster.",
+  "scores_rel": {
+    "tall glass building": 0.1,
+    "vertical purple banner": 0.95,
+    "silhouettes of three people on banner": 0.8,
+    "white structural beams": 0.05,
+    "reflective windows": 0.05,
+    "metal railing at bottom right": 0.05,
+    "light source behind figures on banner": 0.75,
+    "horizontal window lines": 0.05,
+    "shadowed interior visible through glass": 0.05,
+    "poster": 0.6
+  },
+  "target_prompt_time_s": 10.425,
+  "relevance_scores_time_s": 2.7281
+}

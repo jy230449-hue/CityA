@@ -1,0 +1,21 @@
+{
+  "mission_id": "186",
+  "target_text": "A sign with the words 'Hua Xia Bank' in Chinese and English and the Hua Xia Bank logo painted on it is next to a blue sign with the words 'Bank of Communications' in white Chinese that is perpendicular to the building.",
+  "target_image_path": "data\\target_image\\Scene3\\TheBuildingofHXB2.png",
+  "prompt_sam_raw": "huaxia bank sign. large green logo. chinese characters \"华夏银行\". wooden textured background. blue-tinted windows below. white capital letters \"HUAXIA BANK\". stylized \"c\" logo. building facade. horizontal signboard. glass window grid",
+  "prompt_sam": "huaxia bank sign. large green logo. chinese characters 华夏银行. blue-tinted windows below. white capital letters huaxia bank. stylized c logo. building facade. horizontal signboard. glass window grid. sign.",
+  "scores_rel": {
+    "huaxia bank sign": 0.95,
+    "large green logo": 0.85,
+    "chinese characters 华夏银行": 0.9,
+    "blue-tinted windows below": 0.6,
+    "white capital letters huaxia bank": 0.88,
+    "stylized c logo": 0.82,
+    "building facade": 0.75,
+    "horizontal signboard": 0.92,
+    "glass window grid": 0.4,
+    "sign": 0.97
+  },
+  "target_prompt_time_s": 12.1884,
+  "relevance_scores_time_s": 7.2675
+}

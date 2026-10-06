@@ -1,0 +1,176 @@
+{
+  "task_index": 160,
+  "mission_id": "161",
+  "scene_id": "2",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "A blue sign with the word PARKING on it",
+  "target_image_path": "data\\target_image\\Scene2\\Parking.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 1,
+  "if_success": 0,
+  "termination_reason": "llm_stop",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 58.9735,
+  "map_init_time_s": 0.1215,
+  "target_prompt_time_s": 24.6407,
+  "relevance_scores_time_s": 11.0039,
+  "task_total_time_s": 133.1737,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 19.845737000003282,
+      "image_save_s": 0.08493019999878015,
+      "map_preprocess_s": 0.11919849999685539,
+      "dino_sam_s": 4.182037200000195,
+      "semantic_cognitive_s": 0.055245399998966604,
+      "uncertainty_adviser_s": 0.004034900004626252,
+      "boundary_filter_s": 0.0002682999984244816,
+      "qwen_vlm_s": 2.772021400000085,
+      "action_execution_s": 0.0011526000016601756,
+      "success_check_s": 0.00015470000653294846,
+      "total_step_s": 27.17924270000367
+    },
+    {
+      "step": 1,
+      "observation_s": 22.915293799997016,
+      "image_save_s": 0.09974439999496099,
+      "map_preprocess_s": 0.11530969999876106,
+      "dino_sam_s": 7.622405999994953,
+      "semantic_cognitive_s": 0.17980920000263723,
+      "uncertainty_adviser_s": 0.03333540000312496,
+      "boundary_filter_s": 0.0002091999995172955,
+      "qwen_vlm_s": 38.41925129999436,
+      "total_step_s": 69.64662340000359
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.0012,
+      "avg_s": 0.0012,
+      "count": 1
+    },
+    "boundary_filter_s": {
+      "total_s": 0.0005,
+      "avg_s": 0.0002,
+      "count": 2
+    },
+    "dino_sam_s": {
+      "total_s": 11.8044,
+      "avg_s": 5.9022,
+      "count": 2
+    },
+    "image_save_s": {
+      "total_s": 0.1847,
+      "avg_s": 0.0923,
+      "count": 2
+    },
+    "map_preprocess_s": {
+      "total_s": 0.2345,
+      "avg_s": 0.1173,
+      "count": 2
+    },
+    "observation_s": {
+      "total_s": 42.761,
+      "avg_s": 21.3805,
+      "count": 2
+    },
+    "qwen_vlm_s": {
+      "total_s": 41.1913,
+      "avg_s": 20.5956,
+      "count": 2
+    },
+    "semantic_cognitive_s": {
+      "total_s": 0.2351,
+      "avg_s": 0.1175,
+      "count": 2
+    },
+    "success_check_s": {
+      "total_s": 0.0002,
+      "avg_s": 0.0002,
+      "count": 1
+    },
+    "total_step_s": {
+      "total_s": 96.8259,
+      "avg_s": 48.4129,
+      "count": 2
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.0374,
+      "avg_s": 0.0187,
+      "count": 2
+    }
+  },
+  "metric_initial_position": [
+    6710.0,
+    5270.0,
+    5.0
+  ],
+  "metric_target_position": [
+    6786.35,
+    5363.1,
+    5.95
+  ],
+  "metric_final_position": [
+    6700.0,
+    5270.0,
+    5.0
+  ],
+  "initial_target_distance": 120.40695577914144,
+  "final_navigation_error": 126.98360130347592,
+  "trajectory_length": 10.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Go Forward"
+  ],
+  "adviser_uncertainty_history": [
+    null
+  ],
+  "adviser_cognitive_history": [
+    null
+  ],
+  "attraction_value_history": [
+    0.0
+  ],
+  "position": [
+    [
+      6710.0,
+      5270.0,
+      5.0
+    ],
+    [
+      6700.0,
+      5270.0,
+      5.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ]
+  ]
+}

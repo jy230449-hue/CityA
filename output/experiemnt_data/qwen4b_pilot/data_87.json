@@ -1,0 +1,177 @@
+{
+  "task_index": 86,
+  "mission_id": "87",
+  "scene_id": "2",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "A white sign with NYC written on it",
+  "target_image_path": "data\\target_image\\Scene2\\NYC.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 1,
+  "if_success": 0,
+  "termination_reason": "llm_stop",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 109.8584,
+  "map_init_time_s": 0.1158,
+  "target_prompt_time_s": 10.0255,
+  "relevance_scores_time_s": 9.6741,
+  "task_total_time_s": 113.1839,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 15.897322499999973,
+      "image_save_s": 0.09368519999952696,
+      "map_preprocess_s": 0.06046719999994821,
+      "dino_sam_s": 6.569135799999458,
+      "semantic_cognitive_s": 0.09010699999998906,
+      "uncertainty_adviser_s": 0.00503000000026077,
+      "boundary_filter_s": 0.00014150000060908496,
+      "qwen_vlm_s": 8.874228499999845,
+      "action_execution_s": 0.005551899999773013,
+      "success_check_s": 6.170000051497482e-05,
+      "total_step_s": 31.806318400000237
+    },
+    {
+      "step": 1,
+      "observation_s": 13.01458619999994,
+      "image_save_s": 0.06643800000074407,
+      "map_preprocess_s": 0.09712320000016916,
+      "dino_sam_s": 1.8904098000002705,
+      "semantic_cognitive_s": 1.7644432000006418,
+      "uncertainty_adviser_s": 0.030147299999953248,
+      "boundary_filter_s": 0.00020810000023629982,
+      "qwen_vlm_s": 43.99022119999972,
+      "total_step_s": 61.191812999999456
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.0056,
+      "avg_s": 0.0056,
+      "count": 1
+    },
+    "boundary_filter_s": {
+      "total_s": 0.0003,
+      "avg_s": 0.0002,
+      "count": 2
+    },
+    "dino_sam_s": {
+      "total_s": 8.4595,
+      "avg_s": 4.2298,
+      "count": 2
+    },
+    "image_save_s": {
+      "total_s": 0.1601,
+      "avg_s": 0.0801,
+      "count": 2
+    },
+    "map_preprocess_s": {
+      "total_s": 0.1576,
+      "avg_s": 0.0788,
+      "count": 2
+    },
+    "observation_s": {
+      "total_s": 28.9119,
+      "avg_s": 14.456,
+      "count": 2
+    },
+    "qwen_vlm_s": {
+      "total_s": 52.8644,
+      "avg_s": 26.4322,
+      "count": 2
+    },
+    "semantic_cognitive_s": {
+      "total_s": 1.8546,
+      "avg_s": 0.9273,
+      "count": 2
+    },
+    "success_check_s": {
+      "total_s": 0.0001,
+      "avg_s": 0.0001,
+      "count": 1
+    },
+    "total_step_s": {
+      "total_s": 92.9981,
+      "avg_s": 46.4991,
+      "count": 2
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.0352,
+      "avg_s": 0.0176,
+      "count": 2
+    }
+  },
+  "metric_initial_position": [
+    6870.0,
+    5250.0,
+    10.0
+  ],
+  "metric_target_position": [
+    6855.4,
+    5371.95,
+    7.75
+  ],
+  "metric_final_position": [
+    6870.0,
+    5240.0,
+    10.0
+  ],
+  "initial_target_distance": 122.8414628698306,
+  "final_navigation_error": 132.77433863514426,
+  "trajectory_length": 10.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Go Forward"
+  ],
+  "adviser_uncertainty_history": [
+    null
+  ],
+  "adviser_cognitive_history": [
+    null
+  ],
+  "attraction_value_history": [
+    0.0
+  ],
+  "position": [
+    [
+      6870.0,
+      5250.0,
+      10.0
+    ],
+    [
+      6870.0,
+      5240.0,
+      10.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      90.0
+    ],
+    [
+      0.0,
+      0.0,
+      90.0
+    ]
+  ]
+}

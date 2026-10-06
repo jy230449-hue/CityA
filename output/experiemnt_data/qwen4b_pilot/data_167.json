@@ -1,0 +1,316 @@
+{
+  "task_index": 166,
+  "mission_id": "167",
+  "scene_id": "2",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "A police car parked in a parking lot with an empty parking space next to it",
+  "target_image_path": "data\\target_image\\Scene2\\PoliceCar2.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 5,
+  "if_success": 0,
+  "termination_reason": "llm_stop",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 58.9735,
+  "map_init_time_s": 0.0939,
+  "target_prompt_time_s": 20.703,
+  "relevance_scores_time_s": 3.4513,
+  "task_total_time_s": 185.1996,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 15.241907399999036,
+      "image_save_s": 0.06329810000170255,
+      "map_preprocess_s": 0.029342899993935134,
+      "dino_sam_s": 7.144929200003389,
+      "semantic_cognitive_s": 0.18474769999738783,
+      "uncertainty_adviser_s": 0.030905899999197572,
+      "boundary_filter_s": 0.0002066999950329773,
+      "qwen_vlm_s": 10.918339999996533,
+      "action_execution_s": 0.07072219999827212,
+      "success_check_s": 5.490000330610201e-05,
+      "total_step_s": 33.9727217000036
+    },
+    {
+      "step": 1,
+      "observation_s": 22.26874630000384,
+      "image_save_s": 0.07759119999536779,
+      "map_preprocess_s": 0.04772090000187745,
+      "dino_sam_s": 7.225450300000375,
+      "semantic_cognitive_s": 0.210430200000701,
+      "uncertainty_adviser_s": 0.013467700002365746,
+      "boundary_filter_s": 0.00020640000002458692,
+      "qwen_vlm_s": 7.369694900000468,
+      "action_execution_s": 0.06539779999729944,
+      "success_check_s": 5.450000026030466e-05,
+      "total_step_s": 37.53330379999534
+    },
+    {
+      "step": 2,
+      "observation_s": 11.63322089999565,
+      "image_save_s": 0.02892559999600053,
+      "map_preprocess_s": 0.029634400001668837,
+      "dino_sam_s": 1.3131317000006675,
+      "semantic_cognitive_s": 0.06191690000559902,
+      "uncertainty_adviser_s": 0.0014213999966159463,
+      "boundary_filter_s": 0.00013509999553207308,
+      "qwen_vlm_s": 2.0113084000040544,
+      "action_execution_s": 0.08844930000486784,
+      "success_check_s": 5.989999772282317e-05,
+      "total_step_s": 15.206091899999592
+    },
+    {
+      "step": 3,
+      "observation_s": 12.390678299998399,
+      "image_save_s": 0.028294700001424644,
+      "map_preprocess_s": 0.03497270000661956,
+      "dino_sam_s": 1.35174520000146,
+      "semantic_cognitive_s": 0.0642844000030891,
+      "uncertainty_adviser_s": 0.001254700000572484,
+      "boundary_filter_s": 0.0001300999938393943,
+      "qwen_vlm_s": 2.9510441000020364,
+      "action_execution_s": 0.0016245000006165355,
+      "success_check_s": 5.2600000344682485e-05,
+      "total_step_s": 16.94361729999946
+    },
+    {
+      "step": 4,
+      "observation_s": 13.310128700002679,
+      "image_save_s": 0.022516600001836196,
+      "map_preprocess_s": 0.02954679999675136,
+      "dino_sam_s": 1.442367199997534,
+      "semantic_cognitive_s": 0.16314860000420595,
+      "uncertainty_adviser_s": 0.04537949999939883,
+      "boundary_filter_s": 0.00020759999461006373,
+      "qwen_vlm_s": 2.82690939999884,
+      "action_execution_s": 0.004594300000462681,
+      "success_check_s": 5.230000533629209e-05,
+      "total_step_s": 17.94551969999884
+    },
+    {
+      "step": 5,
+      "observation_s": 11.981525000002875,
+      "image_save_s": 0.030090300002484582,
+      "map_preprocess_s": 0.030256300000473857,
+      "dino_sam_s": 1.2506365000008373,
+      "semantic_cognitive_s": 0.03900879999855533,
+      "uncertainty_adviser_s": 0.0013621000034618191,
+      "boundary_filter_s": 0.00015690000145696104,
+      "qwen_vlm_s": 25.707432100003643,
+      "total_step_s": 39.04569380000612
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.2308,
+      "avg_s": 0.0462,
+      "count": 5
+    },
+    "boundary_filter_s": {
+      "total_s": 0.001,
+      "avg_s": 0.0002,
+      "count": 6
+    },
+    "dino_sam_s": {
+      "total_s": 19.7283,
+      "avg_s": 3.288,
+      "count": 6
+    },
+    "image_save_s": {
+      "total_s": 0.2507,
+      "avg_s": 0.0418,
+      "count": 6
+    },
+    "map_preprocess_s": {
+      "total_s": 0.2015,
+      "avg_s": 0.0336,
+      "count": 6
+    },
+    "observation_s": {
+      "total_s": 86.8262,
+      "avg_s": 14.471,
+      "count": 6
+    },
+    "qwen_vlm_s": {
+      "total_s": 51.7847,
+      "avg_s": 8.6308,
+      "count": 6
+    },
+    "semantic_cognitive_s": {
+      "total_s": 0.7235,
+      "avg_s": 0.1206,
+      "count": 6
+    },
+    "success_check_s": {
+      "total_s": 0.0003,
+      "avg_s": 0.0001,
+      "count": 5
+    },
+    "total_step_s": {
+      "total_s": 160.6469,
+      "avg_s": 26.7745,
+      "count": 6
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.0938,
+      "avg_s": 0.0156,
+      "count": 6
+    }
+  },
+  "metric_initial_position": [
+    6710.0,
+    5270.0,
+    5.0
+  ],
+  "metric_target_position": [
+    6719.8,
+    5330.0,
+    0.05
+  ],
+  "metric_final_position": [
+    6700.0,
+    5270.0,
+    5.0
+  ],
+  "initial_target_distance": 60.99624988472655,
+  "final_navigation_error": 63.37619821352499,
+  "trajectory_length": 50.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Go Forward",
+    "Go Left",
+    "Go Right",
+    "Go Right",
+    "Go Left"
+  ],
+  "adviser_uncertainty_history": [
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "adviser_cognitive_history": [
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "attraction_value_history": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "position": [
+    [
+      6710.0,
+      5270.0,
+      5.0
+    ],
+    [
+      6700.0,
+      5270.0,
+      5.0
+    ],
+    [
+      6700.0,
+      5260.0,
+      5.0
+    ],
+    [
+      6700.0,
+      5270.0,
+      5.0
+    ],
+    [
+      6700.0,
+      5280.0,
+      5.0
+    ],
+    [
+      6700.0,
+      5270.0,
+      5.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ]
+  ]
+}

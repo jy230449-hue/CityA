@@ -1,0 +1,21 @@
+{
+  "mission_id": "78",
+  "target_text": "A parking lot with eight cars parked in front of a blue sign that says PARKING",
+  "target_image_path": "data\\target_image\\Scene2\\Parkinglot.png",
+  "prompt_sam_raw": "yellow suv. red station wagon. yellow hummer. blue police car. white pickup truck. stop sign on barrier. pink car. gray sedan. trees along right edge. parking barrier arm",
+  "prompt_sam": "yellow suv. red station wagon. yellow hummer. blue police car. white pickup truck. stop sign on barrier. pink car. gray sedan. trees along right edge. parking barrier arm.",
+  "scores_rel": {
+    "yellow suv": 0.85,
+    "red station wagon": 0.75,
+    "yellow hummer": 0.8,
+    "blue police car": 0.65,
+    "white pickup truck": 0.7,
+    "stop sign on barrier": 0.4,
+    "pink car": 0.6,
+    "gray sedan": 0.75,
+    "trees along right edge": 0.3,
+    "parking barrier arm": 0.9
+  },
+  "target_prompt_time_s": 71.0484,
+  "relevance_scores_time_s": 42.3287
+}

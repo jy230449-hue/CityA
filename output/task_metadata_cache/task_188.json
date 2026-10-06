@@ -1,0 +1,21 @@
+{
+  "mission_id": "188",
+  "target_text": "A white sign with ICBC written in Chinese and the ICBC logo and a hand image painted on it, located between the blue Bank of Communications sign and the purple sign",
+  "target_image_path": "data\\target_image\\Scene3\\ICBC2.png",
+  "prompt_sam_raw": "large white sign. chinese characters. english text \"industrial and commercial bank of china\". logo with circular design. glass building facade. horizontal banner. hand image on sign. blue-tinted windows. metal frame structure.",
+  "prompt_sam": "large white sign. chinese characters. logo with circular design. glass building facade. horizontal banner. hand image on sign. blue-tinted windows. metal frame structure. sign. signboard.",
+  "scores_rel": {
+    "large white sign": 0.95,
+    "chinese characters": 0.98,
+    "logo with circular design": 0.97,
+    "glass building facade": 0.3,
+    "horizontal banner": 0.85,
+    "hand image on sign": 0.96,
+    "blue-tinted windows": 0.2,
+    "metal frame structure": 0.15,
+    "sign": 0.94,
+    "signboard": 0.93
+  },
+  "target_prompt_time_s": 21.7978,
+  "relevance_scores_time_s": 3.0382
+}

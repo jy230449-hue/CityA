@@ -1,0 +1,308 @@
+{
+  "task_index": 7,
+  "mission_id": "8",
+  "scene_id": "1",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "A poster about Pipeline repairs posted on the exterior wall of the second floor",
+  "target_image_path": "data\\target_image\\Scene1\\PosterforPipelineRepair.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 5,
+  "if_success": 1,
+  "termination_reason": "target_visible",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 30.885,
+  "map_init_time_s": 0.0072,
+  "target_prompt_time_s": 12.3156,
+  "relevance_scores_time_s": 10.4955,
+  "task_total_time_s": 176.508,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 21.09919710000031,
+      "image_save_s": 0.09202659999982643,
+      "map_preprocess_s": 0.00535859999990862,
+      "dino_sam_s": 3.1455490999996982,
+      "semantic_cognitive_s": 0.0291018000002623,
+      "uncertainty_adviser_s": 0.002223599999979342,
+      "boundary_filter_s": 0.00017099999968195334,
+      "qwen_vlm_s": 4.320851299999958,
+      "action_execution_s": 0.0010870000000977598,
+      "success_check_s": 5.809999993289239e-05,
+      "total_step_s": 28.83390559999998
+    },
+    {
+      "step": 1,
+      "observation_s": 14.705702499999916,
+      "image_save_s": 0.07840159999977914,
+      "map_preprocess_s": 0.006033900000147696,
+      "dino_sam_s": 3.1868994999999813,
+      "semantic_cognitive_s": 0.2644121999996969,
+      "uncertainty_adviser_s": 0.0017738000001372711,
+      "boundary_filter_s": 0.0003480999998828338,
+      "qwen_vlm_s": 4.439945700000408,
+      "action_execution_s": 0.05827060000001438,
+      "success_check_s": 0.00026640000032784883,
+      "total_step_s": 22.78618349999988
+    },
+    {
+      "step": 2,
+      "observation_s": 17.23182110000016,
+      "image_save_s": 0.0235250000000633,
+      "map_preprocess_s": 0.022425599999678525,
+      "dino_sam_s": 2.6765425000003233,
+      "semantic_cognitive_s": 0.03510280000000421,
+      "uncertainty_adviser_s": 0.001959000000169908,
+      "boundary_filter_s": 0.00016209999967031763,
+      "qwen_vlm_s": 6.155586599999879,
+      "action_execution_s": 0.033653700000286335,
+      "success_check_s": 5.2600000344682485e-05,
+      "total_step_s": 26.261819599999853
+    },
+    {
+      "step": 3,
+      "observation_s": 28.87046250000003,
+      "image_save_s": 0.05305980000002819,
+      "map_preprocess_s": 0.005929199999627599,
+      "dino_sam_s": 3.910127199999806,
+      "semantic_cognitive_s": 0.041248499999710475,
+      "uncertainty_adviser_s": 0.0020801999999093823,
+      "boundary_filter_s": 0.00015239999993355013,
+      "qwen_vlm_s": 7.602281500000117,
+      "action_execution_s": 0.003931499999907828,
+      "success_check_s": 5.7499999911669875e-05,
+      "total_step_s": 40.598268899999766
+    },
+    {
+      "step": 4,
+      "observation_s": 26.193944999999985,
+      "image_save_s": 0.02654019999999946,
+      "map_preprocess_s": 0.006144399999811867,
+      "dino_sam_s": 2.996697999999924,
+      "semantic_cognitive_s": 0.043457000000216794,
+      "uncertainty_adviser_s": 0.0021737000001849083,
+      "boundary_filter_s": 0.00013719999969907803,
+      "qwen_vlm_s": 5.560090699999819,
+      "action_execution_s": 0.03567589999966003,
+      "success_check_s": 0.00022529999978360138,
+      "total_step_s": 35.010471900000084
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.1326,
+      "avg_s": 0.0265,
+      "count": 5
+    },
+    "boundary_filter_s": {
+      "total_s": 0.001,
+      "avg_s": 0.0002,
+      "count": 5
+    },
+    "dino_sam_s": {
+      "total_s": 15.9158,
+      "avg_s": 3.1832,
+      "count": 5
+    },
+    "image_save_s": {
+      "total_s": 0.2736,
+      "avg_s": 0.0547,
+      "count": 5
+    },
+    "map_preprocess_s": {
+      "total_s": 0.0459,
+      "avg_s": 0.0092,
+      "count": 5
+    },
+    "observation_s": {
+      "total_s": 108.1011,
+      "avg_s": 21.6202,
+      "count": 5
+    },
+    "qwen_vlm_s": {
+      "total_s": 28.0788,
+      "avg_s": 5.6158,
+      "count": 5
+    },
+    "semantic_cognitive_s": {
+      "total_s": 0.4133,
+      "avg_s": 0.0827,
+      "count": 5
+    },
+    "success_check_s": {
+      "total_s": 0.0007,
+      "avg_s": 0.0001,
+      "count": 5
+    },
+    "total_step_s": {
+      "total_s": 153.4906,
+      "avg_s": 30.6981,
+      "count": 5
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.0102,
+      "avg_s": 0.002,
+      "count": 5
+    }
+  },
+  "metric_initial_position": [
+    6360.0,
+    4160.0,
+    5.0
+  ],
+  "metric_target_position": [
+    6352.08,
+    4211.35,
+    6.56
+  ],
+  "metric_final_position": [
+    6360.0,
+    4200.0,
+    5.0
+  ],
+  "initial_target_distance": 51.980597341700864,
+  "final_navigation_error": 13.927760049627844,
+  "trajectory_length": 40.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Turn Left",
+    "Go Forward",
+    "Go Forward",
+    "Go Forward",
+    "Go Forward"
+  ],
+  "adviser_uncertainty_history": [
+    "Turn Left",
+    null,
+    null,
+    null,
+    null
+  ],
+  "adviser_cognitive_history": [
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "attraction_value_history": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "position": [
+    [
+      6360.0,
+      4160.0,
+      5.0
+    ],
+    [
+      6360.0,
+      4160.0,
+      5.0
+    ],
+    [
+      6360.0,
+      4170.0,
+      5.0
+    ],
+    [
+      6360.0,
+      4180.0,
+      5.0
+    ],
+    [
+      6360.0,
+      4190.0,
+      5.0
+    ],
+    [
+      6360.0,
+      4200.0,
+      5.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ]
+  ]
+}

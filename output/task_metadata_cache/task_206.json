@@ -1,0 +1,18 @@
+{
+  "mission_id": "206",
+  "target_text": "A yellow sign with CUTTYSARK printed in black",
+  "target_image_path": "data\\target_image\\Scene3\\CUTTYSARK.png",
+  "prompt_sam_raw": "yellow banner. black text \"cutty sark\". ship logo. blue tiled wall.",
+  "prompt_sam": "yellow banner. ship logo. blue tiled wall. sign. signboard. wall sign. billboard.",
+  "scores_rel": {
+    "yellow banner": 0.95,
+    "ship logo": 0.85,
+    "blue tiled wall": 0.1,
+    "sign": 0.9,
+    "signboard": 0.88,
+    "wall sign": 0.87,
+    "billboard": 0.75
+  },
+  "target_prompt_time_s": 3.7045,
+  "relevance_scores_time_s": 2.1093
+}

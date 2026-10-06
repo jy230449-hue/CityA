@@ -1,0 +1,21 @@
+{
+  "mission_id": "187",
+  "target_text": "A blue sign with the words 'Bank of Communications' in Chinese written on it is vertical to the building and is between the Hua Xia Bank sign and the Industrial and Commercial Bank of China sign.",
+  "target_image_path": "data\\target_image\\Scene3\\SignBoardofBCommunication2.png",
+  "prompt_sam_raw": "blue vertical sign. chinese characters \"交通銀行\". glass building facade. white window frames. logo on sign.",
+  "prompt_sam": "blue vertical sign. chinese characters 交通銀行. glass building facade. white window frames. logo on sign. sign. signboard. wall sign. billboard. building.",
+  "scores_rel": {
+    "blue vertical sign": 1.0,
+    "chinese characters 交通銀行": 1.0,
+    "glass building facade": 0.3,
+    "white window frames": 0.2,
+    "logo on sign": 0.95,
+    "sign": 0.9,
+    "signboard": 0.85,
+    "wall sign": 0.8,
+    "billboard": 0.4,
+    "building": 0.6
+  },
+  "target_prompt_time_s": 5.4511,
+  "relevance_scores_time_s": 16.1902
+}

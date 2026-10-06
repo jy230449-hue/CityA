@@ -1,0 +1,21 @@
+{
+  "mission_id": "75",
+  "target_text": "A pink car parked in front of a red sign with the word BANK in white on it",
+  "target_image_path": "data\\target_image\\Scene2\\PinkCar.png",
+  "prompt_sam_raw": "pink car. bicycle. railing. sidewalk. pavement.",
+  "prompt_sam": "pink car. bicycle. railing. sidewalk. pavement. sign. signboard. wall sign. billboard. car.",
+  "scores_rel": {
+    "pink car": 0.95,
+    "bicycle": 0.1,
+    "railing": 0.05,
+    "sidewalk": 0.2,
+    "pavement": 0.25,
+    "sign": 0.85,
+    "signboard": 0.8,
+    "wall sign": 0.75,
+    "billboard": 0.6,
+    "car": 0.3
+  },
+  "target_prompt_time_s": 20.7118,
+  "relevance_scores_time_s": 2.9742
+}

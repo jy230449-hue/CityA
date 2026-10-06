@@ -1,0 +1,21 @@
+{
+  "mission_id": "198",
+  "target_text": "A purple sign next to the ICBC logo, vertically attached to the building",
+  "target_image_path": "data\\target_image\\Scene3\\SportsBoard2.png",
+  "prompt_sam_raw": "purple banner. glass building facade. vertical metal frame. silhouetted figures on banner. horizontal window lines. reflective surface. light streaks on banner. building entrance below. structural beams. shadowed ground area",
+  "prompt_sam": "purple banner. glass building facade. vertical metal frame. silhouetted figures on banner. horizontal window lines. reflective surface. light streaks on banner. building entrance below. structural beams. shadowed ground area.",
+  "scores_rel": {
+    "purple banner": 0.95,
+    "glass building facade": 0.3,
+    "vertical metal frame": 0.85,
+    "silhouetted figures on banner": 0.9,
+    "horizontal window lines": 0.2,
+    "reflective surface": 0.4,
+    "light streaks on banner": 0.75,
+    "building entrance below": 0.1,
+    "structural beams": 0.25,
+    "shadowed ground area": 0.05
+  },
+  "target_prompt_time_s": 13.4896,
+  "relevance_scores_time_s": 11.8706
+}

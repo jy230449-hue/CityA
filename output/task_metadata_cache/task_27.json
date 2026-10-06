@@ -1,0 +1,21 @@
+{
+  "mission_id": "27",
+  "target_text": "A coffee shop named CENTRAL ALL-STAR",
+  "target_image_path": "data\\target_image\\Scene1\\CentralAll_Star.png",
+  "prompt_sam_raw": "central all-star awning. black umbrella. two outdoor tables. white chairs. potted plant. white railing. wooden crate. star symbols on awning. blue building facade. small ladder",
+  "prompt_sam": "central all-star awning. black umbrella. two outdoor tables. white chairs. potted plant. white railing. wooden crate. star symbols on awning. blue building facade. small ladder.",
+  "scores_rel": {
+    "central all-star awning": 1.0,
+    "black umbrella": 0.3,
+    "two outdoor tables": 0.6,
+    "white chairs": 0.5,
+    "potted plant": 0.4,
+    "white railing": 0.2,
+    "wooden crate": 0.1,
+    "star symbols on awning": 0.9,
+    "blue building facade": 0.7,
+    "small ladder": 0.05
+  },
+  "target_prompt_time_s": 11.6798,
+  "relevance_scores_time_s": 3.0079
+}

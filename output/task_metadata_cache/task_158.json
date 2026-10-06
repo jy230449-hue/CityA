@@ -1,0 +1,17 @@
+{
+  "mission_id": "158",
+  "target_text": "A red sign with the word BANK in white on it",
+  "target_image_path": "data\\target_image\\Scene2\\Bank.png",
+  "prompt_sam_raw": "red sign. white text. bank sign",
+  "prompt_sam": "red sign. bank sign. sign. signboard. wall sign. billboard.",
+  "scores_rel": {
+    "red sign": 1.0,
+    "bank sign": 1.0,
+    "sign": 0.85,
+    "signboard": 0.8,
+    "wall sign": 0.75,
+    "billboard": 0.6
+  },
+  "target_prompt_time_s": 4.1812,
+  "relevance_scores_time_s": 4.5704
+}

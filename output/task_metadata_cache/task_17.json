@@ -1,0 +1,21 @@
+{
+  "mission_id": "17",
+  "target_text": "The China Customs Building opposite FamilyMart Store",
+  "target_image_path": "data\\target_image\\Scene1\\BuildingofChinaCustoms.png",
+  "prompt_sam_raw": "large stone lions. prominent chinese characters on roof. tall glass skyscraper to the right. golden emblem above entrance. black metal fence with yellow caution tape. blue signage near entrance. multi-story gray building with grid-like windows. decorative roof parapets. entrance with gold doors. large Chinese characters on wall in front.",
+  "prompt_sam": "large stone lions. prominent chinese characters on roof. tall glass skyscraper to the right. golden emblem above entrance. blue signage near entrance. multi-story gray building with grid-like windows. decorative roof parapets. entrance with gold doors. building. building facade.",
+  "scores_rel": {
+    "large stone lions": 0.1,
+    "prominent chinese characters on roof": 0.95,
+    "tall glass skyscraper to the right": 0.05,
+    "golden emblem above entrance": 0.85,
+    "blue signage near entrance": 0.2,
+    "multi-story gray building with grid-like windows": 0.7,
+    "decorative roof parapets": 0.6,
+    "entrance with gold doors": 0.8,
+    "building": 0.9,
+    "building facade": 0.85
+  },
+  "target_prompt_time_s": 58.8793,
+  "relevance_scores_time_s": 26.6798
+}

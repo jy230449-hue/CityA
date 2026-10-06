@@ -1,0 +1,21 @@
+{
+  "mission_id": "197",
+  "target_text": "A purple sign next to the Agricultural Bank of China, perpendicular to the building",
+  "target_image_path": "data\\target_image\\Scene3\\SportsBoard.png",
+  "prompt_sam_raw": "purple banner. green circular logo. metal grid fence. glass windows. concrete floor. vertical support beam. shadow of figures on banner. bright light source behind banner. white wall panel. railing structure",
+  "prompt_sam": "purple banner. green circular logo. metal grid fence. glass windows. concrete floor. vertical support beam. shadow of figures on banner. bright light source behind banner. white wall panel. railing structure.",
+  "scores_rel": {
+    "purple banner": 0.95,
+    "green circular logo": 0.1,
+    "metal grid fence": 0.05,
+    "glass windows": 0.02,
+    "concrete floor": 0.01,
+    "vertical support beam": 0.03,
+    "shadow of figures on banner": 0.85,
+    "bright light source behind banner": 0.75,
+    "white wall panel": 0.04,
+    "railing structure": 0.06
+  },
+  "target_prompt_time_s": 16.2918,
+  "relevance_scores_time_s": 3.1176
+}

@@ -1,0 +1,21 @@
+{
+  "mission_id": "200",
+  "target_text": "A sign with Chinese and English words 'Agricultural Bank of China'on it, with a purple sign and a white sign with Shanghai Bank on it on either side.",
+  "target_image_path": "data\\target_image\\Scene3\\TheBuildingofABC.png",
+  "prompt_sam_raw": "china agricultural bank sign. green logo with stylized character. large glass facade with grid pattern. vertical banner with \"shanghai bank\" text. blue triangular symbol on banner. white building structure in background. black metal railing in foreground. purple vertical stripe on left edge. english text \"agricultural bank of china\". chinese characters \"中国农业银行\"",
+  "prompt_sam": "china agricultural bank sign. green logo with stylized character. large glass facade with grid pattern. vertical banner with shanghai bank text. blue triangular symbol on banner. white building structure in background. black metal railing in foreground. purple vertical stripe on left edge. chinese characters 中国农业银行. sign.",
+  "scores_rel": {
+    "china agricultural bank sign": 0.95,
+    "green logo with stylized character": 0.85,
+    "large glass facade with grid pattern": 0.7,
+    "vertical banner with shanghai bank text": 0.65,
+    "blue triangular symbol on banner": 0.4,
+    "white building structure in background": 0.3,
+    "black metal railing in foreground": 0.2,
+    "purple vertical stripe on left edge": 0.1,
+    "chinese characters 中国农业银行": 0.9,
+    "sign": 0.8
+  },
+  "target_prompt_time_s": 30.0679,
+  "relevance_scores_time_s": 29.8003
+}

@@ -1,0 +1,17 @@
+{
+  "mission_id": "128",
+  "target_text": "A red car parked in a parking lot next to a yellow and white pickup truck",
+  "target_image_path": "data\\target_image\\Scene2\\RedCar2.png",
+  "prompt_sam_raw": "red car. white parking lines. asphalt surface.",
+  "prompt_sam": "red car. white parking lines. asphalt surface. car. vehicle. truck.",
+  "scores_rel": {
+    "red car": 0.95,
+    "white parking lines": 0.7,
+    "asphalt surface": 0.65,
+    "car": 0.85,
+    "vehicle": 0.8,
+    "truck": 0.1
+  },
+  "target_prompt_time_s": 26.348,
+  "relevance_scores_time_s": 26.81
+}

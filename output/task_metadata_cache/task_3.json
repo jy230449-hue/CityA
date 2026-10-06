@@ -1,0 +1,16 @@
+{
+  "mission_id": "3",
+  "target_text": "Black car parked next to the wall",
+  "target_image_path": "data\\target_image\\Scene1\\BlackCar.png",
+  "prompt_sam_raw": "dark green car. two blue windows. gray tiled ground.",
+  "prompt_sam": "dark green car. two blue windows. gray tiled ground. car. vehicle.",
+  "scores_rel": {
+    "dark green car": 0.1,
+    "two blue windows": 0.05,
+    "gray tiled ground": 0.3,
+    "car": 0.75,
+    "vehicle": 0.7
+  },
+  "target_prompt_time_s": 9.8124,
+  "relevance_scores_time_s": 3.3213
+}

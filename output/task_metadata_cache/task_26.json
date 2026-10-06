@@ -1,0 +1,18 @@
+{
+  "mission_id": "26",
+  "target_text": "A deliveryman station located between two buildings",
+  "target_image_path": "data\\target_image\\Scene1\\DeliverymanStation.png",
+  "prompt_sam_raw": "metal gate structure. blue neon sign with chinese characters and letters \"北京cbd骑士驿站\". tiled ground pattern. brick pillars on both sides of gate. metal truss framework above sign.",
+  "prompt_sam": "metal gate structure. tiled ground pattern. metal truss framework above sign. building. building facade. wall. window.",
+  "scores_rel": {
+    "metal gate structure": 0.1,
+    "tiled ground pattern": 0.3,
+    "metal truss framework above sign": 0.75,
+    "building": 0.6,
+    "building facade": 0.55,
+    "wall": 0.4,
+    "window": 0.25
+  },
+  "target_prompt_time_s": 34.4671,
+  "relevance_scores_time_s": 37.3677
+}

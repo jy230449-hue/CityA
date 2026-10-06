@@ -1,0 +1,21 @@
+{
+  "mission_id": "202",
+  "target_text": "A sign that says Hua Xia Bank, with a green signboard next to it",
+  "target_image_path": "data\\target_image\\Scene3\\TheBuildingofHXB.png",
+  "prompt_sam_raw": "huaxia bank sign. large grid-patterned wall. tall modern skyscrapers in background. golden logo on sign. chinese characters \"华夏银行\". english text \"huaxia bank\". vertical yellow pole on left. gray tiled pavement. glass facade building on right. metal frame structure supporting sign.",
+  "prompt_sam": "huaxia bank sign. large grid-patterned wall. golden logo on sign. chinese characters 华夏银行. vertical yellow pole on left. gray tiled pavement. glass facade building on right. metal frame structure supporting sign. sign. signboard.",
+  "scores_rel": {
+    "huaxia bank sign": 0.95,
+    "large grid-patterned wall": 0.1,
+    "golden logo on sign": 0.85,
+    "chinese characters 华夏银行": 0.9,
+    "vertical yellow pole on left": 0.05,
+    "gray tiled pavement": 0.02,
+    "glass facade building on right": 0.03,
+    "metal frame structure supporting sign": 0.75,
+    "sign": 0.8,
+    "signboard": 0.65
+  },
+  "target_prompt_time_s": 30.2795,
+  "relevance_scores_time_s": 20.543
+}

@@ -1,0 +1,21 @@
+{
+  "mission_id": "44",
+  "target_text": "A station on the side of the street",
+  "target_image_path": "data\\target_image\\Scene1\\BusStation.png",
+  "prompt_sam_raw": "bus shelter. train poster. map display. bench. tiled pavement. metal frame. glass panels. advertisement panel. directional sign. overhead roof",
+  "prompt_sam": "bus shelter. train poster. map display. bench. tiled pavement. metal frame. glass panels. advertisement panel. directional sign. overhead roof.",
+  "scores_rel": {
+    "bus shelter": 0.95,
+    "train poster": 0.7,
+    "map display": 0.85,
+    "bench": 0.6,
+    "tiled pavement": 0.3,
+    "metal frame": 0.8,
+    "glass panels": 0.75,
+    "advertisement panel": 0.65,
+    "directional sign": 0.5,
+    "overhead roof": 0.9
+  },
+  "target_prompt_time_s": 13.7013,
+  "relevance_scores_time_s": 17.0383
+}

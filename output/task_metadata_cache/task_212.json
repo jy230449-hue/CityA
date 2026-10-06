@@ -1,0 +1,21 @@
+{
+  "mission_id": "212",
+  "target_text": "A purple sign that runs vertically to the building and is next to the white ICBC sign",
+  "target_image_path": "data\\target_image\\Scene3\\SportsBoard4.png",
+  "prompt_sam_raw": "purple banner. glass windows. metal frame structure",
+  "prompt_sam": "purple banner. glass windows. metal frame structure. sign. signboard. wall sign. billboard. building. building facade. wall.",
+  "scores_rel": {
+    "purple banner": 1.0,
+    "glass windows": 0.3,
+    "metal frame structure": 0.2,
+    "sign": 0.75,
+    "signboard": 0.7,
+    "wall sign": 0.65,
+    "billboard": 0.4,
+    "building": 0.1,
+    "building facade": 0.55,
+    "wall": 0.25
+  },
+  "target_prompt_time_s": 4.2106,
+  "relevance_scores_time_s": 14.3837
+}

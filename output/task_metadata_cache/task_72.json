@@ -1,0 +1,21 @@
+{
+  "mission_id": "72",
+  "target_text": "A yellow car parked in front of a yellow sign with the word Pharmacy in red",
+  "target_image_path": "data\\target_image\\Scene2\\YellowCar.png",
+  "prompt_sam_raw": "yellow suv. silver wheels. black tires. side mirrors. door handles. rear taillight. front headlight. roof rails. tinted windows. ground surface",
+  "prompt_sam": "yellow suv. silver wheels. black tires. side mirrors. door handles. rear taillight. front headlight. roof rails. tinted windows. ground surface.",
+  "scores_rel": {
+    "yellow suv": 0.95,
+    "silver wheels": 0.7,
+    "black tires": 0.65,
+    "side mirrors": 0.55,
+    "door handles": 0.5,
+    "rear taillight": 0.4,
+    "front headlight": 0.45,
+    "roof rails": 0.3,
+    "tinted windows": 0.35,
+    "ground surface": 0.25
+  },
+  "target_prompt_time_s": 17.0044,
+  "relevance_scores_time_s": 20.3587
+}

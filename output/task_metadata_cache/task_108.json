@@ -1,0 +1,21 @@
+{
+  "mission_id": "108",
+  "target_text": "A white sign with NYC written on it",
+  "target_image_path": "data\\target_image\\Scene2\\NYC.png",
+  "prompt_sam_raw": "nyc sign. white facade. large windows. red roof edge. gray building wall. black window frames. yellow lettering. rectangular entrance. stone cladding. vertical pillar",
+  "prompt_sam": "nyc sign. white facade. large windows. red roof edge. gray building wall. black window frames. yellow lettering. rectangular entrance. stone cladding. vertical pillar.",
+  "scores_rel": {
+    "nyc sign": 0.95,
+    "white facade": 0.85,
+    "large windows": 0.1,
+    "red roof edge": 0.05,
+    "gray building wall": 0.2,
+    "black window frames": 0.15,
+    "yellow lettering": 0.9,
+    "rectangular entrance": 0.3,
+    "stone cladding": 0.05,
+    "vertical pillar": 0.25
+  },
+  "target_prompt_time_s": 12.8724,
+  "relevance_scores_time_s": 12.0216
+}

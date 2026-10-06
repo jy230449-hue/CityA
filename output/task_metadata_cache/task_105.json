@@ -1,0 +1,21 @@
+{
+  "mission_id": "105",
+  "target_text": "A silver car parked in the parking lot with a yellow and white pickup truck in the parking space next to it.",
+  "target_image_path": "data\\target_image\\Scene2\\SilverCar.png",
+  "prompt_sam_raw": "white car. white parking lines. gravel ground. rear windshield. taillights. side mirrors. wheels. roof. door handles. shadow",
+  "prompt_sam": "white car. white parking lines. gravel ground. rear windshield. taillights. side mirrors. wheels. roof. door handles. shadow.",
+  "scores_rel": {
+    "white car": 0.1,
+    "white parking lines": 0.95,
+    "gravel ground": 0.85,
+    "rear windshield": 0.7,
+    "taillights": 0.65,
+    "side mirrors": 0.6,
+    "wheels": 0.8,
+    "roof": 0.55,
+    "door handles": 0.5,
+    "shadow": 0.9
+  },
+  "target_prompt_time_s": 25.4725,
+  "relevance_scores_time_s": 25.3857
+}

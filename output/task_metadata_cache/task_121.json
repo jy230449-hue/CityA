@@ -1,0 +1,21 @@
+{
+  "mission_id": "121",
+  "target_text": "A yellow car parked in a parking lot with no cars in the parking spaces next to it",
+  "target_image_path": "data\\target_image\\Scene2\\YellowCar2.png",
+  "prompt_sam_raw": "yellow suv. white parking lines. asphalt surface. car windows. side mirrors. wheels. door handles. rear taillight. roof rails. sunroof",
+  "prompt_sam": "yellow suv. white parking lines. asphalt surface. car windows. side mirrors. wheels. door handles. rear taillight. roof rails. sunroof.",
+  "scores_rel": {
+    "yellow suv": 0.95,
+    "white parking lines": 0.85,
+    "asphalt surface": 0.75,
+    "car windows": 0.65,
+    "side mirrors": 0.6,
+    "wheels": 0.7,
+    "door handles": 0.55,
+    "rear taillight": 0.5,
+    "roof rails": 0.4,
+    "sunroof": 0.35
+  },
+  "target_prompt_time_s": 21.7085,
+  "relevance_scores_time_s": 10.2867
+}

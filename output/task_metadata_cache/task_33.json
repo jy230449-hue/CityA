@@ -1,0 +1,21 @@
+{
+  "mission_id": "33",
+  "target_text": "A poster about the car deal on a fourth-floor window",
+  "target_image_path": "data\\target_image\\Scene1\\PosterforCarTrading.png",
+  "prompt_sam_raw": "red sign. yellow text. white text. phone number.微信 symbol. car sales text. vehicle exchange text. free appraisal text. auction purchase text. high price car purchase text",
+  "prompt_sam": "red sign. 微信 symbol. car sales text. vehicle exchange text. high price car purchase text. poster. wall poster. sign. signboard. notice board.",
+  "scores_rel": {
+    "red sign": 0.1,
+    "微信 symbol": 0.3,
+    "car sales text": 0.75,
+    "vehicle exchange text": 0.65,
+    "high price car purchase text": 0.9,
+    "poster": 0.85,
+    "wall poster": 0.8,
+    "sign": 0.4,
+    "signboard": 0.7,
+    "notice board": 0.25
+  },
+  "target_prompt_time_s": 24.2566,
+  "relevance_scores_time_s": 35.0798
+}

@@ -1,0 +1,165 @@
+{
+  "task_index": 215,
+  "mission_id": "216",
+  "scene_id": "3",
+  "mission_grade": "2",
+  "paper_difficulty": "Hard",
+  "target_text": "A blue billboard with MILD ESSENCE written in white English on it standing alone on the street",
+  "target_image_path": "data\\target_image\\Scene3\\BlueBoard.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 20,
+  "step_z": 10,
+  "step_all": 40,
+  "steps": 1,
+  "if_success": 0,
+  "termination_reason": "target_visible",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 58.9735,
+  "map_init_time_s": 0.928,
+  "target_prompt_time_s": 8.3952,
+  "relevance_scores_time_s": 9.4639,
+  "task_total_time_s": 59.2906,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 23.869438900001114,
+      "image_save_s": 0.09803850000025705,
+      "map_preprocess_s": 0.7474423999956343,
+      "dino_sam_s": 7.907907799992245,
+      "semantic_cognitive_s": 0.510288399993442,
+      "uncertainty_adviser_s": 0.0038859000051161274,
+      "boundary_filter_s": 0.00016429999959655106,
+      "qwen_vlm_s": 6.665399199991953,
+      "action_execution_s": 0.026172400001087226,
+      "success_check_s": 7.029999687802047e-05,
+      "total_step_s": 39.96097970000119
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.0262,
+      "avg_s": 0.0262,
+      "count": 1
+    },
+    "boundary_filter_s": {
+      "total_s": 0.0002,
+      "avg_s": 0.0002,
+      "count": 1
+    },
+    "dino_sam_s": {
+      "total_s": 7.9079,
+      "avg_s": 7.9079,
+      "count": 1
+    },
+    "image_save_s": {
+      "total_s": 0.098,
+      "avg_s": 0.098,
+      "count": 1
+    },
+    "map_preprocess_s": {
+      "total_s": 0.7474,
+      "avg_s": 0.7474,
+      "count": 1
+    },
+    "observation_s": {
+      "total_s": 23.8694,
+      "avg_s": 23.8694,
+      "count": 1
+    },
+    "qwen_vlm_s": {
+      "total_s": 6.6654,
+      "avg_s": 6.6654,
+      "count": 1
+    },
+    "semantic_cognitive_s": {
+      "total_s": 0.5103,
+      "avg_s": 0.5103,
+      "count": 1
+    },
+    "success_check_s": {
+      "total_s": 0.0001,
+      "avg_s": 0.0001,
+      "count": 1
+    },
+    "total_step_s": {
+      "total_s": 39.961,
+      "avg_s": 39.961,
+      "count": 1
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.0039,
+      "avg_s": 0.0039,
+      "count": 1
+    }
+  },
+  "metric_initial_position": [
+    6030.0,
+    3560.0,
+    20.0
+  ],
+  "metric_target_position": [
+    6022.77,
+    3609.06,
+    18.33
+  ],
+  "metric_final_position": [
+    6030.0,
+    3580.0,
+    20.0
+  ],
+  "initial_target_distance": 49.61799471965779,
+  "final_navigation_error": 29.992422376326832,
+  "trajectory_length": 20.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Go Forward"
+  ],
+  "adviser_uncertainty_history": [
+    null
+  ],
+  "adviser_cognitive_history": [
+    null
+  ],
+  "attraction_value_history": [
+    0.0
+  ],
+  "position": [
+    [
+      6030.0,
+      3560.0,
+      20.0
+    ],
+    [
+      6030.0,
+      3580.0,
+      20.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ]
+  ]
+}

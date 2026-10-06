@@ -1,0 +1,19 @@
+{
+  "mission_id": "127",
+  "target_text": "A yellow and white pickup truck parked in a parking lot between a silver car and a red car",
+  "target_image_path": "data\\target_image\\Scene2\\Truck.png",
+  "prompt_sam_raw": "yellow toy truck. white cab. brown wheels. asphalt surface. white parking line",
+  "prompt_sam": "yellow toy truck. white cab. brown wheels. asphalt surface. white parking line. car. vehicle. truck.",
+  "scores_rel": {
+    "yellow toy truck": 0.1,
+    "white cab": 0.35,
+    "brown wheels": 0.2,
+    "asphalt surface": 0.85,
+    "white parking line": 0.75,
+    "car": 0.05,
+    "vehicle": 0.15,
+    "truck": 0.4
+  },
+  "target_prompt_time_s": 16.4986,
+  "relevance_scores_time_s": 10.978
+}

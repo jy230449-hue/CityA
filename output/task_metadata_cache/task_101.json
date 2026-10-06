@@ -1,0 +1,16 @@
+{
+  "mission_id": "101",
+  "target_text": "A yellow jeep parked in a parking lot with a black car in the parking space next to it",
+  "target_image_path": "data\\target_image\\Scene2\\YellowJeep.png",
+  "prompt_sam_raw": "yellow suv. white parking lines. black asphalt surface",
+  "prompt_sam": "yellow suv. white parking lines. black asphalt surface. car. vehicle.",
+  "scores_rel": {
+    "yellow suv": 0.95,
+    "white parking lines": 0.85,
+    "black asphalt surface": 0.75,
+    "car": 0.65,
+    "vehicle": 0.9
+  },
+  "target_prompt_time_s": 16.9017,
+  "relevance_scores_time_s": 14.3087
+}

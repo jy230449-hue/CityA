@@ -1,0 +1,20 @@
+{
+  "mission_id": "115",
+  "target_text": "A blue sign with the word Cheesspod in black on it",
+  "target_image_path": "data\\target_image\\Scene2\\Cheesspod.png",
+  "prompt_sam_raw": "cheesspod. blue banner. red vertical stripe. yellow vertical stripe. gray horizontal lines",
+  "prompt_sam": "cheesspod. blue banner. red vertical stripe. yellow vertical stripe. gray horizontal lines. sign. signboard. wall sign. billboard.",
+  "scores_rel": {
+    "cheesspod": 0.95,
+    "blue banner": 0.98,
+    "red vertical stripe": 0.1,
+    "yellow vertical stripe": 0.05,
+    "gray horizontal lines": 0.02,
+    "sign": 0.97,
+    "signboard": 0.96,
+    "wall sign": 0.94,
+    "billboard": 0.85
+  },
+  "target_prompt_time_s": 13.1586,
+  "relevance_scores_time_s": 9.165
+}

@@ -1,0 +1,21 @@
+{
+  "mission_id": "134",
+  "target_text": "A yellow sign with the word Pharmacy in red on it",
+  "target_image_path": "data\\target_image\\Scene2\\Pharmacy.png",
+  "prompt_sam_raw": "pharmacy sign. yellow background. red text. blue stripes. white stripes. green edge. rectangular shape. bold lettering. horizontal orientation. high-contrast colors.",
+  "prompt_sam": "pharmacy sign. blue stripes. white stripes. green edge. bold lettering. horizontal orientation. sign. signboard. wall sign. billboard.",
+  "scores_rel": {
+    "pharmacy sign": 1.0,
+    "blue stripes": 0.3,
+    "white stripes": 0.2,
+    "green edge": 0.4,
+    "bold lettering": 0.95,
+    "horizontal orientation": 0.85,
+    "sign": 0.9,
+    "signboard": 0.8,
+    "wall sign": 0.75,
+    "billboard": 0.6
+  },
+  "target_prompt_time_s": 7.2212,
+  "relevance_scores_time_s": 12.744
+}

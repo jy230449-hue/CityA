@@ -1,0 +1,19 @@
+{
+  "mission_id": "89",
+  "target_text": "A police car parked on the side of the road in front of the red car",
+  "target_image_path": "data\\target_image\\Scene2\\PoliceCar.png",
+  "prompt_sam_raw": "police car. blue and white paint. red siren light. number 3300. cyrillic text \"віцебск\". cyrillic text \"міліцыя\". yellow emblem on door. white roof stripe. black tire with silver rim. pavement background.",
+  "prompt_sam": "police car. blue and white paint. red siren light. yellow emblem on door. white roof stripe. black tire with silver rim. car. vehicle.",
+  "scores_rel": {
+    "police car": 0.95,
+    "blue and white paint": 0.92,
+    "red siren light": 0.88,
+    "yellow emblem on door": 0.85,
+    "white roof stripe": 0.82,
+    "black tire with silver rim": 0.78,
+    "car": 0.65,
+    "vehicle": 0.6
+  },
+  "target_prompt_time_s": 22.9674,
+  "relevance_scores_time_s": 6.2225
+}

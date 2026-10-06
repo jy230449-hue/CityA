@@ -1,0 +1,464 @@
+C:\hjy\software\anconda\envs\airport\lib\site-packages\timm\models\layers\__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+Some weights of the model checkpoint at C:\hjy\models\bert-base-uncased were not used when initializing BertModel: ['cls.predictions.bias', 'cls.predictions.transform.dense.bias', 'cls.seq_relationship.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+
+ Initializing
+Initializing - init_config()
+Connected!
+Client Ver:1 (Min Req: 1), Server Ver:1 (Min Req: 1)
+
+initial position: [ 6.3600000e+03 -4.2000000e+03 -6.0500234e-01], initial rotation: [ 0.          0.         -1.57079612]
+use local bert model path: C:\hjy\models\bert-base-uncased
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['label_enc.weight'])
+[TIME] Model initialization: 35.28s
+[Single Task Mode] mission_id=8, dataset_index=7
+======================================================================
+CityAVOS experiment configuration
+Dataset: ./data/target_information_605.json
+Total dataset tasks: 605
+Run task range: 7 -> 7
+Scene config: ./data/scenes_compat_6.json
+theta_T: 0.1
+cognitive_threshold: 0.5
+if_draw: 0
+if_figure_plot: 0
+profile_mode: True
+profile_steps: 5
+======================================================================
+
+======================================================================
+Task - 8
+Mission ID: 8
+Original mission grade: 1
+Paper difficulty: Easy
+Scene ID: 1
+Search object: A poster about Pipeline repairs posted on the exterior wall of the second floor
+Target image: data\target_image\Scene1\PosterforPipelineRepair.png
+[TIME] Map initialization: 0.00s
+[LLM DETAIL] image=data\target_image\Scene1\PosterforPipelineRepair.png | file=0.08MB | base64=0.11MB | read=0.001s | encode=0.001s | total=0.002s
+[LLM DETAIL] single image prepared in 0.003s
+[LLM DETAIL] message prepared = 0.003s
+[LLM DETAIL] CLOUD API request start | model=qwen3-vl-plus
+[LLM DETAIL] CLOUD API request finished = 18.88s
+[LLM DETAIL] response parse = 0.0000s
+[LLM DETAIL] usage: CompletionUsage(completion_tokens=27, prompt_tokens=139, total_tokens=166, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=None, rejected_prediction_tokens=None, text_tokens=27), prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=0, image_tokens=86, text_tokens=53))
+[LLM DETAIL] chat_with_llm total = 18.88s
+[DINO PROMPT] raw: sign. text. numbers. yellow background. red background. blue background. phone number. service list. professional wording. rectangular shape
+[DINO PROMPT] prepared: sign. poster. wall poster. signboard. notice board.
+[LLM DETAIL] image=./data\target_image\Scene1\PosterforPipelineRepair.png | file=0.08MB | base64=0.11MB | read=0.000s | encode=0.000s | total=0.001s
+[LLM DETAIL] single image prepared in 0.001s
+[LLM DETAIL] message prepared = 0.001s
+[LLM DETAIL] CLOUD API request start | model=qwen3-vl-plus
+[LLM DETAIL] CLOUD API request finished = 20.15s
+[LLM DETAIL] response parse = 0.0000s
+[LLM DETAIL] usage: CompletionUsage(completion_tokens=29, prompt_tokens=229, total_tokens=258, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=None, rejected_prediction_tokens=None, text_tokens=29), prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=0, image_tokens=86, text_tokens=143))
+[LLM DETAIL] chat_with_llm total = 20.15s
+[TIME] Target prompt: 18.88s
+[TIME] Relevance scores: 20.16s
+Related Objects with Scores: {'sign': 0.1, 'poster': 0.85, 'wall poster': 0.9, 'signboard': 0.75, 'notice board': 0.3}
+Step: 0 (executed actions: 0/5)
+Get Observation.
+[AIRSIM] simGetImages RGB+Depth = 23.18s
+[AIRSIM] get_observation total = 23.25s
+Update cognitive map and uncertainty map.
+[GPU PROFILE] segment start | allocated=3.10GB | reserved=3.18GB | global_free=8.84/23.99GB
+[PROFILE] DINO preprocess = 0.257s
+[GPU PROFILE] before DINO inference | allocated=3.10GB | reserved=3.18GB | global_free=8.84/23.99GB
+[PROFILE] DINO inference = 4.351s
+[GPU PROFILE] after DINO inference | allocated=3.11GB | reserved=4.17GB | global_free=6.72/23.99GB
+[DINO] prompt= 'sign. poster. wall poster. signboard. notice board.' | box_threshold= 0.4 | text_threshold= 0.25 | detections= 1
+[PROFILE] DINO postprocess = 0.087s
+[PROFILE] SAM image read = 0.013s
+[GPU PROFILE] before SAM set_image | allocated=3.11GB | reserved=4.17GB | global_free=6.72/23.99GB
+[PROFILE] SAM set_image = 0.857s
+[GPU PROFILE] after SAM set_image | allocated=3.19GB | reserved=7.17GB | global_free=0.72/23.99GB
+[PROFILE] SAM box transform = 0.001s
+[GPU PROFILE] before SAM predict | allocated=3.19GB | reserved=7.17GB | global_free=0.72/23.99GB
+[PROFILE] SAM predict = 0.175s
+[GPU PROFILE] after SAM predict | allocated=3.19GB | reserved=7.17GB | global_free=1.46/23.99GB
+[PROFILE] SAM postprocess = 0.001s
+[DINO] accepted classes: ['notice board'] | masks: 1 | threshold: (0.4, 0.25)
+[GPU PROFILE] before empty_cache | allocated=3.19GB | reserved=7.17GB | global_free=1.46/23.99GB
+[PROFILE] CUDA empty_cache = 6.042s
+[GPU PROFILE] after empty_cache | allocated=3.19GB | reserved=3.32GB | global_free=9.16/23.99GB
+[PROFILE SUMMARY] DINO_pre=0.257s | DINO_infer=4.351s | DINO_post=0.087s | SAM_read=0.013s | SAM_set=0.857s | SAM_box=0.001s | SAM_predict=0.175s | SAM_post=0.001s | TOTAL=11.790s
+[SEM INNER] camera=0.000s | read_depth=0.012s | depth_to_world=0.003s | add_label=0.032s | TOTAL=0.047s
+[SEM PROFILE] score_match=0.000s | overlay=0.067s | update_map=0.047s | cluster=0.077s | TOTAL=0.192s
+[DEBUG] class_names: ['notice board']
+[DEBUG] class_scores: [0.3]
+[DEBUG] mask_count: 1
+[DEBUG] cognitive_max: 0.3
+[DEBUG] cognitive_nonzero: 53
+max_value: 0.3
+max_cluster: [6393.09433962 4149.94339623    6.47169811]
+0.12388072171244309
+advisier_un: Turn Left
+advisier_co: None
+  
+                    
+                                You are operating a drone to search for a visual target in an urban space. For each step, you will receive the following inputs:
+                                -Image_RGB_inputs: An RGB image representing your current view, which is the first image.
+                                -Image_Object: An image of the object you are searching for, which is the second image.
+                                -Text_Object: The object you are searching for is A poster about Pipeline repairs posted on the exterior wall of the second floor.
+                                Guidelines:
+                                -Exploration advice: Select action "Turn Left" helps you search for the target.
+                                -You can follow the exploration advice or you can also follow your own ideas.
+                                Select your action follow the guidelines above. Only return the name of the action you selected.
+                                
+Navigation history:
+Use the recent history to avoid revisiting the same area without gaining new visual information.
+
+Boundary constraint:
+- The drone must stay inside the current search scene.
+- You MUST choose one action only from this currently legal set: ['Go Up', 'Turn Left', 'Turn Right', 'Go Forward', 'Go Left', 'Go Right'].
+- Do not choose an action outside this legal set.
+
+[QWEN TEST] Attempt 1/3 start
+[LLM DETAIL] image=./output/rgb_image_0.png | file=0.46MB | base64=0.62MB | read=0.000s | encode=0.003s | total=0.003s
+[LLM DETAIL] image 1/2 prepared in 0.004s
+[LLM DETAIL] image=data\target_image\Scene1\PosterforPipelineRepair.png | file=0.08MB | base64=0.11MB | read=0.000s | encode=0.000s | total=0.000s
+[LLM DETAIL] image 2/2 prepared in 0.001s
+[LLM DETAIL] all images + messages prepared = 0.004s
+[LLM DETAIL] LOCAL API request start | model=qwen3-vl-4b
+[LLM DETAIL] LOCAL API request finished = 6.70s
+[LLM DETAIL] response parse = 0.0000s
+[LLM DETAIL] usage: CompletionUsage(completion_tokens=0, prompt_tokens=0, total_tokens=0, completion_tokens_details=None, prompt_tokens_details=None)
+[LLM DETAIL] chat_with_llm_images total = 6.71s
+[QWEN TEST] Attempt 1/3 time = 6.71s
+[QWEN TEST] Raw result: 'Turn Left'
+LLM raw action: 'Turn Left'
+LLM normalized action: Turn Left
+agent_choose_action: 2
+����ת 90 ��
+[TIME] obs=23.26s | save=0.04s | map=0.01s | DINO+SAM=11.79s | semantic=0.19s | uncertainty=0.00s | Qwen=6.71s | action=1.03s | TOTAL=43.04s
+Step: 1 (executed actions: 1/5)
+Get Observation.
+[AIRSIM] simGetImages RGB+Depth = 18.13s
+[AIRSIM] get_observation total = 18.16s
+Update cognitive map and uncertainty map.
+[GPU PROFILE] segment start | allocated=3.19GB | reserved=3.32GB | global_free=8.41/23.99GB
+[PROFILE] DINO preprocess = 0.378s
+[GPU PROFILE] before DINO inference | allocated=3.19GB | reserved=3.32GB | global_free=8.41/23.99GB
+[PROFILE] DINO inference = 1.075s
+[GPU PROFILE] after DINO inference | allocated=3.19GB | reserved=4.25GB | global_free=6.54/23.99GB
+[DINO] prompt= 'sign. poster. wall poster. signboard. notice board.' | box_threshold= 0.4 | text_threshold= 0.25 | detections= 0
+[DINO] prompt= 'sign. poster. wall poster. signboard. notice board.' | box_threshold= 0.3 | text_threshold= 0.2 | detections= 1
+[PROFILE] DINO postprocess = 0.093s
+[PROFILE] SAM image read = 0.076s
+[GPU PROFILE] before SAM set_image | allocated=3.19GB | reserved=4.25GB | global_free=6.54/23.99GB
+[PROFILE] SAM set_image = 1.246s
+[GPU PROFILE] after SAM set_image | allocated=3.19GB | reserved=7.25GB | global_free=0.54/23.99GB
+[PROFILE] SAM box transform = 0.001s
+[GPU PROFILE] before SAM predict | allocated=3.19GB | reserved=7.25GB | global_free=0.54/23.99GB
+[PROFILE] SAM predict = 0.013s
+[GPU PROFILE] after SAM predict | allocated=3.19GB | reserved=7.25GB | global_free=0.54/23.99GB
+[PROFILE] SAM postprocess = 0.000s
+[DINO] accepted classes: ['poster wall poster'] | masks: 1 | threshold: (0.3, 0.2)
+[GPU PROFILE] before empty_cache | allocated=3.19GB | reserved=7.25GB | global_free=0.54/23.99GB
+[PROFILE] CUDA empty_cache = 1.785s
+[GPU PROFILE] after empty_cache | allocated=3.19GB | reserved=3.32GB | global_free=8.26/23.99GB
+[PROFILE SUMMARY] DINO_pre=0.378s | DINO_infer=1.075s | DINO_post=0.093s | SAM_read=0.076s | SAM_set=1.246s | SAM_box=0.001s | SAM_predict=0.013s | SAM_post=0.000s | TOTAL=4.671s
+Warning: Key 'poster wall poster' (normalized: 'posterwallposter') not found in scores dict. Using default 0.5.
+[SEM INNER] camera=0.000s | read_depth=0.017s | depth_to_world=0.012s | add_label=3.144s | TOTAL=3.173s
+[SEM PROFILE] score_match=0.000s | overlay=0.005s | update_map=3.174s | cluster=0.003s | TOTAL=3.183s
+[DEBUG] class_names: ['poster wall poster']
+[DEBUG] class_scores: [0.5]
+[DEBUG] mask_count: 1
+[DEBUG] cognitive_max: 0.5
+[DEBUG] cognitive_nonzero: 105
+max_value: 0.5
+max_cluster: [6.3535e+03 4.1670e+03 1.0000e+00]
+0.057166566606109116
+advisier_un: None
+advisier_co: None
+  
+                                You are operating a drone to search for a visual target in an urban space. For each step, you will receive the following inputs:
+                                -Image_RGB_inputs: An RGB image representing your current view, which is the first image.
+                                -Image_Object: An image of the object you are searching for, which is the second image.
+                                -Text_Object: The object you are searching for is A poster about Pipeline repairs posted on the exterior wall of the second floor.
+                                Guidelines:
+                                -Follow your own ideas.
+                                -You can select on action from ("Turn Left", "Turn Right", "Go Forward", "Go Left", "Go Right")
+                                Select your action following guidelines above, Only return the name of the action you selected.
+                                
+Navigation history:
+Recent executed actions: ['Turn Left'].
+Recent map positions (oldest -> newest): [[6360.0, 4160.0, 5.0], [6360.0, 4160.0, 5.0]].
+Use the recent history to avoid revisiting the same area without gaining new visual information.
+
+Boundary constraint:
+- The drone must stay inside the current search scene.
+- You MUST choose one action only from this currently legal set: ['Turn Left', 'Turn Right', 'Go Forward', 'Go Left', 'Go Right'].
+- Do not choose an action outside this legal set.
+
+[QWEN TEST] Attempt 1/3 start
+[LLM DETAIL] image=./output/rgb_image_1.png | file=0.52MB | base64=0.70MB | read=0.000s | encode=0.002s | total=0.003s
+[LLM DETAIL] image 1/2 prepared in 0.003s
+[LLM DETAIL] image=data\target_image\Scene1\PosterforPipelineRepair.png | file=0.08MB | base64=0.11MB | read=0.000s | encode=0.000s | total=0.001s
+[LLM DETAIL] image 2/2 prepared in 0.001s
+[LLM DETAIL] all images + messages prepared = 0.004s
+[LLM DETAIL] LOCAL API request start | model=qwen3-vl-4b
+[LLM DETAIL] LOCAL API request finished = 6.37s
+[LLM DETAIL] response parse = 0.0000s
+[LLM DETAIL] usage: CompletionUsage(completion_tokens=0, prompt_tokens=0, total_tokens=0, completion_tokens_details=None, prompt_tokens_details=None)
+[LLM DETAIL] chat_with_llm_images total = 6.38s
+[QWEN TEST] Attempt 1/3 time = 6.38s
+[QWEN TEST] Raw result: 'Go Forward'
+LLM raw action: 'Go Forward'
+LLM normalized action: Go Forward
+agent_choose_action: 4
+��ǰ�ƶ� 10 ��
+[TIME] obs=18.17s | save=0.03s | map=0.01s | DINO+SAM=4.67s | semantic=3.18s | uncertainty=0.00s | Qwen=6.38s | action=1.01s | TOTAL=33.47s
+Step: 2 (executed actions: 2/5)
+Get Observation.
+[AIRSIM] simGetImages RGB+Depth = 21.26s
+[AIRSIM] get_observation total = 21.28s
+Update cognitive map and uncertainty map.
+[GPU PROFILE] segment start | allocated=3.19GB | reserved=3.32GB | global_free=8.41/23.99GB
+[PROFILE] DINO preprocess = 0.429s
+[GPU PROFILE] before DINO inference | allocated=3.19GB | reserved=3.32GB | global_free=8.41/23.99GB
+[PROFILE] DINO inference = 1.496s
+[GPU PROFILE] after DINO inference | allocated=3.19GB | reserved=4.25GB | global_free=6.54/23.99GB
+[DINO] prompt= 'sign. poster. wall poster. signboard. notice board.' | box_threshold= 0.4 | text_threshold= 0.25 | detections= 0
+[DINO] prompt= 'sign. poster. wall poster. signboard. notice board.' | box_threshold= 0.3 | text_threshold= 0.2 | detections= 0
+[DINO] prompt= 'sign. poster. wall poster. signboard. notice board.' | box_threshold= 0.24 | text_threshold= 0.18 | detections= 2
+[PROFILE] DINO postprocess = 0.115s
+[PROFILE] SAM image read = 0.025s
+[GPU PROFILE] before SAM set_image | allocated=3.19GB | reserved=4.25GB | global_free=6.54/23.99GB
+[PROFILE] SAM set_image = 1.568s
+[GPU PROFILE] after SAM set_image | allocated=3.19GB | reserved=7.25GB | global_free=1.48/23.99GB
+[PROFILE] SAM box transform = 0.001s
+[GPU PROFILE] before SAM predict | allocated=3.19GB | reserved=7.25GB | global_free=1.48/23.99GB
+[PROFILE] SAM predict = 0.029s
+[GPU PROFILE] after SAM predict | allocated=3.20GB | reserved=7.25GB | global_free=1.48/23.99GB
+[PROFILE] SAM postprocess = 0.001s
+[DINO] accepted classes: ['wall notice board', 'sign wall poster'] | masks: 2 | threshold: (0.24, 0.18)
+[GPU PROFILE] before empty_cache | allocated=3.20GB | reserved=7.25GB | global_free=1.48/23.99GB
+[PROFILE] CUDA empty_cache = 1.364s
+[GPU PROFILE] after empty_cache | allocated=3.20GB | reserved=3.32GB | global_free=8.38/23.99GB
+[PROFILE SUMMARY] DINO_pre=0.429s | DINO_infer=1.496s | DINO_post=0.115s | SAM_read=0.025s | SAM_set=1.568s | SAM_box=0.001s | SAM_predict=0.029s | SAM_post=0.001s | TOTAL=5.035s
+Warning: Key 'wall notice board' (normalized: 'wallnoticeboard') not found in scores dict. Using default 0.5.
+Warning: Key 'sign wall poster' (normalized: 'signwallposter') not found in scores dict. Using default 0.5.
+[SEM INNER] camera=0.000s | read_depth=0.012s | depth_to_world=0.003s | add_label=0.010s | TOTAL=0.025s
+[SEM PROFILE] score_match=0.000s | overlay=0.009s | update_map=0.025s | cluster=0.011s | TOTAL=0.045s
+[DEBUG] class_names: ['wall notice board' 'sign wall poster']
+[DEBUG] class_scores: [0.5, 0.5]
+[DEBUG] mask_count: 2
+[DEBUG] cognitive_max: 0.5
+[DEBUG] cognitive_nonzero: 115
+max_value: 0.5
+max_cluster: [6.351e+03 4.203e+03 3.000e+00]
+0.057166566606109005
+advisier_un: None
+advisier_co: None
+  
+                                You are operating a drone to search for a visual target in an urban space. For each step, you will receive the following inputs:
+                                -Image_RGB_inputs: An RGB image representing your current view, which is the first image.
+                                -Image_Object: An image of the object you are searching for, which is the second image.
+                                -Text_Object: The object you are searching for is A poster about Pipeline repairs posted on the exterior wall of the second floor.
+                                Guidelines:
+                                -Follow your own ideas.
+                                -You can select on action from ("Turn Left", "Turn Right", "Go Forward", "Go Left", "Go Right")
+                                Select your action following guidelines above, Only return the name of the action you selected.
+                                
+Navigation history:
+Recent executed actions: ['Turn Left', 'Go Forward'].
+Recent map positions (oldest -> newest): [[6360.0, 4160.0, 5.0], [6360.0, 4160.0, 5.0], [6360.0, 4170.0, 5.0]].
+Use the recent history to avoid revisiting the same area without gaining new visual information.
+
+Boundary constraint:
+- The drone must stay inside the current search scene.
+- You MUST choose one action only from this currently legal set: ['Turn Left', 'Turn Right', 'Go Forward', 'Go Left', 'Go Right'].
+- Do not choose an action outside this legal set.
+
+[QWEN TEST] Attempt 1/3 start
+[LLM DETAIL] image=./output/rgb_image_2.png | file=0.50MB | base64=0.67MB | read=0.000s | encode=0.005s | total=0.007s
+[LLM DETAIL] image 1/2 prepared in 0.007s
+[LLM DETAIL] image=data\target_image\Scene1\PosterforPipelineRepair.png | file=0.08MB | base64=0.11MB | read=0.000s | encode=0.000s | total=0.000s
+[LLM DETAIL] image 2/2 prepared in 0.001s
+[LLM DETAIL] all images + messages prepared = 0.008s
+[LLM DETAIL] LOCAL API request start | model=qwen3-vl-4b
+[LLM DETAIL] LOCAL API request finished = 7.30s
+[LLM DETAIL] response parse = 0.0000s
+[LLM DETAIL] usage: CompletionUsage(completion_tokens=0, prompt_tokens=0, total_tokens=0, completion_tokens_details=None, prompt_tokens_details=None)
+[LLM DETAIL] chat_with_llm_images total = 7.31s
+[QWEN TEST] Attempt 1/3 time = 7.31s
+[QWEN TEST] Raw result: 'Go Forward'
+LLM raw action: 'Go Forward'
+LLM normalized action: Go Forward
+agent_choose_action: 4
+��ǰ�ƶ� 10 ��
+[TIME] obs=21.37s | save=0.03s | map=0.01s | DINO+SAM=5.04s | semantic=0.04s | uncertainty=0.00s | Qwen=7.31s | action=1.00s | TOTAL=34.81s
+Step: 3 (executed actions: 3/5)
+Get Observation.
+[AIRSIM] simGetImages RGB+Depth = 21.99s
+[AIRSIM] get_observation total = 22.03s
+Update cognitive map and uncertainty map.
+[GPU PROFILE] segment start | allocated=3.19GB | reserved=3.32GB | global_free=8.41/23.99GB
+[PROFILE] DINO preprocess = 0.339s
+[GPU PROFILE] before DINO inference | allocated=3.19GB | reserved=3.32GB | global_free=8.41/23.99GB
+[PROFILE] DINO inference = 0.711s
+[GPU PROFILE] after DINO inference | allocated=3.19GB | reserved=4.25GB | global_free=6.55/23.99GB
+[DINO] prompt= 'sign. poster. wall poster. signboard. notice board.' | box_threshold= 0.4 | text_threshold= 0.25 | detections= 0
+[DINO] prompt= 'sign. poster. wall poster. signboard. notice board.' | box_threshold= 0.3 | text_threshold= 0.2 | detections= 1
+[PROFILE] DINO postprocess = 0.005s
+[PROFILE] SAM image read = 0.008s
+[GPU PROFILE] before SAM set_image | allocated=3.19GB | reserved=4.25GB | global_free=6.55/23.99GB
+[PROFILE] SAM set_image = 1.179s
+[GPU PROFILE] after SAM set_image | allocated=3.19GB | reserved=7.25GB | global_free=0.68/23.99GB
+[PROFILE] SAM box transform = 0.001s
+[GPU PROFILE] before SAM predict | allocated=3.19GB | reserved=7.25GB | global_free=0.68/23.99GB
+[PROFILE] SAM predict = 0.052s
+[GPU PROFILE] after SAM predict | allocated=3.20GB | reserved=7.25GB | global_free=0.68/23.99GB
+[PROFILE] SAM postprocess = 0.000s
+[DINO] accepted classes: ['notice board'] | masks: 1 | threshold: (0.3, 0.2)
+[GPU PROFILE] before empty_cache | allocated=3.20GB | reserved=7.25GB | global_free=0.68/23.99GB
+[PROFILE] CUDA empty_cache = 0.784s
+[GPU PROFILE] after empty_cache | allocated=3.20GB | reserved=3.32GB | global_free=8.34/23.99GB
+[PROFILE SUMMARY] DINO_pre=0.339s | DINO_infer=0.711s | DINO_post=0.005s | SAM_read=0.008s | SAM_set=1.179s | SAM_box=0.001s | SAM_predict=0.052s | SAM_post=0.000s | TOTAL=3.084s
+[SEM INNER] camera=0.004s | read_depth=0.009s | depth_to_world=0.005s | add_label=0.009s | TOTAL=0.027s
+[SEM PROFILE] score_match=0.003s | overlay=0.004s | update_map=0.027s | cluster=0.004s | TOTAL=0.038s
+[DEBUG] class_names: ['notice board']
+[DEBUG] class_scores: [0.3]
+[DEBUG] mask_count: 1
+[DEBUG] cognitive_max: 0.5
+[DEBUG] cognitive_nonzero: 113
+max_value: 0.5
+max_cluster: [6.351e+03 4.203e+03 3.000e+00]
+0.06563601255705645
+advisier_un: None
+advisier_co: None
+  
+                                You are operating a drone to search for a visual target in an urban space. For each step, you will receive the following inputs:
+                                -Image_RGB_inputs: An RGB image representing your current view, which is the first image.
+                                -Image_Object: An image of the object you are searching for, which is the second image.
+                                -Text_Object: The object you are searching for is A poster about Pipeline repairs posted on the exterior wall of the second floor.
+                                Guidelines:
+                                -Follow your own ideas.
+                                -You can select on action from ("Turn Left", "Turn Right", "Go Forward", "Go Left", "Go Right")
+                                Select your action following guidelines above, Only return the name of the action you selected.
+                                
+Navigation history:
+Recent executed actions: ['Turn Left', 'Go Forward', 'Go Forward'].
+Recent map positions (oldest -> newest): [[6360.0, 4160.0, 5.0], [6360.0, 4160.0, 5.0], [6360.0, 4170.0, 5.0], [6360.0, 4180.0, 5.0]].
+Use the recent history to avoid revisiting the same area without gaining new visual information.
+
+Boundary constraint:
+- The drone must stay inside the current search scene.
+- You MUST choose one action only from this currently legal set: ['Turn Left', 'Turn Right', 'Go Forward', 'Go Left', 'Go Right'].
+- Do not choose an action outside this legal set.
+
+[QWEN TEST] Attempt 1/3 start
+[LLM DETAIL] image=./output/rgb_image_3.png | file=0.37MB | base64=0.50MB | read=0.001s | encode=0.001s | total=0.002s
+[LLM DETAIL] image 1/2 prepared in 0.002s
+[LLM DETAIL] image=data\target_image\Scene1\PosterforPipelineRepair.png | file=0.08MB | base64=0.11MB | read=0.000s | encode=0.001s | total=0.001s
+[LLM DETAIL] image 2/2 prepared in 0.001s
+[LLM DETAIL] all images + messages prepared = 0.003s
+[LLM DETAIL] LOCAL API request start | model=qwen3-vl-4b
+[LLM DETAIL] LOCAL API request finished = 6.25s
+[LLM DETAIL] response parse = 0.0000s
+[LLM DETAIL] usage: CompletionUsage(completion_tokens=0, prompt_tokens=0, total_tokens=0, completion_tokens_details=None, prompt_tokens_details=None)
+[LLM DETAIL] chat_with_llm_images total = 6.25s
+[QWEN TEST] Attempt 1/3 time = 6.25s
+[QWEN TEST] Raw result: 'Go Forward'
+LLM raw action: 'Go Forward'
+LLM normalized action: Go Forward
+agent_choose_action: 4
+��ǰ�ƶ� 10 ��
+[TIME] obs=22.03s | save=0.03s | map=0.01s | DINO+SAM=3.08s | semantic=0.04s | uncertainty=0.00s | Qwen=6.25s | action=1.07s | TOTAL=32.51s
+Step: 4 (executed actions: 4/5)
+Get Observation.
+[AIRSIM] simGetImages RGB+Depth = 21.86s
+[AIRSIM] get_observation total = 21.90s
+Update cognitive map and uncertainty map.
+[GPU PROFILE] segment start | allocated=3.19GB | reserved=3.32GB | global_free=8.41/23.99GB
+[PROFILE] DINO preprocess = 0.457s
+[GPU PROFILE] before DINO inference | allocated=3.19GB | reserved=3.32GB | global_free=8.41/23.99GB
+[PROFILE] DINO inference = 1.350s
+[GPU PROFILE] after DINO inference | allocated=3.19GB | reserved=4.25GB | global_free=6.54/23.99GB
+[DINO] prompt= 'sign. poster. wall poster. signboard. notice board.' | box_threshold= 0.4 | text_threshold= 0.25 | detections= 0
+[DINO] prompt= 'sign. poster. wall poster. signboard. notice board.' | box_threshold= 0.3 | text_threshold= 0.2 | detections= 1
+[PROFILE] DINO postprocess = 0.114s
+[PROFILE] SAM image read = 0.127s
+[GPU PROFILE] before SAM set_image | allocated=3.19GB | reserved=4.25GB | global_free=6.54/23.99GB
+[PROFILE] SAM set_image = 0.810s
+[GPU PROFILE] after SAM set_image | allocated=3.19GB | reserved=7.25GB | global_free=0.54/23.99GB
+[PROFILE] SAM box transform = 0.001s
+[GPU PROFILE] before SAM predict | allocated=3.19GB | reserved=7.25GB | global_free=0.54/23.99GB
+[PROFILE] SAM predict = 0.021s
+[GPU PROFILE] after SAM predict | allocated=3.19GB | reserved=7.25GB | global_free=0.54/23.99GB
+[PROFILE] SAM postprocess = 0.001s
+[DINO] accepted classes: ['notice board'] | masks: 1 | threshold: (0.3, 0.2)
+[GPU PROFILE] before empty_cache | allocated=3.19GB | reserved=7.25GB | global_free=0.54/23.99GB
+[PROFILE] CUDA empty_cache = 0.747s
+[GPU PROFILE] after empty_cache | allocated=3.19GB | reserved=3.32GB | global_free=8.41/23.99GB
+[PROFILE SUMMARY] DINO_pre=0.457s | DINO_infer=1.350s | DINO_post=0.114s | SAM_read=0.127s | SAM_set=0.810s | SAM_box=0.001s | SAM_predict=0.021s | SAM_post=0.001s | TOTAL=3.638s
+[SEM INNER] camera=0.000s | read_depth=0.072s | depth_to_world=0.003s | add_label=0.006s | TOTAL=0.081s
+[SEM PROFILE] score_match=0.000s | overlay=0.008s | update_map=0.081s | cluster=0.007s | TOTAL=0.096s
+[DEBUG] class_names: ['notice board']
+[DEBUG] class_scores: [0.3]
+[DEBUG] mask_count: 1
+[DEBUG] cognitive_max: 0.5
+[DEBUG] cognitive_nonzero: 94
+max_value: 0.5
+max_cluster: [6.3535e+03 4.1670e+03 1.0000e+00]
+0.06301471992224325
+advisier_un: None
+advisier_co: None
+  
+                                You are operating a drone to search for a visual target in an urban space. For each step, you will receive the following inputs:
+                                -Image_RGB_inputs: An RGB image representing your current view, which is the first image.
+                                -Image_Object: An image of the object you are searching for, which is the second image.
+                                -Text_Object: The object you are searching for is A poster about Pipeline repairs posted on the exterior wall of the second floor.
+                                Guidelines:
+                                -Follow your own ideas.
+                                -You can select on action from ("Turn Left", "Turn Right", "Go Forward", "Go Left", "Go Right")
+                                Select your action following guidelines above, Only return the name of the action you selected.
+                                
+Navigation history:
+Recent executed actions: ['Turn Left', 'Go Forward', 'Go Forward', 'Go Forward'].
+Recent map positions (oldest -> newest): [[6360.0, 4160.0, 5.0], [6360.0, 4160.0, 5.0], [6360.0, 4170.0, 5.0], [6360.0, 4180.0, 5.0], [6360.0, 4190.0, 5.0]].
+Use the recent history to avoid revisiting the same area without gaining new visual information.
+
+Boundary constraint:
+- The drone must stay inside the current search scene.
+- You MUST choose one action only from this currently legal set: ['Turn Left', 'Turn Right', 'Go Forward', 'Go Left', 'Go Right'].
+- Do not choose an action outside this legal set.
+
+[QWEN TEST] Attempt 1/3 start
+[LLM DETAIL] image=./output/rgb_image_4.png | file=0.37MB | base64=0.49MB | read=0.000s | encode=0.003s | total=0.003s
+[LLM DETAIL] image 1/2 prepared in 0.004s
+[LLM DETAIL] image=data\target_image\Scene1\PosterforPipelineRepair.png | file=0.08MB | base64=0.11MB | read=0.000s | encode=0.000s | total=0.001s
+[LLM DETAIL] image 2/2 prepared in 0.001s
+[LLM DETAIL] all images + messages prepared = 0.005s
+[LLM DETAIL] LOCAL API request start | model=qwen3-vl-4b
+[LLM DETAIL] LOCAL API request finished = 8.07s
+[LLM DETAIL] response parse = 0.0000s
+[LLM DETAIL] usage: CompletionUsage(completion_tokens=0, prompt_tokens=0, total_tokens=0, completion_tokens_details=None, prompt_tokens_details=None)
+[LLM DETAIL] chat_with_llm_images total = 8.07s
+[QWEN TEST] Attempt 1/3 time = 8.07s
+[QWEN TEST] Raw result: 'Go Forward'
+LLM raw action: 'Go Forward'
+LLM normalized action: Go Forward
+agent_choose_action: 4
+��ǰ�ƶ� 10 ��
+[TIME] obs=21.91s | save=0.06s | map=0.01s | DINO+SAM=3.64s | semantic=0.10s | uncertainty=0.00s | Qwen=8.07s | action=1.01s | TOTAL=34.79s
+Task success!
+
+[TIME SUMMARY]
+Task total: 217.70s
+action_execution_s: avg=1.02s, total=5.12s, n=5
+boundary_filter_s: avg=0.00s, total=0.02s, n=5
+dino_sam_s: avg=5.65s, total=28.23s, n=5
+image_save_s: avg=0.04s, total=0.19s, n=5
+map_preprocess_s: avg=0.01s, total=0.03s, n=5
+observation_s: avg=21.35s, total=106.74s, n=5
+qwen_vlm_s: avg=6.94s, total=34.71s, n=5
+semantic_cognitive_s: avg=0.71s, total=3.55s, n=5
+success_check_s: avg=0.00s, total=0.00s, n=5
+total_step_s: avg=35.72s, total=178.61s, n=5
+uncertainty_adviser_s: avg=0.00s, total=0.01s, n=5
+Saved Task 8 | Scene 1 | Easy | Success=1 | Steps=5/5 | Reason=target_visible
+Result: ./output/experiemnt_data/profile\data_8_profile.json

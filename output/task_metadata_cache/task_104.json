@@ -1,0 +1,19 @@
+{
+  "mission_id": "104",
+  "target_text": "A police car parked in a parking lot with an empty parking space next to it",
+  "target_image_path": "data\\target_image\\Scene2\\PoliceCar2.png",
+  "prompt_sam_raw": "blue van. white roof with \"3300\". red and blue light bar. white parking lines. rear window. \"apc\" logo. \"x-300\" text.",
+  "prompt_sam": "blue van. white roof with 3300. red and blue light bar. white parking lines. rear window. apc logo. car. vehicle.",
+  "scores_rel": {
+    "blue van": 0.1,
+    "white roof with 3300": 0.95,
+    "red and blue light bar": 0.9,
+    "white parking lines": 0.85,
+    "rear window": 0.7,
+    "apc logo": 0.6,
+    "car": 0.8,
+    "vehicle": 0.75
+  },
+  "target_prompt_time_s": 16.495,
+  "relevance_scores_time_s": 3.9811
+}

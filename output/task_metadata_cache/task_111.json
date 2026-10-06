@@ -1,0 +1,20 @@
+{
+  "mission_id": "111",
+  "target_text": "A black sign with the word EXCHANGE in blue on it",
+  "target_image_path": "data\\target_image\\Scene2\\Exchange.png",
+  "prompt_sam_raw": "exchange sign. two white arched windows. blue railing. gray tiled pavement. dark blue base of building",
+  "prompt_sam": "exchange sign. two white arched windows. blue railing. gray tiled pavement. dark blue base of building. sign. signboard. wall sign. billboard.",
+  "scores_rel": {
+    "exchange sign": 1.0,
+    "two white arched windows": 0.1,
+    "blue railing": 0.05,
+    "gray tiled pavement": 0.02,
+    "dark blue base of building": 0.03,
+    "sign": 0.95,
+    "signboard": 0.9,
+    "wall sign": 0.85,
+    "billboard": 0.7
+  },
+  "target_prompt_time_s": 16.9027,
+  "relevance_scores_time_s": 17.3787
+}

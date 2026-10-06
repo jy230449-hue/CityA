@@ -1,0 +1,18 @@
+{
+  "mission_id": "119",
+  "target_text": "A blue sign with the word PARKING on it",
+  "target_image_path": "data\\target_image\\Scene2\\Parking.png",
+  "prompt_sam_raw": "parking sign. green rectangular sign. blue window grid above sign",
+  "prompt_sam": "parking sign. green rectangular sign. blue window grid above sign. sign. signboard. wall sign. billboard.",
+  "scores_rel": {
+    "parking sign": 0.1,
+    "green rectangular sign": 0.95,
+    "blue window grid above sign": 0.05,
+    "sign": 0.7,
+    "signboard": 0.65,
+    "wall sign": 0.8,
+    "billboard": 0.4
+  },
+  "target_prompt_time_s": 16.6461,
+  "relevance_scores_time_s": 16.1045
+}

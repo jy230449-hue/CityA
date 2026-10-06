@@ -1,0 +1,21 @@
+{
+  "mission_id": "204",
+  "target_text": "A sign with a yellow car painted on it, perpendicular to the building, between the Bank of China and Hua Xia Bank signs",
+  "target_image_path": "data\\target_image\\Scene3\\SignBoardofCar.png",
+  "prompt_sam_raw": "alpine logo. yellow car graphic. red abstract pattern. black text \"media\". vertical banner. gray wall panels. metal frame. reflective surface. street sign edge. sidewalk corner",
+  "prompt_sam": "alpine logo. yellow car graphic. red abstract pattern. vertical banner. gray wall panels. metal frame. reflective surface. street sign edge. sidewalk corner. sign.",
+  "scores_rel": {
+    "alpine logo": 0.1,
+    "yellow car graphic": 0.85,
+    "red abstract pattern": 0.05,
+    "vertical banner": 0.75,
+    "gray wall panels": 0.02,
+    "metal frame": 0.3,
+    "reflective surface": 0.15,
+    "street sign edge": 0.08,
+    "sidewalk corner": 0.03,
+    "sign": 0.9
+  },
+  "target_prompt_time_s": 16.2245,
+  "relevance_scores_time_s": 3.5776
+}

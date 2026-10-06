@@ -133,25 +133,12 @@ def generate_coginitive_map(x_min, x_max, y_min, y_max, z_min, z_max, interval, 
     return points
 
 def add_label_to_semantic_map(world_points, labels, semantic_map, cognitive_map, scores_rel):
-    """
-    将检测到的 world_points 归并到 semantic_map / cognitive_map。
+    # 等价优化：
+    # - np.round() 规则不变
+    # - dominant label 规则不变
+    # - count 相同时仍取原输入中最先出现的 label
+    # - 地图索引和 score 公式不变
 
-    保留原逻辑：
-    1. 世界坐标 np.round() 到整数网格点；
-    2. 同一网格点若有多个 label，使用出现次数最多的 dominant label；
-    3. semantic_map 写 dominant label；
-    4. cognitive_map 写 scores_rel[label-1] * 当前 weight。
-
-    2026-10-03 性能优化：
-    原版对每个 key 都用 np.where() 扫描完整 semantic_map。
-    Scene3 数百万网格点时复杂度接近 O(K*N)。
-
-    新版：
-    - 分组逻辑仍用字典 + Counter，保持 dominant-label 语义；
-    - 利用规则网格元数据直接计算数组下标，单个 key 为 O(1)；
-    - 若遇到非本函数生成、缺少元数据的 semantic_map，则自动回退原 np.where，
-      保证兼容性。
-    """
     if world_points is None or labels is None:
         return semantic_map, cognitive_map
 
@@ -161,41 +148,132 @@ def add_label_to_semantic_map(world_points, labels, semantic_map, cognitive_map,
     if len(world_points) == 0 or len(labels) == 0:
         return semantic_map, cognitive_map
 
-    # 创建字典，保持原代码“同一整数坐标按出现次数取主导标签”的行为。
-    label_dict = {}
+    finite_mask = np.all(np.isfinite(world_points), axis=1)
 
-    for point, label in zip(world_points, labels):
-        # 原实现 np.round(point).astype(int)。
-        # 对非有限值跳过，相当于其无法命中规则地图坐标。
-        if not np.all(np.isfinite(point)):
-            continue
+    if not np.any(finite_mask):
+        return semantic_map, cognitive_map
 
-        rounded_point = tuple(np.round(point).astype(int))
-        if rounded_point in label_dict:
-            label_dict[rounded_point].append(label)
-        else:
-            label_dict[rounded_point] = [label]
+    valid_points = world_points[finite_mask]
+    valid_labels = labels[finite_mask]
+
+    rounded_points = np.round(valid_points).astype(np.int64)
+
+    unique_points, inverse = np.unique(
+        rounded_points,
+        axis=0,
+        return_inverse=True,
+    )
+
+    if len(unique_points) == 0:
+        return semantic_map, cognitive_map
+
+    pair_data = np.column_stack((
+        inverse.astype(np.int64),
+        valid_labels,
+    ))
+
+    unique_pairs, first_indices, counts = np.unique(
+        pair_data,
+        axis=0,
+        return_index=True,
+        return_counts=True,
+    )
+
+    group_ids = unique_pairs[:, 0].astype(np.int64)
+
+    # group 升序、count 降序、first occurrence 升序。
+    order = np.lexsort((
+        first_indices,
+        -counts,
+        group_ids,
+    ))
+
+    sorted_pairs = unique_pairs[order]
+    sorted_group_ids = group_ids[order]
+
+    _, first_for_group = np.unique(
+        sorted_group_ids,
+        return_index=True,
+    )
+
+    winning_pairs = sorted_pairs[first_for_group]
+
+    winning_groups = winning_pairs[:, 0].astype(np.int64)
+    dominant_labels = winning_pairs[:, 1]
+    dominant_points = unique_points[winning_groups]
 
     meta = _SEMANTIC_GRID_META.get(id(semantic_map))
 
-    for key, value in label_dict.items():
-        dominant_label = Counter(value).most_common(1)[0][0]
+    if meta is not None:
+        fx = (
+            dominant_points[:, 0].astype(np.float64)
+            - meta["x0"]
+        ) / meta["dx"]
 
-        idx_value = None
-        if meta is not None:
-            idx_value = _grid_index_from_key(key, meta)
+        fy = (
+            dominant_points[:, 1].astype(np.float64)
+            - meta["y0"]
+        ) / meta["dy"]
 
-        if idx_value is None and meta is None:
-            # 兼容旧数组/外部数组：只有缺少规则网格元数据时才使用原慢路径。
-            idx = np.where(
-                (semantic_map[:, 0] == key[0])
-                & (semantic_map[:, 1] == key[1])
-                & (semantic_map[:, 2] == key[2])
-            )
-            if idx[0].size > 0:
-                idx_value = int(idx[0][0])
+        fz = (
+            dominant_points[:, 2].astype(np.float64)
+            - meta["z0"]
+        ) / meta["dz"]
 
-        if idx_value is not None:
+        ix = np.rint(fx).astype(np.int64)
+        iy = np.rint(fy).astype(np.int64)
+        iz = np.rint(fz).astype(np.int64)
+
+        valid_grid = (
+            np.isclose(fx, ix, atol=1e-9)
+            & np.isclose(fy, iy, atol=1e-9)
+            & np.isclose(fz, iz, atol=1e-9)
+            & (ix >= 0)
+            & (ix < meta["nx"])
+            & (iy >= 0)
+            & (iy < meta["ny"])
+            & (iz >= 0)
+            & (iz < meta["nz"])
+        )
+
+        if not np.any(valid_grid):
+            return semantic_map, cognitive_map
+
+        ix = ix[valid_grid]
+        iy = iy[valid_grid]
+        iz = iz[valid_grid]
+        dominant_labels = dominant_labels[valid_grid]
+
+        map_indices = (
+            (ix * meta["ny"] + iy) * meta["nz"] + iz
+        ).astype(np.int64)
+
+        semantic_map[map_indices, 3] = dominant_labels
+
+        score_array = np.asarray(scores_rel)
+        label_indices = dominant_labels.astype(np.int64) - 1
+
+        cognitive_map[map_indices, 3] = (
+            score_array[label_indices]
+            * cognitive_map[map_indices, 4]
+        )
+
+        return semantic_map, cognitive_map
+
+    # 非规则/外部 semantic_map 保留旧兼容路径。
+    for key, dominant_label in zip(
+        dominant_points,
+        dominant_labels,
+    ):
+        idx = np.where(
+            (semantic_map[:, 0] == key[0])
+            & (semantic_map[:, 1] == key[1])
+            & (semantic_map[:, 2] == key[2])
+        )
+
+        if idx[0].size > 0:
+            idx_value = int(idx[0][0])
+
             semantic_map[idx_value, 3] = dominant_label
             cognitive_map[idx_value, 3] = (
                 scores_rel[int(dominant_label) - 1]
@@ -204,8 +282,6 @@ def add_label_to_semantic_map(world_points, labels, semantic_map, cognitive_map,
 
     return semantic_map, cognitive_map
 
-
-#
 def visualize_semantic_map(semantic_map, step, if_figure_plot,
                            filename_prefix='./output/semantic_map/semantic_map'):
     """

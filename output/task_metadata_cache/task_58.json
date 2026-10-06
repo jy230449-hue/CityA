@@ -1,0 +1,21 @@
+{
+  "mission_id": "58",
+  "target_text": "A clothing store called Cheesspod",
+  "target_image_path": "data\\target_image\\Scene1\\Cheesspod.png",
+  "prompt_sam_raw": "cheesspod sign. trees. red telephone booth. black street lamps. yellow flag. people silhouettes. white building facade. blue lower wall. black pole. window openings",
+  "prompt_sam": "cheesspod sign. trees. red telephone booth. black street lamps. yellow flag. people silhouettes. white building facade. blue lower wall. black pole. window openings.",
+  "scores_rel": {
+    "cheesspod sign": 1.0,
+    "trees": 0.3,
+    "red telephone booth": 0.1,
+    "black street lamps": 0.2,
+    "yellow flag": 0.4,
+    "people silhouettes": 0.25,
+    "white building facade": 0.9,
+    "blue lower wall": 0.15,
+    "black pole": 0.1,
+    "window openings": 0.6
+  },
+  "target_prompt_time_s": 33.8538,
+  "relevance_scores_time_s": 14.7938
+}

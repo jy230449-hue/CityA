@@ -1,0 +1,21 @@
+{
+  "mission_id": "35",
+  "target_text": "A poster about repairs between the windows on the fourth and fifth floors",
+  "target_image_path": "data\\target_image\\Scene1\\PosterforRepair1.png",
+  "prompt_sam_raw": "air conditioner unit. window. red signboard. white horizontal beam. pink wall. yellow sticker on air conditioner. black fan grille. blue-tinted window panes. Chinese characters on sign. small electrical box below air conditioner",
+  "prompt_sam": "air conditioner unit. window. red signboard. white horizontal beam. pink wall. yellow sticker on air conditioner. black fan grille. blue-tinted window panes. chinese characters on sign. small electrical box below air conditioner.",
+  "scores_rel": {
+    "air conditioner unit": 0.1,
+    "window": 0.3,
+    "red signboard": 0.95,
+    "white horizontal beam": 0.2,
+    "pink wall": 0.15,
+    "yellow sticker on air conditioner": 0.05,
+    "black fan grille": 0.05,
+    "blue-tinted window panes": 0.25,
+    "chinese characters on sign": 0.9,
+    "small electrical box below air conditioner": 0.1
+  },
+  "target_prompt_time_s": 28.8228,
+  "relevance_scores_time_s": 28.4072
+}

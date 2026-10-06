@@ -1,0 +1,19 @@
+{
+  "mission_id": "207",
+  "target_text": "A sign with the words China Construction Bank written in blue Chinese and white English and the China Construction Bank logo painted on it",
+  "target_image_path": "data\\target_image\\Scene3\\ChinaConstructionBank.png",
+  "prompt_sam_raw": "china construction bank logo. chinese characters \"中国建设银行\". blue circular logo. glass facade with grid pattern. white background panels.",
+  "prompt_sam": "china construction bank logo. chinese characters 中国建设银行. blue circular logo. glass facade with grid pattern. sign. signboard. wall sign. billboard.",
+  "scores_rel": {
+    "china construction bank logo": 0.95,
+    "chinese characters 中国建设银行": 0.98,
+    "blue circular logo": 0.97,
+    "glass facade with grid pattern": 0.3,
+    "sign": 0.96,
+    "signboard": 0.94,
+    "wall sign": 0.95,
+    "billboard": 0.85
+  },
+  "target_prompt_time_s": 5.8093,
+  "relevance_scores_time_s": 5.48
+}

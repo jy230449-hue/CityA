@@ -1,0 +1,213 @@
+{
+  "task_index": 96,
+  "mission_id": "97",
+  "scene_id": "2",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "A yellow sign with the word Books on it",
+  "target_image_path": "data\\target_image\\Scene2\\Books2.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 2,
+  "if_success": 0,
+  "termination_reason": "llm_stop",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Go Down",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 109.8584,
+  "map_init_time_s": 0.0449,
+  "target_prompt_time_s": 9.7649,
+  "relevance_scores_time_s": 9.9752,
+  "task_total_time_s": 107.9627,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 16.18956160000016,
+      "image_save_s": 0.05566540000108944,
+      "map_preprocess_s": 0.036927200000718585,
+      "dino_sam_s": 5.062596899999335,
+      "semantic_cognitive_s": 0.027564100000745384,
+      "uncertainty_adviser_s": 0.001748500000758213,
+      "boundary_filter_s": 0.0001436000002286164,
+      "qwen_vlm_s": 3.0634448999990127,
+      "action_execution_s": 0.0012633000005735084,
+      "success_check_s": 5.020000025979243e-05,
+      "total_step_s": 24.52172259999861
+    },
+    {
+      "step": 1,
+      "observation_s": 12.751911100000143,
+      "image_save_s": 0.027820199999041506,
+      "map_preprocess_s": 0.036201100001562736,
+      "dino_sam_s": 0.9780432999996265,
+      "semantic_cognitive_s": 1.2024237999994511,
+      "uncertainty_adviser_s": 0.05399490000127116,
+      "boundary_filter_s": 0.00021940000078757294,
+      "qwen_vlm_s": 2.505593300000328,
+      "action_execution_s": 0.0013275000001158332,
+      "success_check_s": 5.03999999637017e-05,
+      "total_step_s": 17.619104100000186
+    },
+    {
+      "step": 2,
+      "observation_s": 13.762914900000396,
+      "image_save_s": 0.02231449999999313,
+      "map_preprocess_s": 0.027811300000394112,
+      "dino_sam_s": 1.4394118000000162,
+      "semantic_cognitive_s": 0.026056900000185124,
+      "uncertainty_adviser_s": 0.0012483000009524403,
+      "boundary_filter_s": 0.00021320000087143853,
+      "qwen_vlm_s": 30.488351299998612,
+      "total_step_s": 45.776049099999
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.0026,
+      "avg_s": 0.0013,
+      "count": 2
+    },
+    "boundary_filter_s": {
+      "total_s": 0.0006,
+      "avg_s": 0.0002,
+      "count": 3
+    },
+    "dino_sam_s": {
+      "total_s": 7.4801,
+      "avg_s": 2.4934,
+      "count": 3
+    },
+    "image_save_s": {
+      "total_s": 0.1058,
+      "avg_s": 0.0353,
+      "count": 3
+    },
+    "map_preprocess_s": {
+      "total_s": 0.1009,
+      "avg_s": 0.0336,
+      "count": 3
+    },
+    "observation_s": {
+      "total_s": 42.7044,
+      "avg_s": 14.2348,
+      "count": 3
+    },
+    "qwen_vlm_s": {
+      "total_s": 36.0574,
+      "avg_s": 12.0191,
+      "count": 3
+    },
+    "semantic_cognitive_s": {
+      "total_s": 1.256,
+      "avg_s": 0.4187,
+      "count": 3
+    },
+    "success_check_s": {
+      "total_s": 0.0001,
+      "avg_s": 0.0001,
+      "count": 2
+    },
+    "total_step_s": {
+      "total_s": 87.9169,
+      "avg_s": 29.3056,
+      "count": 3
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.057,
+      "avg_s": 0.019,
+      "count": 3
+    }
+  },
+  "metric_initial_position": [
+    6870.0,
+    5250.0,
+    10.0
+  ],
+  "metric_target_position": [
+    6786.45,
+    5330.2,
+    6.65
+  ],
+  "metric_final_position": [
+    6880.0,
+    5240.0,
+    10.0
+  ],
+  "initial_target_distance": 115.86140427251864,
+  "final_navigation_error": 129.9956345420876,
+  "trajectory_length": 20.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Go Forward",
+    "Go Left"
+  ],
+  "adviser_uncertainty_history": [
+    null,
+    null
+  ],
+  "adviser_cognitive_history": [
+    null,
+    null
+  ],
+  "attraction_value_history": [
+    0.0,
+    0.0
+  ],
+  "position": [
+    [
+      6870.0,
+      5250.0,
+      10.0
+    ],
+    [
+      6870.0,
+      5240.0,
+      10.0
+    ],
+    [
+      6880.0,
+      5240.0,
+      10.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      90.0
+    ],
+    [
+      0.0,
+      0.0,
+      90.0
+    ],
+    [
+      0.0,
+      0.0,
+      90.0
+    ]
+  ]
+}

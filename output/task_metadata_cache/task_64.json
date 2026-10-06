@@ -1,0 +1,21 @@
+{
+  "mission_id": "64",
+  "target_text": "A red car parked in front of FamilyMart",
+  "target_image_path": "data\\target_image\\Scene1\\RedCar.png",
+  "prompt_sam_raw": "familymart sign. red sedan car. two small trees. black trash bins. blue building facade. yellow banner. street lamp. window with shutters. sidewalk tiles. bicycle wheel (partial)",
+  "prompt_sam": "familymart sign. red sedan car. two small trees. black trash bins. blue building facade. yellow banner. street lamp. window with shutters. sidewalk tiles. bicycle wheel partial.",
+  "scores_rel": {
+    "familymart sign": 0.95,
+    "red sedan car": 0.98,
+    "two small trees": 0.3,
+    "black trash bins": 0.2,
+    "blue building facade": 0.15,
+    "yellow banner": 0.1,
+    "street lamp": 0.25,
+    "window with shutters": 0.05,
+    "sidewalk tiles": 0.4,
+    "bicycle wheel partial": 0.05
+  },
+  "target_prompt_time_s": 33.2041,
+  "relevance_scores_time_s": 62.1284
+}

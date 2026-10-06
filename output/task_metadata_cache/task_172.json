@@ -1,0 +1,21 @@
+{
+  "mission_id": "172",
+  "target_text": "A signboard with oranges and perfume painted on it is vertical to the building, next to the white signboard with the words Industrial and Commercial Bank of China.",
+  "target_image_path": "data\\target_image\\Scene3\\SignBoardofPerfume.png",
+  "prompt_sam_raw": "perfume bottle. orange slice illustration. guerlain paris logo. aqua allegoria text. honeycomb pattern on bottle. sunburst design. vertical banner shape. white background. purple edge on left. yellow-orange gradient",
+  "prompt_sam": "perfume bottle. orange slice illustration. guerlain paris logo. honeycomb pattern on bottle. sunburst design. vertical banner shape. purple edge on left. yellow-orange gradient. sign. signboard.",
+  "scores_rel": {
+    "perfume bottle": 0.1,
+    "orange slice illustration": 0.85,
+    "guerlain paris logo": 0.75,
+    "honeycomb pattern on bottle": 0.6,
+    "sunburst design": 0.55,
+    "vertical banner shape": 0.95,
+    "purple edge on left": 0.3,
+    "yellow-orange gradient": 0.7,
+    "sign": 0.9,
+    "signboard": 0.98
+  },
+  "target_prompt_time_s": 11.8734,
+  "relevance_scores_time_s": 8.7697
+}

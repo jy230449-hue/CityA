@@ -1,0 +1,21 @@
+{
+  "mission_id": "171",
+  "target_text": "A white sign has the Chinese characters 'Industrial and Commercial Bank of China'and a hand image on it, and next to it is a sign with oranges and perfume.",
+  "target_image_path": "data\\target_image\\Scene3\\ICBC.png",
+  "prompt_sam_raw": "china industrial and commercial bank sign. red logo with stylized characters. white banner with black text. blue vertical fence bars. hand image on right side of banner. chinese characters \"中国工商银行\". english text \"industrial and commercial bank of china\". slogan in chinese below main text. metal fence structure. green foliage at bottom edge",
+  "prompt_sam": "china industrial and commercial bank sign. red logo with stylized characters. white banner with black text. blue vertical fence bars. chinese characters 中国工商银行. metal fence structure. green foliage at bottom edge. sign. signboard. wall sign.",
+  "scores_rel": {
+    "china industrial and commercial bank sign": 0.95,
+    "red logo with stylized characters": 0.92,
+    "white banner with black text": 0.88,
+    "blue vertical fence bars": 0.1,
+    "chinese characters 中国工商银行": 0.94,
+    "metal fence structure": 0.05,
+    "green foliage at bottom edge": 0.03,
+    "sign": 0.85,
+    "signboard": 0.87,
+    "wall sign": 0.9
+  },
+  "target_prompt_time_s": 15.8607,
+  "relevance_scores_time_s": 2.5165
+}

@@ -1,0 +1,308 @@
+{
+  "task_index": 6,
+  "mission_id": "7",
+  "scene_id": "1",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "A poster about the car deal on a fourth-floor window",
+  "target_image_path": "data\\target_image\\Scene1\\PosterforCarTrading.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 5,
+  "if_success": 1,
+  "termination_reason": "target_visible",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 30.885,
+  "map_init_time_s": 0.0042,
+  "target_prompt_time_s": 26.7343,
+  "relevance_scores_time_s": 25.7438,
+  "task_total_time_s": 218.4187,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 27.170798600000126,
+      "image_save_s": 0.09492880000016157,
+      "map_preprocess_s": 0.0052742000002581335,
+      "dino_sam_s": 8.641840100000081,
+      "semantic_cognitive_s": 0.12148989999968762,
+      "uncertainty_adviser_s": 0.035785000000032596,
+      "boundary_filter_s": 0.0003941999998460233,
+      "qwen_vlm_s": 9.83792769999991,
+      "action_execution_s": 0.03812710000011066,
+      "success_check_s": 5.0999999984924216e-05,
+      "total_step_s": 46.36216030000014
+    },
+    {
+      "step": 1,
+      "observation_s": 18.416079399999944,
+      "image_save_s": 0.06700339999997595,
+      "map_preprocess_s": 0.0052676999998766405,
+      "dino_sam_s": 6.606989800000065,
+      "semantic_cognitive_s": 0.019949500000166154,
+      "uncertainty_adviser_s": 0.0028664999999818974,
+      "boundary_filter_s": 0.00013489999992088997,
+      "qwen_vlm_s": 9.11034010000003,
+      "action_execution_s": 0.02598710000029314,
+      "success_check_s": 0.00027480000017021666,
+      "total_step_s": 34.36581290000004
+    },
+    {
+      "step": 2,
+      "observation_s": 18.555277599999954,
+      "image_save_s": 0.04438049999998839,
+      "map_preprocess_s": 0.005055799999809096,
+      "dino_sam_s": 6.989950099999987,
+      "semantic_cognitive_s": 0.1401691999999457,
+      "uncertainty_adviser_s": 0.0016544000000067172,
+      "boundary_filter_s": 0.00021229999993011006,
+      "qwen_vlm_s": 6.556989700000031,
+      "action_execution_s": 0.0026954999998451967,
+      "success_check_s": 6.749999965904863e-05,
+      "total_step_s": 32.487263500000154
+    },
+    {
+      "step": 3,
+      "observation_s": 18.529376500000126,
+      "image_save_s": 0.02575329999990572,
+      "map_preprocess_s": 0.007676299999729963,
+      "dino_sam_s": 2.7776739999999336,
+      "semantic_cognitive_s": 0.03970900000012989,
+      "uncertainty_adviser_s": 0.0016800000003058813,
+      "boundary_filter_s": 0.00013150000040695886,
+      "qwen_vlm_s": 4.747126600000229,
+      "action_execution_s": 0.033355999999912456,
+      "success_check_s": 6.010000015521655e-05,
+      "total_step_s": 26.201839100000143
+    },
+    {
+      "step": 4,
+      "observation_s": 18.07736879999993,
+      "image_save_s": 0.029551699999956327,
+      "map_preprocess_s": 0.007902800000010757,
+      "dino_sam_s": 2.1192054000002827,
+      "semantic_cognitive_s": 0.024156800000127987,
+      "uncertainty_adviser_s": 0.001829599999837228,
+      "boundary_filter_s": 0.00013579999995272374,
+      "qwen_vlm_s": 5.968278499999997,
+      "action_execution_s": 0.0016500000001542503,
+      "success_check_s": 7.29000003047986e-05,
+      "total_step_s": 26.384993399999985
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.1018,
+      "avg_s": 0.0204,
+      "count": 5
+    },
+    "boundary_filter_s": {
+      "total_s": 0.001,
+      "avg_s": 0.0002,
+      "count": 5
+    },
+    "dino_sam_s": {
+      "total_s": 27.1357,
+      "avg_s": 5.4271,
+      "count": 5
+    },
+    "image_save_s": {
+      "total_s": 0.2616,
+      "avg_s": 0.0523,
+      "count": 5
+    },
+    "map_preprocess_s": {
+      "total_s": 0.0312,
+      "avg_s": 0.0062,
+      "count": 5
+    },
+    "observation_s": {
+      "total_s": 100.7489,
+      "avg_s": 20.1498,
+      "count": 5
+    },
+    "qwen_vlm_s": {
+      "total_s": 36.2207,
+      "avg_s": 7.2441,
+      "count": 5
+    },
+    "semantic_cognitive_s": {
+      "total_s": 0.3455,
+      "avg_s": 0.0691,
+      "count": 5
+    },
+    "success_check_s": {
+      "total_s": 0.0005,
+      "avg_s": 0.0001,
+      "count": 5
+    },
+    "total_step_s": {
+      "total_s": 165.8021,
+      "avg_s": 33.1604,
+      "count": 5
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.0438,
+      "avg_s": 0.0088,
+      "count": 5
+    }
+  },
+  "metric_initial_position": [
+    6360.0,
+    4160.0,
+    5.0
+  ],
+  "metric_target_position": [
+    6345.73,
+    4210.37,
+    11.14
+  ],
+  "metric_final_position": [
+    6360.0,
+    4200.0,
+    5.0
+  ],
+  "initial_target_distance": 52.71118856561671,
+  "final_navigation_error": 18.678045936339544,
+  "trajectory_length": 40.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Turn Left",
+    "Go Forward",
+    "Go Forward",
+    "Go Forward",
+    "Go Forward"
+  ],
+  "adviser_uncertainty_history": [
+    "Turn Left",
+    null,
+    null,
+    null,
+    null
+  ],
+  "adviser_cognitive_history": [
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "attraction_value_history": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "position": [
+    [
+      6360.0,
+      4160.0,
+      5.0
+    ],
+    [
+      6360.0,
+      4160.0,
+      5.0
+    ],
+    [
+      6360.0,
+      4170.0,
+      5.0
+    ],
+    [
+      6360.0,
+      4180.0,
+      5.0
+    ],
+    [
+      6360.0,
+      4190.0,
+      5.0
+    ],
+    [
+      6360.0,
+      4200.0,
+      5.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ],
+    [
+      0.0,
+      0.0,
+      -90.0
+    ]
+  ]
+}

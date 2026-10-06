@@ -1,0 +1,20 @@
+{
+  "mission_id": "48",
+  "target_text": "A poster about repairs between the windows on the fourth and fifth floors",
+  "target_image_path": "data\\target_image\\Scene1\\PosterforRepair1.png",
+  "prompt_sam_raw": "air conditioner unit. window with blue glass panes. red signboard with white and yellow text. white horizontal beam below signboard. pink wall background.",
+  "prompt_sam": "air conditioner unit. window with blue glass panes. white horizontal beam below signboard. pink wall background. poster. wall poster. sign. signboard. notice board.",
+  "scores_rel": {
+    "air conditioner unit": 0.1,
+    "window with blue glass panes": 0.05,
+    "white horizontal beam below signboard": 0.85,
+    "pink wall background": 0.2,
+    "poster": 0.95,
+    "wall poster": 0.9,
+    "sign": 0.8,
+    "signboard": 0.75,
+    "notice board": 0.6
+  },
+  "target_prompt_time_s": 16.7464,
+  "relevance_scores_time_s": 19.7099
+}

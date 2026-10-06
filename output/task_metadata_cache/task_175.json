@@ -1,0 +1,21 @@
+{
+  "mission_id": "175",
+  "target_text": "A purple sign next to the ICBC logo, vertically attached to the building",
+  "target_image_path": "data\\target_image\\Scene3\\SportsBoard2.png",
+  "prompt_sam_raw": "purple banner. silhouettes of people. tall glass building. vertical metal frame. horizontal window lines. reflective surface. abstract leaf pattern. light gradient background. structural columns. modern architecture",
+  "prompt_sam": "purple banner. silhouettes of people. tall glass building. vertical metal frame. horizontal window lines. reflective surface. abstract leaf pattern. structural columns. modern architecture. sign.",
+  "scores_rel": {
+    "purple banner": 0.95,
+    "silhouettes of people": 0.7,
+    "tall glass building": 0.3,
+    "vertical metal frame": 0.85,
+    "horizontal window lines": 0.2,
+    "reflective surface": 0.4,
+    "abstract leaf pattern": 0.6,
+    "structural columns": 0.25,
+    "modern architecture": 0.35,
+    "sign": 0.9
+  },
+  "target_prompt_time_s": 15.682,
+  "relevance_scores_time_s": 16.8685
+}

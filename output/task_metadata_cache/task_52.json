@@ -1,0 +1,21 @@
+{
+  "mission_id": "52",
+  "target_text": "A deliveryman station located between two buildings",
+  "target_image_path": "data\\target_image\\Scene1\\DeliverymanStation.png",
+  "prompt_sam_raw": "beijing cbd qishi station sign. metal truss gate structure. black diamond-patterned gate. tiled pavement. blue building wall. concrete pillars. blue window frame. blue circular logo. gray metal scaffolding. pinkish wall on right",
+  "prompt_sam": "beijing cbd qishi station sign. metal truss gate structure. black diamond-patterned gate. tiled pavement. blue building wall. concrete pillars. blue window frame. blue circular logo. gray metal scaffolding. pinkish wall on right.",
+  "scores_rel": {
+    "beijing cbd qishi station sign": 0.1,
+    "metal truss gate structure": 0.85,
+    "black diamond-patterned gate": 0.75,
+    "tiled pavement": 0.6,
+    "blue building wall": 0.4,
+    "concrete pillars": 0.9,
+    "blue window frame": 0.3,
+    "blue circular logo": 0.2,
+    "gray metal scaffolding": 0.5,
+    "pinkish wall on right": 0.35
+  },
+  "target_prompt_time_s": 25.5806,
+  "relevance_scores_time_s": 50.2812
+}

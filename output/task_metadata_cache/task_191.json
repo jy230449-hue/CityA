@@ -1,0 +1,21 @@
+{
+  "mission_id": "191",
+  "target_text": "A red poster with tea leaves on it, 'Tea Ceremony' in Chinese and 'When I do well in the exam' in English",
+  "target_image_path": "data\\target_image\\Scene3\\SignBoardofTea.png",
+  "prompt_sam_raw": "bamboo mat. wooden scoop. dried tea leaves. red banner. chinese characters. english text. window frame. horizontal slats. dark background. light-colored wall",
+  "prompt_sam": "bamboo mat. wooden scoop. dried tea leaves. red banner. chinese characters. window frame. horizontal slats. light-colored wall. poster. wall poster.",
+  "scores_rel": {
+    "bamboo mat": 0.1,
+    "wooden scoop": 0.05,
+    "dried tea leaves": 0.2,
+    "red banner": 0.75,
+    "chinese characters": 0.95,
+    "window frame": 0.0,
+    "horizontal slats": 0.0,
+    "light-colored wall": 0.0,
+    "poster": 0.9,
+    "wall poster": 0.85
+  },
+  "target_prompt_time_s": 17.6896,
+  "relevance_scores_time_s": 2.5535
+}

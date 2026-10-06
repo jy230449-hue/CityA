@@ -1,0 +1,21 @@
+{
+  "mission_id": "2",
+  "target_text": "A store named Family Mart",
+  "target_image_path": "data\\target_image\\Scene1\\FamilyMart.png",
+  "prompt_sam_raw": "familymart sign. yellow banner. green and blue logo. small tree. black vent grille. window with red stripe. black speaker boxes. white railing. red and yellow objects on ground. blue building facade",
+  "prompt_sam": "familymart sign. yellow banner. green and blue logo. small tree. black vent grille. window with red stripe. black speaker boxes. white railing. red and yellow objects on ground. blue building facade.",
+  "scores_rel": {
+    "familymart sign": 0.95,
+    "yellow banner": 0.85,
+    "green and blue logo": 0.9,
+    "small tree": 0.3,
+    "black vent grille": 0.1,
+    "window with red stripe": 0.2,
+    "black speaker boxes": 0.15,
+    "white railing": 0.25,
+    "red and yellow objects on ground": 0.1,
+    "blue building facade": 0.4
+  },
+  "target_prompt_time_s": 14.1514,
+  "relevance_scores_time_s": 13.043
+}

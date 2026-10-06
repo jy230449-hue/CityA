@@ -1,0 +1,211 @@
+{
+  "task_index": 161,
+  "mission_id": "162",
+  "scene_id": "2",
+  "mission_grade": "1",
+  "paper_difficulty": "Easy",
+  "target_text": "A parking lot with eight cars parked in front of a blue sign that says PARKING",
+  "target_image_path": "data\\target_image\\Scene2\\Parkinglot.png",
+  "theta_T": 0.1,
+  "cognitive_threshold": 0.5,
+  "step_x": 10,
+  "step_z": 5,
+  "step_all": 40,
+  "steps": 2,
+  "if_success": 0,
+  "termination_reason": "llm_stop",
+  "boundary_reject_count": 0,
+  "boundary_rejected_actions": [],
+  "valid_actions_history": [
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Forward",
+      "Go Left",
+      "Go Right"
+    ],
+    [
+      "Go Up",
+      "Turn Left",
+      "Turn Right",
+      "Go Left",
+      "Go Right"
+    ]
+  ],
+  "profile_mode": false,
+  "profile_step_limit": null,
+  "model_init_time_s": 58.9735,
+  "map_init_time_s": 0.0925,
+  "target_prompt_time_s": 67.4238,
+  "relevance_scores_time_s": 47.784,
+  "task_total_time_s": 208.9679,
+  "step_timing_history": [
+    {
+      "step": 0,
+      "observation_s": 24.11529840000003,
+      "image_save_s": 0.025800000003073364,
+      "map_preprocess_s": 0.06284060000325553,
+      "dino_sam_s": 7.410912500003178,
+      "semantic_cognitive_s": 0.4305991000001086,
+      "uncertainty_adviser_s": 0.0015521000022999942,
+      "boundary_filter_s": 0.00016090000281110406,
+      "qwen_vlm_s": 6.913890700001502,
+      "action_execution_s": 0.0013307000044733286,
+      "success_check_s": 5.1700000767596066e-05,
+      "total_step_s": 39.0072291999968
+    },
+    {
+      "step": 1,
+      "observation_s": 17.345980500002042,
+      "image_save_s": 0.030270700000983197,
+      "map_preprocess_s": 0.032161099996301346,
+      "dino_sam_s": 1.5383110000038869,
+      "semantic_cognitive_s": 0.13414349999948172,
+      "uncertainty_adviser_s": 0.0012475999974412844,
+      "boundary_filter_s": 0.00012449999485397711,
+      "qwen_vlm_s": 3.5295079999996233,
+      "action_execution_s": 0.002319899998838082,
+      "success_check_s": 5.059999966761097e-05,
+      "total_step_s": 22.621530000003986
+    },
+    {
+      "step": 2,
+      "observation_s": 12.444845000005444,
+      "image_save_s": 0.026395199995022267,
+      "map_preprocess_s": 0.04341769999882672,
+      "dino_sam_s": 2.0746721000032267,
+      "semantic_cognitive_s": 0.07832300000154646,
+      "uncertainty_adviser_s": 0.0012475999974412844,
+      "boundary_filter_s": 0.00012590000551426783,
+      "qwen_vlm_s": 16.754145899998548,
+      "total_step_s": 31.42832709999493
+    }
+  ],
+  "timing_summary": {
+    "action_execution_s": {
+      "total_s": 0.0037,
+      "avg_s": 0.0018,
+      "count": 2
+    },
+    "boundary_filter_s": {
+      "total_s": 0.0004,
+      "avg_s": 0.0001,
+      "count": 3
+    },
+    "dino_sam_s": {
+      "total_s": 11.0239,
+      "avg_s": 3.6746,
+      "count": 3
+    },
+    "image_save_s": {
+      "total_s": 0.0825,
+      "avg_s": 0.0275,
+      "count": 3
+    },
+    "map_preprocess_s": {
+      "total_s": 0.1384,
+      "avg_s": 0.0461,
+      "count": 3
+    },
+    "observation_s": {
+      "total_s": 53.9061,
+      "avg_s": 17.9687,
+      "count": 3
+    },
+    "qwen_vlm_s": {
+      "total_s": 27.1975,
+      "avg_s": 9.0658,
+      "count": 3
+    },
+    "semantic_cognitive_s": {
+      "total_s": 0.6431,
+      "avg_s": 0.2144,
+      "count": 3
+    },
+    "success_check_s": {
+      "total_s": 0.0001,
+      "avg_s": 0.0001,
+      "count": 2
+    },
+    "total_step_s": {
+      "total_s": 93.0571,
+      "avg_s": 31.019,
+      "count": 3
+    },
+    "uncertainty_adviser_s": {
+      "total_s": 0.004,
+      "avg_s": 0.0013,
+      "count": 3
+    }
+  },
+  "metric_initial_position": [
+    6710.0,
+    5270.0,
+    5.0
+  ],
+  "metric_target_position": [
+    6713.2,
+    5336.1,
+    0.05
+  ],
+  "metric_final_position": [
+    6700.0,
+    5260.0,
+    5.0
+  ],
+  "initial_target_distance": 66.36228220909862,
+  "final_navigation_error": 77.39478341593863,
+  "trajectory_length": 20.0,
+  "metadata_from_cache": false,
+  "action_history": [
+    "Go Forward",
+    "Go Left"
+  ],
+  "adviser_uncertainty_history": [
+    null,
+    null
+  ],
+  "adviser_cognitive_history": [
+    null,
+    null
+  ],
+  "attraction_value_history": [
+    0.0,
+    0.0
+  ],
+  "position": [
+    [
+      6710.0,
+      5270.0,
+      5.0
+    ],
+    [
+      6700.0,
+      5270.0,
+      5.0
+    ],
+    [
+      6700.0,
+      5260.0,
+      5.0
+    ]
+  ],
+  "orientation": [
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ],
+    [
+      0.0,
+      0.0,
+      -180.0
+    ]
+  ]
+}

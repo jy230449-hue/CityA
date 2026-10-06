@@ -1,0 +1,21 @@
+{
+  "mission_id": "193",
+  "target_text": "A blue billboard with MILD ESSENCE written in white English on it standing alone on the street",
+  "target_image_path": "data\\target_image\\Scene3\\BlueBoard.png",
+  "prompt_sam_raw": "billboard. airplane. clouds. ocean. building. text \"mild essence\". text \"mild seven\". sky. horizon. logo",
+  "prompt_sam": "billboard. airplane. clouds. ocean. building. sky. horizon. logo. advertisement board. signboard.",
+  "scores_rel": {
+    "billboard": 0.95,
+    "airplane": 0.1,
+    "clouds": 0.3,
+    "ocean": 0.05,
+    "building": 0.2,
+    "sky": 0.4,
+    "horizon": 0.25,
+    "logo": 0.85,
+    "advertisement board": 0.9,
+    "signboard": 0.8
+  },
+  "target_prompt_time_s": 17.3988,
+  "relevance_scores_time_s": 2.5113
+}

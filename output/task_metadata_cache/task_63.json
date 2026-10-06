@@ -1,0 +1,21 @@
+{
+  "mission_id": "63",
+  "target_text": "A poster about selling water on the second floor",
+  "target_image_path": "data\\target_image\\Scene1\\PosterforWaterSelling.png",
+  "prompt_sam_raw": "sign. water dispenser illustration. blue border. red text. green logo. white background. chinese characters. circular symbol. bottle graphic. phone icon",
+  "prompt_sam": "sign. water dispenser illustration. blue border. green logo. chinese characters. circular symbol. bottle graphic. phone icon. poster. wall poster.",
+  "scores_rel": {
+    "sign": 0.1,
+    "water dispenser illustration": 0.85,
+    "blue border": 0.75,
+    "green logo": 0.6,
+    "chinese characters": 0.95,
+    "circular symbol": 0.4,
+    "bottle graphic": 0.9,
+    "phone icon": 0.2,
+    "poster": 0.98,
+    "wall poster": 0.97
+  },
+  "target_prompt_time_s": 11.5921,
+  "relevance_scores_time_s": 3.3013
+}

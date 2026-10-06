@@ -1,0 +1,18 @@
+{
+  "mission_id": "145",
+  "target_text": "A pink car parked in a parking lot with a black car in the parking space next to it",
+  "target_image_path": "data\\target_image\\Scene2\\PinkCar2.png",
+  "prompt_sam_raw": "pink car. black roof stripe. gray wheels. dark asphalt surface. white frame edge",
+  "prompt_sam": "pink car. black roof stripe. gray wheels. dark asphalt surface. white frame edge. car. vehicle.",
+  "scores_rel": {
+    "pink car": 0.95,
+    "black roof stripe": 0.7,
+    "gray wheels": 0.6,
+    "dark asphalt surface": 0.85,
+    "white frame edge": 0.1,
+    "car": 0.9,
+    "vehicle": 0.85
+  },
+  "target_prompt_time_s": 16.0917,
+  "relevance_scores_time_s": 12.6612
+}
