@@ -9,7 +9,6 @@ import re
 
 
 
-
 # ============================================================
 
 # 2026-10-04 最终性能优化：
@@ -572,6 +571,56 @@ def save_run_state(
 
 
 
+# ============================================================
+# 2026-10-07 新增：纯统计 Audit
+# 作用：只统计 DINO -> relevance 匹配和 Adviser 触发情况。
+# 不修改 class_scores、地图、阈值、Prompt 或动作决策。
+# ============================================================
+def audit_relevance_mapping(class_names, scores_rel):
+    def normalize_str(value):
+        return re.sub(r'[\s\-_]', '', str(value)).lower()
+
+    result = {
+        "detection_count": 0,
+        "exact_match_count": 0,
+        "fallback_count": 0,
+        "matched_classes": [],
+        "fallback_classes": [],
+    }
+
+    if class_names is None:
+        return result
+
+    class_names_list = [str(name) for name in list(class_names)]
+    result["detection_count"] = len(class_names_list)
+
+    if not isinstance(scores_rel, dict):
+        result["fallback_count"] = len(class_names_list)
+        result["fallback_classes"] = class_names_list
+        return result
+
+    normalized_scores = {
+        normalize_str(key): key
+        for key in scores_rel.keys()
+    }
+
+    for name in class_names_list:
+        clean_name = normalize_str(name)
+        if clean_name in normalized_scores:
+            score_key = normalized_scores[clean_name]
+            result["exact_match_count"] += 1
+            result["matched_classes"].append({
+                "dino_name": name,
+                "score_key": score_key,
+                "score": float(scores_rel[score_key]),
+            })
+        else:
+            result["fallback_count"] += 1
+            result["fallback_classes"].append(name)
+
+    return result
+
+
 def main():
 
 
@@ -1040,7 +1089,7 @@ def main():
 
     else:
 
-        result_output_dir = "./output/experiemnt_data/ours"
+        result_output_dir = "./output/experiemnt_data/audit"
 
 
 
@@ -1074,7 +1123,7 @@ def main():
 
         run_state_dir,
 
-        "run_state.json",
+        "run_state_audit.json",
 
     )
 
@@ -1479,6 +1528,23 @@ def main():
         # 修改1：记录安全恢复次数，方便后续统计。
         action_recovery_count = 0
         action_recovery_history = []
+
+        # ============================================================
+        # Audit：当前 Task 的纯统计计数。
+        # 只记录，不参与任何算法计算。
+        # ============================================================
+        audit_stats = {
+            "dino_detection_count": 0,
+            "dino_nonempty_step_count": 0,
+            "dino_empty_step_count": 0,
+            "relevance_exact_match_count": 0,
+            "relevance_fallback_count": 0,
+            "cognitive_adviser_count": 0,
+            "uncertainty_adviser_count": 0,
+            "both_adviser_count": 0,
+            "no_adviser_count": 0,
+        }
+        audit_step_history = []
 
 
 
@@ -1932,6 +1998,28 @@ def main():
 
             )
 
+            # ============================================================
+            # Audit：旁路统计当前 DINO 类别与 scores_rel 的匹配情况。
+            # 不修改 class_scores。
+            # ============================================================
+            relevance_audit = audit_relevance_mapping(
+                class_names,
+                scores_rel,
+            )
+            audit_stats["dino_detection_count"] += (
+                relevance_audit["detection_count"]
+            )
+            if relevance_audit["detection_count"] > 0:
+                audit_stats["dino_nonempty_step_count"] += 1
+            else:
+                audit_stats["dino_empty_step_count"] += 1
+            audit_stats["relevance_exact_match_count"] += (
+                relevance_audit["exact_match_count"]
+            )
+            audit_stats["relevance_fallback_count"] += (
+                relevance_audit["fallback_count"]
+            )
+
 
 
             depth_plus_id, depth_plus_score = (
@@ -2189,6 +2277,42 @@ def main():
                 adviser_cognitive_map
 
             )
+
+            # ============================================================
+            # Audit：统计两个 Adviser 是否产生建议，并保存当前 Step。
+            # ============================================================
+            if adviser_cognitive_map is not None:
+                audit_stats["cognitive_adviser_count"] += 1
+            if adviser_uncertainty_map is not None:
+                audit_stats["uncertainty_adviser_count"] += 1
+            if (
+                adviser_cognitive_map is not None
+                and adviser_uncertainty_map is not None
+            ):
+                audit_stats["both_adviser_count"] += 1
+            if (
+                adviser_cognitive_map is None
+                and adviser_uncertainty_map is None
+            ):
+                audit_stats["no_adviser_count"] += 1
+
+            audit_step_history.append({
+                "step": int(step),
+                "dino_detection_count": int(
+                    relevance_audit["detection_count"]
+                ),
+                "relevance_exact_match_count": int(
+                    relevance_audit["exact_match_count"]
+                ),
+                "relevance_fallback_count": int(
+                    relevance_audit["fallback_count"]
+                ),
+                "matched_classes": relevance_audit["matched_classes"],
+                "fallback_classes": relevance_audit["fallback_classes"],
+                "cognitive_adviser": adviser_cognitive_map,
+                "uncertainty_adviser": adviser_uncertainty_map,
+                "cognitive_max_value": float(max_value),
+            })
 
 
 
@@ -2897,6 +3021,36 @@ def main():
 
 
         # ============================================================
+        # Audit：Task 结束后生成汇总。
+        # ============================================================
+        relevance_total_count = (
+            audit_stats["relevance_exact_match_count"]
+            + audit_stats["relevance_fallback_count"]
+        )
+        if relevance_total_count > 0:
+            audit_stats["relevance_match_rate"] = round(
+                audit_stats["relevance_exact_match_count"]
+                / relevance_total_count,
+                6,
+            )
+            audit_stats["relevance_fallback_rate"] = round(
+                audit_stats["relevance_fallback_count"]
+                / relevance_total_count,
+                6,
+            )
+        else:
+            audit_stats["relevance_match_rate"] = 0.0
+            audit_stats["relevance_fallback_rate"] = 0.0
+
+        audit_stats["executed_steps"] = int(step)
+        audit_stats["action_recovery_count"] = int(
+            action_recovery_count
+        )
+        audit_stats["boundary_reject_count"] = int(
+            boundary_reject_count
+        )
+
+        # ============================================================
 
         # 2026-09-29 修改
 
@@ -2983,6 +3137,12 @@ def main():
             # 修改3：记录安全恢复，便于统计。
             "action_recovery_count": action_recovery_count,
             "action_recovery_history": action_recovery_history,
+
+            # --------------------------------------------------------
+            # 2026-10-07 新增：纯统计 Audit
+            # --------------------------------------------------------
+            "audit": audit_stats,
+            "audit_step_history": audit_step_history,
 
 
 
@@ -3235,6 +3395,19 @@ def main():
         )
 
 
+
+        print(
+            "[AUDIT] "
+            f"DINO={audit_stats['dino_detection_count']} | "
+            f"Match={audit_stats['relevance_exact_match_count']} | "
+            f"Fallback={audit_stats['relevance_fallback_count']} | "
+            f"MatchRate={audit_stats['relevance_match_rate']:.2%} | "
+            f"Cog={audit_stats['cognitive_adviser_count']} | "
+            f"Unc={audit_stats['uncertainty_adviser_count']} | "
+            f"Both={audit_stats['both_adviser_count']} | "
+            f"None={audit_stats['no_adviser_count']} | "
+            f"Recovery={action_recovery_count}"
+        )
 
         print(
 
